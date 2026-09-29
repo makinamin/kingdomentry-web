@@ -44,7 +44,7 @@ export default async function BrandReview({ params }: { params: Promise<{ locale
   const swatches = Object.entries(color) as Array<[ColorToken, string]>;
 
   return (
-    <main className="mx-auto max-w-site px-6 pb-24">
+    <div className="mx-auto w-full max-w-site px-6 pb-24">
       <header className="flex flex-wrap items-center justify-between gap-6 py-10">
         <div>
           <p className="text-[12px] font-medium uppercase tracking-label text-ink-soft">Step 1 · scaffold review</p>
@@ -182,6 +182,6 @@ export default async function BrandReview({ params }: { params: Promise<{ locale
           ))}
         </ul>
       </Panel>
-    </main>
+    </div>
   );
 }

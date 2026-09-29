@@ -48,7 +48,7 @@ export function Logo({ mark = "gold", diamond, size = 34, lockup = false, label,
     </svg>
   );
 
-  if (!lockup) return className ? <span className={className}>{svg}</span> : svg;
+  if (!lockup) return className ? <span className={`inline-flex ${className}`}>{svg}</span> : svg;
 
   // Prototype ratios: 34px mark / 21px type / 12px gap (header), 40 / 24 / 14 (footer).
   const fontSize = Math.round(px * 0.61);

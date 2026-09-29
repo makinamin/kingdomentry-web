@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { reemKufi, ubuntu } from "@/lib/fonts";
 
 export function generateStaticParams() {
@@ -25,8 +27,14 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={dir} className={`${ubuntu.variable} ${reemKufi.variable}`}>
-      <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      <body className="flex min-h-screen flex-col">
+        <NextIntlClientProvider>
+          <Header />
+          <main id="main" tabIndex={-1} className="flex flex-1 flex-col focus:outline-none">
+            {children}
+          </main>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
