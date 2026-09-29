@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-pearl font-sans text-blue;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Arabic sets every text run in Reem Kufi. The wordmark opts back into Ubuntu. */
+  html[lang="ar"] body {
+    @apply font-arabic;
+  }
+
+  a {
+    @apply text-blue transition-colors hover:text-gold;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.gold.DEFAULT");
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* Arabic labels drop the tracking (prototype: labelSpacing 0 for ar). */
+  html[lang="ar"] .tracking-label,
+  html[lang="ar"] .tracking-wide {
+    letter-spacing: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

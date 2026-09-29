@@ -1,0 +1,405 @@
+{
+  "dir": "ltr",
+  "code": "NL",
+  "review": true,
+  "brand": {
+    "wordA": "KINGDOM",
+    "wordB": "ENTRY",
+    "descriptor": "SOFT LANDING · SAUDI-ARABIË",
+    "arabicName": "مدخل المملكة"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Diensten",
+    "sectors": "Sectoren",
+    "how": "Hoe het werkt",
+    "about": "Over ons",
+    "contact": "Contact",
+    "cta": "Plan een kennismaking",
+    "menu": "Menu",
+    "close": "Sluiten"
+  },
+  "hero": {
+    "label": "Soft landing · Saudi-Arabië",
+    "title": "Het Koninkrijk is open. Stap binnen.",
+    "sub": "Wij verbinden Europese bedrijven met Saoedische kopers, partners en licenties. Van het eerste gesprek tot je eigen entiteit.",
+    "cta1": "Plan een kennismaking",
+    "cta2": "Zo werkt het",
+    "proof": "Amsterdam · Jeddah · Riyad"
+  },
+  "gateway": {
+    "utility": "Soft landing partner voor Europese bedrijven die Saudi-Arabië betreden",
+    "label": "Jouw toegang tot Saudi-Arabië",
+    "title": "Het Koninkrijk is open. Stap binnen.",
+    "sub": "Wij verbinden Europese bedrijven met Saoedische kopers, partners en licenties. Van het eerste gesprek tot je eigen entiteit.",
+    "quick": "Begin hier",
+    "statsLabel": "Waarom nu",
+    "statsTitle": "Saudi-Arabië koopt. Europa bouwt.",
+    "stats": [
+      {
+        "figure": "[PLACEHOLDER]",
+        "caption": "Snelst groeiende G20-economie"
+      },
+      {
+        "figure": "[PLACEHOLDER]",
+        "caption": "Gigaprojecten in aanbouw"
+      },
+      {
+        "figure": "[PLACEHOLDER]",
+        "caption": "Investeringspijplijn zorg"
+      },
+      {
+        "figure": "[PLACEHOLDER]",
+        "caption": "Lokalisatiedoel industrie"
+      },
+      {
+        "figure": "[PLACEHOLDER]",
+        "caption": "Nederlandse bedrijven al in KSA"
+      }
+    ],
+    "statsNote": "Cijfers worden voor lancering gebronneerd en geverifieerd.",
+    "sectorsLabel": "Sectoren",
+    "sectorsTitle": "Waar Europa past.",
+    "explore": "Bekijk sector",
+    "packagesLabel": "Drie routes",
+    "packagesTitle": "Kies je tempo."
+  },
+  "whyNow": {
+    "label": "Waarom nu",
+    "title": "Saudi-Arabië koopt. Europa bouwt.",
+    "points": [
+      {
+        "title": "Zorg",
+        "text": "Nieuwe ziekenhuizen, nieuwe klinieken, digitale zorg op schaal. Kopers willen Europese systemen die al werken. [PLACEHOLDER]"
+      },
+      {
+        "title": "Energie en water",
+        "text": "Gigaprojecten hebben cleantech nodig die bestand is tegen hitte en zand. Bewezen wint van beloofd. [PLACEHOLDER]"
+      },
+      {
+        "title": "AI, voeding en industrie",
+        "text": "Lokalisatiedoelen openen de deur voor Europese kennis. Maak het hier, verkoop het hier. [PLACEHOLDER]"
+      }
+    ]
+  },
+  "packages": {
+    "label": "Drie routes",
+    "title": "Kies je tempo.",
+    "cta": "Bespreek je entree",
+    "includesLabel": "Wat zit erin",
+    "outcomeLabel": "Resultaat",
+    "items": [
+      {
+        "name": "Market Validation Sprint",
+        "duration": "6 tot 8 weken",
+        "includes": [
+          "Marktscan",
+          "5 tot 8 gesprekken met kopers in KSA",
+          "Go/no-go advies"
+        ],
+        "outcome": "Een helder ja of nee, gebaseerd op echte kopersgesprekken."
+      },
+      {
+        "name": "Market Entry",
+        "duration": "3 tot 6 maanden",
+        "includes": [
+          "Delegatiereis",
+          "Pilotdeal",
+          "Selectie lokale partner",
+          "Licentieroute"
+        ],
+        "outcome": "Een getekende pilot en een gekozen partner."
+      },
+      {
+        "name": "Soft Landing",
+        "duration": "6 tot 12 maanden",
+        "includes": [
+          "Oprichting entiteit",
+          "Kantoor",
+          "Eerste lokale medewerkers",
+          "Doorlopende business development"
+        ],
+        "outcome": "Je eigen entiteit, je eigen mensen, je eerste omzet."
+      }
+    ]
+  },
+  "sectorsStrip": {
+    "label": "Sectoren",
+    "title": "Waar Europa past.",
+    "all": "Alle sectoren"
+  },
+  "how": {
+    "label": "Hoe het werkt",
+    "title": "Vier stappen. Eén deur.",
+    "intro": "Elke klant loopt hetzelfde pad. Het tempo bepaal jij.",
+    "steps": [
+      {
+        "name": "Valideren",
+        "text": "We scannen de markt en spreken echte kopers. Jij krijgt een go of een no-go."
+      },
+      {
+        "name": "Verbinden",
+        "text": "We openen deuren. Delegatiereis, pilotdeal, de juiste lokale partner."
+      },
+      {
+        "name": "Landen",
+        "text": "We richten je entiteit op, je kantoor en je eerste medewerkers."
+      },
+      {
+        "name": "Groeien",
+        "text": "We blijven. Business development ter plaatse tot je ons niet meer nodig hebt."
+      }
+    ]
+  },
+  "team": {
+    "label": "Wie we zijn",
+    "title": "Nederlands en Saoedisch. Aanwezig in beide.",
+    "text": "Eén team, twee landen. We zitten met jou in Amsterdam en met je kopers in Jeddah en Riyad.",
+    "cta": "Ontmoet het team"
+  },
+  "ctaBand": {
+    "title": "Je eerste stap in het Koninkrijk begint met één gesprek.",
+    "cta": "Plan een kennismaking"
+  },
+  "services": {
+    "title": "Drie pakketten. Geen verrassingen.",
+    "intro": "Elke entree is anders. Elk pakket is vast in scope en tijd. Geen prijzen op de site. We offreren na het eerste gesprek."
+  },
+  "sectors": {
+    "title": "Vijf sectoren. Eén vraag: werkt het hier?",
+    "intro": "We richten ons op waar Saoedische vraag en Europese kracht elkaar raken.",
+    "opportunity": "De Saoedische kans",
+    "buyers": "Typische kopers",
+    "help": "Hoe wij helpen",
+    "cta": "Bespreek je entree",
+    "back": "Alle sectoren",
+    "items": [
+      {
+        "id": "medical",
+        "icon": "icon-medical",
+        "name": "Medisch & Zorg",
+        "tagline": "De zorg schaalt op. Het boodschappenlijstje ook.",
+        "opportunity": "Het Koninkrijk bouwt ziekenhuizen, privatiseert zorg en digitaliseert. Het wil systemen die al werken. [PLACEHOLDER]",
+        "buyers": [
+          "Clusters van het ministerie van Volksgezondheid",
+          "Private ziekenhuisgroepen",
+          "Zorgverzekeraars",
+          "Medische distributeurs"
+        ],
+        "help": [
+          "Regulatoire route en registratie",
+          "Introducties bij kopers",
+          "Selectie lokale distributeur"
+        ]
+      },
+      {
+        "id": "cleantech",
+        "icon": "icon-cleantech",
+        "name": "Cleantech & Water",
+        "tagline": "Water is het schaarste goed. Los het op.",
+        "opportunity": "Ontzilting, hergebruik, zon, koeling. Gigaprojecten willen technologie die bewezen is in hitte. [PLACEHOLDER]",
+        "buyers": [
+          "Waterbedrijven",
+          "Ontwikkelaars van gigaprojecten",
+          "EPC-aannemers",
+          "Industrieparken"
+        ],
+        "help": [
+          "Selectie pilotlocatie",
+          "Matching met partners en EPC",
+          "Lokalisatieplan"
+        ]
+      },
+      {
+        "id": "ai",
+        "icon": "icon-ai",
+        "name": "AI & ICT",
+        "tagline": "Data is de nieuwe olie. Het Koninkrijk weet het.",
+        "opportunity": "Cloudregio's, smart cities en digitalisering van de overheid. De vraag naar toegepaste AI is groter dan het aanbod. [PLACEHOLDER]",
+        "buyers": [
+          "Digitale overheidsdiensten",
+          "Telecomoperators",
+          "Banken",
+          "Systeemintegrators"
+        ],
+        "help": [
+          "Route voor dataresidentie",
+          "Partnerschappen met integrators",
+          "Pilot met een ankerklant"
+        ]
+      },
+      {
+        "id": "agri",
+        "icon": "icon-agri",
+        "name": "Landbouw & Food Tech",
+        "tagline": "Voedselzekerheid is nationaal beleid. Jouw techniek hoort hier.",
+        "opportunity": "Kassen, verticale landbouw, aquacultuur, koelketen. Voedselzekerheid stuurt de investeringen. [PLACEHOLDER]",
+        "buyers": [
+          "Agri-investeringsfondsen",
+          "Voedselproducenten",
+          "Retailgroepen",
+          "Ministerieprogramma's"
+        ],
+        "help": [
+          "Lokale telerpartners",
+          "Pilotboerderij",
+          "Import- en licentieroute"
+        ]
+      },
+      {
+        "id": "industry",
+        "icon": "icon-industry",
+        "name": "Industrie & Maakindustrie",
+        "tagline": "Maak het in het Koninkrijk.",
+        "opportunity": "Lokalisatiedoelen belonen bedrijven die lokaal produceren. Industriesteden bieden grond, energie en incentives. [PLACEHOLDER]",
+        "buyers": [
+          "Autoriteiten van industriesteden",
+          "Olie-, gas- en petrochemiebedrijven",
+          "Lokale fabrikanten",
+          "Defensie- en mobiliteitsprogramma's"
+        ],
+        "help": [
+          "Scan van locaties en incentives",
+          "Selectie JV-partner",
+          "Oprichting entiteit en licentie"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "label": "Over ons",
+    "title": "Een Nederlands-Saoedisch partnerschap.",
+    "story": [
+      "Kingdom Entry begon met een simpele observatie. Europese bedrijven hadden de technologie die Saudi-Arabië wilde. Ze wisten alleen niet hoe ze binnen moesten komen.",
+      "Dus bouwden wij de deur. Een team in Nederland dat scale-up spreekt. Een team in Saudi-Arabië dat koper, partner en licentie spreekt.",
+      "Amsterdam. Jeddah. Riyad. Ter plaatse in alle drie."
+    ],
+    "teamLabel": "Het team",
+    "members": [
+      {
+        "name": "[NAAM]",
+        "role": "[ROL] · Amsterdam",
+        "photo": "[FOTO]",
+        "linkedin": "[LINKEDIN]"
+      },
+      {
+        "name": "[NAAM]",
+        "role": "[ROL] · Jeddah",
+        "photo": "[FOTO]",
+        "linkedin": "[LINKEDIN]"
+      },
+      {
+        "name": "[NAAM]",
+        "role": "[ROL] · Riyad",
+        "photo": "[FOTO]",
+        "linkedin": "[LINKEDIN]"
+      },
+      {
+        "name": "[NAAM]",
+        "role": "[ROL] · Amsterdam",
+        "photo": "[FOTO]",
+        "linkedin": "[LINKEDIN]"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Plan een kennismaking.",
+    "intro": "Dertig minuten. Jouw product, onze lezing van de markt. Geen pitch.",
+    "form": {
+      "name": "Naam",
+      "company": "Bedrijf",
+      "role": "Functie",
+      "email": "E-mail",
+      "phone": "Telefoon",
+      "sector": "Sector",
+      "sectorPlaceholder": "Kies een sector",
+      "size": "Bedrijfsgrootte",
+      "sizes": [
+        "1 tot 10",
+        "11 tot 50",
+        "51 tot 200",
+        "200+"
+      ],
+      "message": "Bericht",
+      "submit": "Plan het gesprek",
+      "privacy": "We reageren binnen twee werkdagen. Je gegevens blijven bij ons."
+    },
+    "thanks": {
+      "title": "Ontvangen.",
+      "text": "We komen binnen twee werkdagen bij je terug.",
+      "again": "Nog een bericht"
+    },
+    "calendar": "Agenda-embed [PLACEHOLDER]",
+    "cities": [
+      {
+        "city": "Amsterdam",
+        "lines": [
+          "[PLACEHOLDER adres]",
+          "NL +31 624 66 4290"
+        ]
+      },
+      {
+        "city": "Jeddah",
+        "lines": [
+          "Red Sea Mall, Prince Faisal Ibn Fahd",
+          "Ash Shati, Jeddah 21146",
+          "KSA +966 9200 17540"
+        ]
+      },
+      {
+        "city": "Riyad",
+        "lines": [
+          "[PLACEHOLDER adres]"
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy.",
+    "intro": "Kort gezegd: we verzamelen wat we nodig hebben om je te antwoorden, niets meer. [JURIDISCHE REVIEW]",
+    "sections": [
+      {
+        "title": "Wat we verzamelen",
+        "text": "Naam, bedrijf, functie, e-mail, telefoon en je bericht via het contactformulier. Anonieme, privacyvriendelijke analytics op de site."
+      },
+      {
+        "title": "Waarom",
+        "text": "Om je verzoek te beantwoorden en het gesprek voor te bereiden. Om te zien welke pagina's nuttig zijn."
+      },
+      {
+        "title": "Hoe lang",
+        "text": "Formulierinzendingen 24 maanden, of tot je ons vraagt ze te verwijderen."
+      },
+      {
+        "title": "Je rechten",
+        "text": "Inzage, correctie, verwijdering, bezwaar. Mail privacy@kingdomentry.com."
+      },
+      {
+        "title": "Cookies",
+        "text": "Eén functionele cookie voor je taal. Analytics draait zonder cookies."
+      }
+    ]
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Deze deur is dicht. Probeer een andere.",
+    "link": "Terug naar home"
+  },
+  "footer": {
+    "tagline": "Jouw zachte landing in Saudi-Arabië.",
+    "company": "Bedrijf",
+    "contact": "Contact",
+    "download": "Download bedrijfsprofiel (PDF)",
+    "email": "hello@kingdomentry.com",
+    "linkedin": "LinkedIn",
+    "rights": "© 2026 Kingdom Entry. Alle rechten voorbehouden.",
+    "privacy": "Privacy",
+    "language": "Taal"
+  },
+  "cookie": {
+    "text": "We gebruiken privacyvriendelijke analytics. Geen advertenties, geen tracking over sites heen.",
+    "accept": "Accepteren",
+    "decline": "Weigeren"
+  }
+}

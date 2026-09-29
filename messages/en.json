@@ -1,0 +1,405 @@
+{
+  "dir": "ltr",
+  "code": "EN",
+  "review": false,
+  "brand": {
+    "wordA": "KINGDOM",
+    "wordB": "ENTRY",
+    "descriptor": "SOFT LANDING · SAUDI ARABIA",
+    "arabicName": "مدخل المملكة"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "sectors": "Sectors",
+    "how": "How it works",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Book an intro call",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "hero": {
+    "label": "Soft landing · Saudi Arabia",
+    "title": "The Kingdom is open. Walk in.",
+    "sub": "We connect European companies to Saudi buyers, partners and licenses. From the first meeting to your own entity.",
+    "cta1": "Book an intro call",
+    "cta2": "See how it works",
+    "proof": "Amsterdam · Jeddah · Riyadh"
+  },
+  "gateway": {
+    "utility": "Soft landing partner for European companies entering Saudi Arabia",
+    "label": "Your gateway to Saudi Arabia",
+    "title": "The Kingdom is open. Walk in.",
+    "sub": "We connect European companies to Saudi buyers, partners and licenses. From the first meeting to your own entity.",
+    "quick": "Start here",
+    "statsLabel": "Why now",
+    "statsTitle": "Saudi Arabia is buying. Europe is building.",
+    "stats": [
+      {
+        "figure": "[PLACEHOLDER]",
+        "caption": "Fastest-growing G20 economy"
+      },
+      {
+        "figure": "[PLACEHOLDER]",
+        "caption": "Giga-projects under construction"
+      },
+      {
+        "figure": "[PLACEHOLDER]",
+        "caption": "Healthcare investment pipeline"
+      },
+      {
+        "figure": "[PLACEHOLDER]",
+        "caption": "Localisation target for industry"
+      },
+      {
+        "figure": "[PLACEHOLDER]",
+        "caption": "Dutch companies already in KSA"
+      }
+    ],
+    "statsNote": "Figures to be sourced and verified before launch.",
+    "sectorsLabel": "Sectors",
+    "sectorsTitle": "Where Europe fits.",
+    "explore": "Explore sector",
+    "packagesLabel": "Three ways in",
+    "packagesTitle": "Pick your pace."
+  },
+  "whyNow": {
+    "label": "Why now",
+    "title": "Saudi Arabia is buying. Europe is building.",
+    "points": [
+      {
+        "title": "Health",
+        "text": "New hospitals, new clinics, digital care at scale. Buyers want European systems that already work. [PLACEHOLDER]"
+      },
+      {
+        "title": "Energy and water",
+        "text": "Giga-projects need cleantech built for heat and sand. Proven beats promising. [PLACEHOLDER]"
+      },
+      {
+        "title": "AI, food and industry",
+        "text": "Localisation targets open the door to European know-how. Make it here, sell it here. [PLACEHOLDER]"
+      }
+    ]
+  },
+  "packages": {
+    "label": "Three ways in",
+    "title": "Pick your pace.",
+    "cta": "Discuss your entry",
+    "includesLabel": "What's included",
+    "outcomeLabel": "Outcome",
+    "items": [
+      {
+        "name": "Market Validation Sprint",
+        "duration": "6 to 8 weeks",
+        "includes": [
+          "Market scan",
+          "5 to 8 buyer conversations in KSA",
+          "Go/no-go advice"
+        ],
+        "outcome": "A clear yes or no, backed by real buyer conversations."
+      },
+      {
+        "name": "Market Entry",
+        "duration": "3 to 6 months",
+        "includes": [
+          "Delegation trip",
+          "Pilot deal",
+          "Local partner selection",
+          "Licensing route"
+        ],
+        "outcome": "A signed pilot and a chosen partner."
+      },
+      {
+        "name": "Soft Landing",
+        "duration": "6 to 12 months",
+        "includes": [
+          "Entity setup",
+          "Office",
+          "First local hires",
+          "Ongoing business development"
+        ],
+        "outcome": "Your own entity, your own people, your first revenue."
+      }
+    ]
+  },
+  "sectorsStrip": {
+    "label": "Sectors",
+    "title": "Where Europe fits.",
+    "all": "All sectors"
+  },
+  "how": {
+    "label": "How it works",
+    "title": "Four steps. One door.",
+    "intro": "Every client walks the same path. The pace is yours.",
+    "steps": [
+      {
+        "name": "Validate",
+        "text": "We scan the market and talk to real buyers. You get a go or a no-go."
+      },
+      {
+        "name": "Connect",
+        "text": "We open doors. Delegation trip, pilot deal, the right local partner."
+      },
+      {
+        "name": "Land",
+        "text": "We set up your entity, your office and your first hires."
+      },
+      {
+        "name": "Grow",
+        "text": "We stay. Business development on the ground until you don't need us."
+      }
+    ]
+  },
+  "team": {
+    "label": "Who we are",
+    "title": "Dutch and Saudi. On the ground in both.",
+    "text": "One team, two countries. We sit with you in Amsterdam and with your buyers in Jeddah and Riyadh.",
+    "cta": "Meet the team"
+  },
+  "ctaBand": {
+    "title": "Your first step into the Kingdom starts with one call.",
+    "cta": "Book an intro call"
+  },
+  "services": {
+    "title": "Three packages. No surprises.",
+    "intro": "Every entry is different. Every package is fixed in scope and time. No prices on the site. We quote after the first call."
+  },
+  "sectors": {
+    "title": "Five sectors. One question: does it work here?",
+    "intro": "We focus where Saudi demand meets European strength.",
+    "opportunity": "The Saudi opportunity",
+    "buyers": "Typical buyers",
+    "help": "How we help",
+    "cta": "Discuss your entry",
+    "back": "All sectors",
+    "items": [
+      {
+        "id": "medical",
+        "icon": "icon-medical",
+        "name": "Medical & Health",
+        "tagline": "Care is scaling. So is the shopping list.",
+        "opportunity": "The Kingdom is building hospitals, privatising care and going digital. It wants systems that already work. [PLACEHOLDER: market size, hospital pipeline]",
+        "buyers": [
+          "Ministry of Health clusters",
+          "Private hospital groups",
+          "Health insurers",
+          "Medical distributors"
+        ],
+        "help": [
+          "Regulatory route and registration",
+          "Buyer introductions",
+          "Local distributor selection"
+        ]
+      },
+      {
+        "id": "cleantech",
+        "icon": "icon-cleantech",
+        "name": "Cleantech & Water",
+        "tagline": "Water is the scarcest resource. Solve it.",
+        "opportunity": "Desalination, reuse, solar, cooling. Giga-projects want technology proven in heat. [PLACEHOLDER: project pipeline, water targets]",
+        "buyers": [
+          "Water utilities",
+          "Giga-project developers",
+          "EPC contractors",
+          "Industrial parks"
+        ],
+        "help": [
+          "Pilot site selection",
+          "Partner and EPC matching",
+          "Localisation planning"
+        ]
+      },
+      {
+        "id": "ai",
+        "icon": "icon-ai",
+        "name": "AI & ICT",
+        "tagline": "Data is the new oil. The Kingdom knows it.",
+        "opportunity": "Cloud regions, smart cities and public-sector digitalisation. Demand for applied AI outstrips supply. [PLACEHOLDER: digital spend, cloud investment]",
+        "buyers": [
+          "Government digital agencies",
+          "Telecom operators",
+          "Banks",
+          "System integrators"
+        ],
+        "help": [
+          "Data-residency route",
+          "Integrator partnerships",
+          "Pilot with an anchor client"
+        ]
+      },
+      {
+        "id": "agri",
+        "icon": "icon-agri",
+        "name": "Agriculture & Food Tech",
+        "tagline": "Food security is national policy. Your tech belongs here.",
+        "opportunity": "Greenhouses, vertical farms, aquaculture, cold chain. Food security drives investment. [PLACEHOLDER: import share, investment programmes]",
+        "buyers": [
+          "Agri investment funds",
+          "Food producers",
+          "Retail groups",
+          "Ministry programmes"
+        ],
+        "help": [
+          "Local grower partners",
+          "Pilot farm",
+          "Import and licensing route"
+        ]
+      },
+      {
+        "id": "industry",
+        "icon": "icon-industry",
+        "name": "Industry & Manufacturing",
+        "tagline": "Make it in the Kingdom.",
+        "opportunity": "Localisation targets reward companies that produce locally. Industrial cities offer land, energy and incentives. [PLACEHOLDER: localisation targets, incentive schemes]",
+        "buyers": [
+          "Industrial city authorities",
+          "Oil, gas and petrochemical majors",
+          "Local manufacturers",
+          "Defence and mobility programmes"
+        ],
+        "help": [
+          "Site and incentive scan",
+          "JV partner selection",
+          "Entity and licence setup"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "label": "About",
+    "title": "A Dutch-Saudi partnership.",
+    "story": [
+      "Kingdom Entry started with a simple observation. European companies had the technology Saudi Arabia wanted. They just didn't know how to walk in.",
+      "So we built the door. A team in the Netherlands that speaks scale-up. A team in Saudi Arabia that speaks buyer, partner and license.",
+      "Amsterdam. Jeddah. Riyadh. On the ground in all three."
+    ],
+    "teamLabel": "The team",
+    "members": [
+      {
+        "name": "[NAME]",
+        "role": "[ROLE] · Amsterdam",
+        "photo": "[PHOTO]",
+        "linkedin": "[LINKEDIN]"
+      },
+      {
+        "name": "[NAME]",
+        "role": "[ROLE] · Jeddah",
+        "photo": "[PHOTO]",
+        "linkedin": "[LINKEDIN]"
+      },
+      {
+        "name": "[NAME]",
+        "role": "[ROLE] · Riyadh",
+        "photo": "[PHOTO]",
+        "linkedin": "[LINKEDIN]"
+      },
+      {
+        "name": "[NAME]",
+        "role": "[ROLE] · Amsterdam",
+        "photo": "[PHOTO]",
+        "linkedin": "[LINKEDIN]"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Book an intro call.",
+    "intro": "Thirty minutes. Your product, our read of the market. No pitch.",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "role": "Role",
+      "email": "Email",
+      "phone": "Phone",
+      "sector": "Sector",
+      "sectorPlaceholder": "Select a sector",
+      "size": "Company size",
+      "sizes": [
+        "1 to 10",
+        "11 to 50",
+        "51 to 200",
+        "200+"
+      ],
+      "message": "Message",
+      "submit": "Book the call",
+      "privacy": "We reply within two working days. Your data stays with us."
+    },
+    "thanks": {
+      "title": "Received.",
+      "text": "We'll come back to you within two working days.",
+      "again": "Send another"
+    },
+    "calendar": "Calendar booking embed [PLACEHOLDER]",
+    "cities": [
+      {
+        "city": "Amsterdam",
+        "lines": [
+          "[PLACEHOLDER address]",
+          "NL +31 624 66 4290"
+        ]
+      },
+      {
+        "city": "Jeddah",
+        "lines": [
+          "Red Sea Mall, Prince Faisal Ibn Fahd",
+          "Ash Shati, Jeddah 21146",
+          "KSA +966 9200 17540"
+        ]
+      },
+      {
+        "city": "Riyadh",
+        "lines": [
+          "[PLACEHOLDER address]"
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy.",
+    "intro": "Short version: we collect what we need to reply to you, nothing more. [LEGAL REVIEW]",
+    "sections": [
+      {
+        "title": "What we collect",
+        "text": "Name, company, role, email, phone and your message when you use the contact form. Anonymous, privacy-friendly analytics on the site."
+      },
+      {
+        "title": "Why",
+        "text": "To answer your request and prepare the intro call. To understand which pages are useful."
+      },
+      {
+        "title": "How long",
+        "text": "Form submissions for 24 months, or until you ask us to delete them."
+      },
+      {
+        "title": "Your rights",
+        "text": "Access, correction, deletion, objection. Email privacy@kingdomentry.com."
+      },
+      {
+        "title": "Cookies",
+        "text": "One functional cookie for your language. Analytics run without cookies."
+      }
+    ]
+  },
+  "notFound": {
+    "code": "404",
+    "title": "This door is closed. Try another.",
+    "link": "Back home"
+  },
+  "footer": {
+    "tagline": "Your soft landing in Saudi Arabia.",
+    "company": "Company",
+    "contact": "Contact",
+    "download": "Download company profile (PDF)",
+    "email": "hello@kingdomentry.com",
+    "linkedin": "LinkedIn",
+    "rights": "© 2026 Kingdom Entry. All rights reserved.",
+    "privacy": "Privacy",
+    "language": "Language"
+  },
+  "cookie": {
+    "text": "We use privacy-friendly analytics. No ads, no tracking across sites.",
+    "accept": "Accept",
+    "decline": "Decline"
+  }
+}
