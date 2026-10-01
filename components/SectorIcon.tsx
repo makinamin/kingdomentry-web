@@ -1,8 +1,5 @@
-import { color } from "@/lib/tokens";
-
-const gold = color.gold;
-
-// Line icons from assets/icons/sector-*.svg: 1.5px gold strokes with a diamond accent.
+// Line icons from assets/icons/sector-*.svg: 1.5px strokes with a diamond accent. Colour follows currentColor.
+const gold = "currentColor";
 const paths = {
   medical: (
     <>

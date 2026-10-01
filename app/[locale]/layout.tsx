@@ -1,15 +1,23 @@
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { routing } from "@/i18n/routing";
+import { CookieNotice } from "@/components/CookieNotice";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { reemKufi, ubuntu } from "@/lib/fonts";
+import { routing } from "@/i18n/routing";
+import { epilogue, reemKufi, ubuntu } from "@/lib/fonts";
+import { site } from "@/lib/site";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  title: { default: "Kingdom Entry", template: "%s · Kingdom Entry" },
+};
 
 export default async function LocaleLayout({
   children,
@@ -26,7 +34,11 @@ export default async function LocaleLayout({
   const dir = messages.dir === "rtl" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={dir} className={`${ubuntu.variable} ${reemKufi.variable}`}>
+    <html lang={locale} dir={dir} className={`${epilogue.variable} ${ubuntu.variable} ${reemKufi.variable}`}>
+      <head>
+        {/* Lets CSS hide reveal-on-scroll content only when JavaScript can show it again. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body className="flex min-h-screen flex-col">
         <NextIntlClientProvider>
           <Header />
@@ -34,6 +46,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <Footer />
+          <CookieNotice />
         </NextIntlClientProvider>
       </body>
     </html>

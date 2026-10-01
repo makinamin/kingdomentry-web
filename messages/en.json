@@ -324,7 +324,14 @@
       ],
       "message": "Message",
       "submit": "Book the call",
-      "privacy": "We reply within two working days. Your data stays with us."
+      "privacy": "We reply within two working days. Your data stays with us.",
+      "sending": "Sending",
+      "errors": {
+        "required": "Required.",
+        "email": "Enter a valid email.",
+        "tooFast": "That was quick. Give it a moment and send again.",
+        "failed": "That did not go through. Email us at hello@kingdomentry.com."
+      }
     },
     "thanks": {
       "title": "Received.",

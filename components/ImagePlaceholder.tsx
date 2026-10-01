@@ -1,39 +1,32 @@
-import { color } from "@/lib/tokens";
 import { MarkShapes } from "./Logo";
 
 /**
  * Stand-in for photography that has not arrived yet. Reserves the aspect ratio
- * so the real image causes no layout shift. The note says what photo goes here.
+ * so the real image causes no layout shift. The note says which photo goes here.
  */
 export function ImagePlaceholder({
   note,
   ratio = "4 / 5",
-  tone = "light",
   className = "",
+  rounded = "rounded-xl",
 }: {
   note: string;
   ratio?: string;
-  tone?: "light" | "dark";
   className?: string;
+  rounded?: string;
 }) {
-  const dark = tone === "dark";
   return (
     <div
       role="img"
       aria-label={note}
-      className={`relative flex items-center justify-center overflow-hidden rounded-md ${
-        dark
-          ? "bg-[linear-gradient(180deg,theme(colors.blue.lift),theme(colors.blue.deep))]"
-          : "border border-stone/30 bg-white"
-      } ${className}`}
+      className={`relative isolate flex items-center justify-center overflow-hidden bg-[linear-gradient(140deg,theme(colors.night.soft)_0%,theme(colors.night.DEFAULT)_55%,theme(colors.indigo)_160%)] ${rounded} ${className}`}
       style={{ aspectRatio: ratio }}
     >
-      <svg viewBox="0 0 120 120" aria-hidden className="h-[46%] w-[46%] opacity-[0.12]">
-        <MarkShapes mark={dark ? color.pearl : color.blue} diamond={dark ? color.pearl : color.blue} />
+      <span aria-hidden className="absolute -end-10 -top-10 -z-10 h-1/2 w-1/2 rounded-full bg-violet/50 blur-[60px]" />
+      <svg viewBox="0 0 120 120" aria-hidden className="h-[34%] w-[34%] text-white opacity-[0.14]">
+        <MarkShapes mark="currentColor" diamond="currentColor" />
       </svg>
-      <span
-        className={`absolute bottom-3 px-3 text-center text-[11px] tracking-label ${dark ? "text-horizon" : "text-stone"}`}
-      >
+      <span className="absolute bottom-4 start-4 rounded-full bg-white/10 px-3 py-1 text-[12px] font-medium text-white/70 backdrop-blur">
         {note}
       </span>
     </div>

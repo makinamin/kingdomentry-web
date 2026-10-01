@@ -5,42 +5,94 @@
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-pearl font-sans text-blue;
-    font-size: 16px;
-    line-height: 1.6;
+    @apply bg-mist font-sans text-ink-2;
+    font-size: 17px;
+    line-height: 1.75;
   }
 
-  /* Arabic sets every text run in Reem Kufi. The wordmark opts back into Ubuntu. */
   html[lang="ar"] body {
     @apply font-arabic;
   }
 
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-ink;
+  }
+
   a {
-    @apply text-blue transition-colors hover:text-gold;
+    @apply transition-colors duration-300;
   }
 
   :focus-visible {
-    outline: 2px solid theme("colors.gold.DEFAULT");
+    outline: 2px solid theme("colors.violet.DEFAULT");
     outline-offset: 3px;
+  }
+
+  ::selection {
+    @apply bg-violet text-white;
   }
 }
 
 @layer utilities {
-  /* Arabic labels drop the tracking (prototype: labelSpacing 0 for ar). */
+  .text-gradient {
+    background: theme("backgroundImage.gd-violet");
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Outlined display word, Gilroy "has-stroke". */
+  .text-stroke {
+    -webkit-text-stroke: 2px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+  @media (max-width: 767px) {
+    .text-stroke {
+      -webkit-text-stroke-width: 1px;
+    }
+  }
+
   html[lang="ar"] .tracking-label,
   html[lang="ar"] .tracking-wide {
     letter-spacing: 0;
   }
+
+  /* Scroll reveal, driven by components/Reveal.tsx. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      opacity 0.9s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+  html:not(.js) .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

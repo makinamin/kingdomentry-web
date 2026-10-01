@@ -324,7 +324,14 @@
       ],
       "message": "Bericht",
       "submit": "Plan het gesprek",
-      "privacy": "We reageren binnen twee werkdagen. Je gegevens blijven bij ons."
+      "privacy": "We reageren binnen twee werkdagen. Je gegevens blijven bij ons.",
+      "sending": "Versturen",
+      "errors": {
+        "required": "Verplicht.",
+        "email": "Vul een geldig e-mailadres in.",
+        "tooFast": "Dat ging snel. Wacht even en verstuur opnieuw.",
+        "failed": "Dat is niet gelukt. Mail ons op hello@kingdomentry.com."
+      }
     },
     "thanks": {
       "title": "Ontvangen.",

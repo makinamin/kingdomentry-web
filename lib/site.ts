@@ -1,10 +1,13 @@
 // Site-wide facts that are not copy. Copy lives in messages/*.json.
 export const site = {
+  url: "https://kingdomentry.com",
   email: "hello@kingdomentry.com",
   // [PLACEHOLDER] Company LinkedIn page. The prototype links to linkedin.com.
   linkedin: "https://www.linkedin.com",
   // [PLACEHOLDER] Company profile PDF. Drop the file in public/ at this path.
   profilePdf: "/kingdom-entry-profile.pdf",
+  // Form endpoint (serverless function or form service). Unset: the form opens a prefilled email instead.
+  formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? "",
 } as const;
 
 export const navItems = [

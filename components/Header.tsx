@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { navItems } from "@/lib/site";
+import { navItems, site } from "@/lib/site";
 import { ButtonLink } from "./Button";
+import { ArrowIcon, ChatIcon, CloseIcon, MailIcon, MenuIcon } from "./icons";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Logo } from "./Logo";
 
@@ -12,20 +13,32 @@ const isActive = (pathname: string, href: string) =>
   href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
 /**
- * Sticky 76px header. Pearl at 94% with blur on light pages; blue-deep at 72%
- * with pearl text on the immersive home. Nav collapses into a Menu button under 1120px.
+ * Gilroy header-1: transparent over the dark hero with violet gradient slabs
+ * behind the logo and the menu button. Turns solid black once you scroll.
+ * Nav shows from 1200px; the menu button opens a side drawer at every size.
  */
 export function Header() {
   const t = useTranslations("nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
-  const dark = pathname === "/";
+  const closeButton = useRef<HTMLButtonElement>(null);
 
-  // Close the menu on navigation and on Escape.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   useEffect(() => setOpen(false), [pathname]);
+
   useEffect(() => {
     if (!open) return;
+    closeButton.current?.focus();
+    const { overflow } = document.body.style;
+    document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(false);
@@ -33,92 +46,150 @@ export function Header() {
       }
     };
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = overflow;
+      document.removeEventListener("keydown", onKey);
+    };
   }, [open]);
 
-  const fg = dark ? "text-pearl" : "text-blue";
-
   return (
-    <header
-      className={`sticky top-0 z-20 border-b backdrop-blur-[8px] ${
-        dark ? "border-gold-light/[0.28] bg-blue-deep/[0.72]" : "border-stone/30 bg-pearl/[0.94]"
-      } ${fg}`}
-    >
-      <a
-        href="#main"
-        className="absolute start-4 top-3 z-30 -translate-y-24 rounded-sm bg-blue px-4 py-2 text-pearl no-underline focus:translate-y-0 focus:text-pearl"
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-40 text-white transition-[background-color,box-shadow,backdrop-filter] duration-500 ${
+          scrolled ? "bg-night-deep/90 shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-md" : "bg-transparent"
+        }`}
       >
-        {t("skip")}
-      </a>
-      <div className="mx-auto flex h-[76px] w-full max-w-site items-center justify-between gap-6 px-6">
-        <Link href="/" aria-label="Kingdom Entry" className={`no-underline focus-visible:outline-offset-4 ${fg}`}>
-          {/* Under 480px the lockup, language switch and Menu button cannot share one row, so the mark stands alone. */}
-          <Logo mark={dark ? "pearl" : "blue"} diamond="gold" size={34} className="min-[480px]:hidden" />
-          <Logo mark={dark ? "pearl" : "blue"} diamond="gold" size={34} lockup className="hidden min-[480px]:inline-flex" />
-        </Link>
+        <a
+          href="#main"
+          className="absolute start-4 top-3 z-50 -translate-y-24 rounded-full bg-white px-5 py-2.5 font-semibold text-ink no-underline focus:translate-y-0"
+        >
+          {t("skip")}
+        </a>
+        <div className="mx-auto flex h-[88px] w-full max-w-[1800px] items-center justify-between gap-6 px-4 sm:px-6">
+          {/* Logo on its gradient slab */}
+          <div className="relative flex h-full items-center">
+            <span
+              aria-hidden
+              className={`absolute -inset-y-0 -start-[60vw] end-[-36px] -z-10 hidden bg-[linear-gradient(90deg,theme(colors.indigo)_85%,theme(colors.violet.DEFAULT)_94%,transparent)] transition-opacity duration-500 rtl:bg-[linear-gradient(270deg,theme(colors.indigo)_85%,theme(colors.violet.DEFAULT)_94%,transparent)] lg:block ${
+                scrolled ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <Link href="/" aria-label="Kingdom Entry" className="text-white no-underline hover:text-white">
+              <Logo mark="current" size={34} className="min-[480px]:hidden" />
+              <Logo mark="current" size={34} lockup className="hidden min-[480px]:inline-flex" />
+            </Link>
+          </div>
 
-        <nav className="hidden items-center gap-[30px] min-[1120px]:flex">
-          {navItems.map((n) => {
-            const active = isActive(pathname, n.href);
-            return (
-              <Link
-                key={n.key}
-                href={n.href}
-                aria-current={active ? "page" : undefined}
-                className={`whitespace-nowrap border-b py-1.5 text-[14.5px] font-medium tracking-[0.02em] no-underline hover:text-gold focus-visible:outline-offset-4 ${fg} ${
-                  active ? "border-gold" : "border-transparent"
+          <nav className="hidden items-center gap-9 min-[1200px]:flex">
+            {navItems.map((n) => {
+              const active = isActive(pathname, n.href);
+              return (
+                <Link
+                  key={n.key}
+                  href={n.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`group flex items-center gap-2 whitespace-nowrap text-[16px] font-semibold no-underline transition-colors hover:text-white ${
+                    active ? "text-white" : "text-white/80"
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className={`h-1.5 w-1.5 rounded-full transition-colors ${active ? "bg-violet-2" : "bg-white/30 group-hover:bg-violet-2"}`}
+                  />
+                  {t(n.key)}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="relative flex h-full items-center gap-5">
+            <Link
+              href="/contact"
+              className="hidden items-center gap-2 text-[16px] font-bold text-violet-soft no-underline hover:text-white min-[1200px]:flex"
+            >
+              <ChatIcon />
+              {t("cta")}
+            </Link>
+            <LanguageSwitcher className="hidden sm:flex" />
+            <div className="relative flex h-full items-center">
+              <span
+                aria-hidden
+                className={`absolute inset-y-0 -end-[60vw] -start-[30px] -z-10 hidden bg-[linear-gradient(270deg,theme(colors.indigo)_87%,theme(colors.violet.DEFAULT)_94%,transparent)] transition-opacity duration-500 rtl:bg-[linear-gradient(90deg,theme(colors.indigo)_87%,theme(colors.violet.DEFAULT)_94%,transparent)] lg:block ${
+                  scrolled ? "opacity-0" : "opacity-100"
                 }`}
+              />
+              <button
+                ref={menuButton}
+                type="button"
+                aria-expanded={open}
+                aria-controls="side-menu"
+                aria-label={t("menu")}
+                onClick={() => setOpen(true)}
+                className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-0 bg-white/10 text-white transition-colors hover:bg-white/20 lg:bg-transparent"
               >
-                {t(n.key)}
-              </Link>
-            );
-          })}
-        </nav>
+                <MenuIcon />
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
 
-        <div className="flex items-center gap-4">
-          <LanguageSwitcher tone={dark ? "dark" : "light"} />
-          <ButtonLink
-            href="/contact"
-            variant={dark ? "gold-light" : "blue"}
-            className="hidden !px-[22px] !py-3 !text-[14.5px] tracking-[0.02em] min-[1120px]:inline-flex"
-          >
-            {t("cta")}
-          </ButtonLink>
+      {/* Side drawer */}
+      <div
+        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+        onClick={() => setOpen(false)}
+        aria-hidden
+      />
+      <aside
+        id="side-menu"
+        aria-label={t("menu")}
+        aria-hidden={!open}
+        inert={!open}
+        className={`fixed inset-y-0 end-0 z-50 flex w-full max-w-[460px] flex-col overflow-y-auto bg-night-deep px-8 pb-10 pt-6 text-white transition-transform duration-500 ease-out ${
+          open ? "translate-x-0" : "translate-x-full rtl:-translate-x-full"
+        }`}
+      >
+        <div className="flex items-center justify-between">
+          <Logo mark="current" size={30} lockup />
           <button
-            ref={menuButton}
+            ref={closeButton}
             type="button"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen((o) => !o)}
-            className={`cursor-pointer rounded-sm border bg-transparent px-3.5 py-[9px] text-[13px] font-medium tracking-[0.08em] min-[1120px]:hidden ${
-              dark ? "border-pearl text-pearl" : "border-blue text-blue"
-            }`}
+            aria-label={t("close")}
+            onClick={() => {
+              setOpen(false);
+              menuButton.current?.focus();
+            }}
+            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-0 bg-gd-violet text-white transition-transform duration-500 hover:rotate-90"
           >
-            {open ? t("close") : t("menu")}
+            <CloseIcon />
           </button>
         </div>
-      </div>
-
-      {open ? (
-        <nav
-          id="mobile-menu"
-          className="flex flex-col gap-1 border-t border-stone/30 bg-pearl px-6 pb-6 pt-3 min-[1120px]:hidden"
-        >
-          {navItems.map((n) => (
+        <nav className="mt-12 flex flex-col">
+          {navItems.map((n, i) => (
             <Link
               key={n.key}
               href={n.href}
               aria-current={isActive(pathname, n.href) ? "page" : undefined}
-              className="border-b border-stone/25 py-2.5 text-[28px] font-medium text-blue no-underline"
+              className={`group flex items-center justify-between border-b border-white/10 py-4 text-[28px] font-black no-underline transition-colors hover:text-white ${
+                isActive(pathname, n.href) ? "text-white" : "text-white/70"
+              }`}
+              style={{ transitionDelay: open ? `${i * 40}ms` : "0ms" }}
             >
               {t(n.key)}
+              <ArrowIcon className="opacity-0 transition-opacity group-hover:opacity-100" />
             </Link>
           ))}
-          <ButtonLink href="/contact" variant="blue" className="mt-4 !py-4">
-            {t("cta")}
-          </ButtonLink>
         </nav>
-      ) : null}
-    </header>
+        <LanguageSwitcher className="mt-8 self-start sm:hidden" />
+        <a href={`mailto:${site.email}`} className="mt-10 flex items-center gap-3 text-[17px] text-white/80 no-underline hover:text-white">
+          <MailIcon /> {site.email}
+        </a>
+        <ButtonLink href="/contact" className="mt-8 self-start">
+          {t("cta")}
+        </ButtonLink>
+      </aside>
+    </>
   );
 }

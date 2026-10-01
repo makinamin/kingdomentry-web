@@ -66,7 +66,7 @@ export function Logo({ mark = "gold", diamond, size = 34, lockup = false, label,
 /** KINGDOM 600 + ENTRY 300, no space, always LTR and always Ubuntu, even in Arabic. */
 export function Wordmark({ fontSize = 21 }: { fontSize?: number }) {
   return (
-    <span dir="ltr" className="font-sans leading-none" style={{ fontSize, letterSpacing: "0.16em" }}>
+    <span dir="ltr" className="font-brand leading-none" style={{ fontSize, letterSpacing: "0.16em" }}>
       <span className="font-semibold">KINGDOM</span>
       <span className="font-light">ENTRY</span>
     </span>
