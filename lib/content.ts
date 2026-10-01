@@ -1,16 +1,18 @@
 import { getMessages } from "next-intl/server";
-import type { Package, Sector, Step } from "./types";
+import type { Founder, Item, Office, Package, Sector, Service } from "./types";
 
 /** Typed view of the list-shaped parts of messages/*.json. */
 export type Content = {
-  packages: { items: Package[] };
+  home: { intro: { pains: string[] }; pillars: { items: Item[] }; serve: { items: string[] } };
+  why: { reasons: { items: Item[] }; rules: { items: Array<Item & { tag: string }> }; programs: { items: Item[] } };
   sectors: { items: Sector[] };
-  how: { steps: Step[] };
-  gateway: { stats: Array<{ figure: string; caption: string }> };
-  whyNow: { points: Array<{ title: string; text: string }> };
-  about: { story: string[]; members: Array<{ name: string; role: string; photo: string; linkedin: string }> };
-  contact: { cities: Array<{ city: string; lines: string[] }> };
+  services: { items: Service[] };
+  how: { steps: Item[]; packages: { items: Package[] } };
+  about: { story: { paragraphs: string[] }; values: { items: Item[] }; founders: { items: Founder[] } };
+  offices: { items: Office[] };
+  faq: { items: Array<{ q: string; a: string }> };
   privacy: { sections: Array<{ title: string; text: string }> };
+  closing: string[];
 };
 
 export async function getContent() {

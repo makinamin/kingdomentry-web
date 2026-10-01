@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { useMessages, useTranslations } from "next-intl";
 import { site } from "@/lib/site";
 import { Button } from "./Button";
@@ -37,7 +37,7 @@ function TextField({ id, label, required, error, children }: { id: string; label
 }
 
 /** Zeyna-style choice chips: a radio group that looks like square tags. */
-function Chips({ name, legend, options, required, error, defaultValue }: { name: string; legend: string; options: Array<{ value: string; label: string }>; required?: boolean; error?: string; defaultValue?: string }) {
+function Chips({ name, legend, options, required, error, value, onChange }: { name: string; legend: string; options: Array<{ value: string; label: string }>; required?: boolean; error?: string; value: string; onChange: (v: string) => void }) {
   return (
     <fieldset className="m-0 border-0 p-0" aria-describedby={error ? `${name}-error` : undefined}>
       <legend className="mb-3 p-0 text-[13px] text-navy/70">
@@ -47,7 +47,7 @@ function Chips({ name, legend, options, required, error, defaultValue }: { name:
       <div className="flex flex-wrap gap-2">
         {options.map((o) => (
           <label key={o.value} className="cursor-pointer">
-            <input type="radio" name={name} value={o.value} defaultChecked={o.value === defaultValue} className="peer sr-only" />
+            <input type="radio" name={name} value={o.value} checked={o.value === value} onChange={() => onChange(o.value)} className="peer sr-only" />
             <span className="inline-flex border border-line px-4 py-2.5 text-[14px] text-navy transition-colors hover:border-navy peer-checked:border-royal peer-checked:bg-royal peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-royal-2">
               {o.label}
             </span>
@@ -62,7 +62,7 @@ function Chips({ name, legend, options, required, error, defaultValue }: { name:
 export function ContactForm() {
   const t = useTranslations("contact");
   const messages = useMessages() as unknown as {
-    contact: { form: { sizes: string[] } };
+    contact: { form: { stages: string[] } };
     sectors: { items: Array<{ id: string; name: string }> };
   };
   const [status, setStatus] = useState<Status>("idle");
@@ -70,6 +70,17 @@ export function ContactForm() {
   const [notice, setNotice] = useState("");
   const startedAt = useRef(Date.now());
   const formRef = useRef<HTMLFormElement>(null);
+  const [sector, setSector] = useState("");
+  const [stage, setStage] = useState("");
+
+  // Arriving from the hero finder or a package: preselect sector and journey stage.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const sec = q.get("sector");
+    const stg = q.get("stage");
+    if (sec && messages.sectors.items.some((s) => s.id === sec)) setSector(sec);
+    if (stg && messages.contact.form.stages[Number(stg)]) setStage(messages.contact.form.stages[Number(stg)] ?? "");
+  }, [messages]);
 
   function validate(data: FormData) {
     const next: Partial<Record<Field, string>> = {};
@@ -135,6 +146,8 @@ export function ContactForm() {
           variant="outline-navy"
           onClick={() => {
             formRef.current?.reset();
+            setSector("");
+            setStage("");
             startedAt.current = Date.now();
             setStatus("idle");
           }}
@@ -151,21 +164,24 @@ export function ContactForm() {
     <form ref={formRef} noValidate onSubmit={onSubmit} className="relative flex flex-col gap-9 bg-white p-[clamp(24px,4vw,56px)]">
       <div className="flex flex-wrap items-start justify-between gap-6">
         <Label>{t("label")}</Label>
-        <p className="m-0 max-w-[24ch] text-h5 text-navy">{t("intro")}</p>
+        <p className="m-0 max-w-[26ch] text-h5 text-navy">{t("alt.title")} {t("alt.text")}</p>
       </div>
 
+      <Chips
+        name="stage"
+        legend={t("form.stage")}
+        value={stage}
+        onChange={setStage}
+        options={messages.contact.form.stages.map((s) => ({ value: s, label: s }))}
+      />
       <Chips
         name="sector"
         legend={t("form.sector")}
         required
         error={errors.sector}
+        value={sector}
+        onChange={setSector}
         options={messages.sectors.items.map((s) => ({ value: s.id, label: s.name }))}
-      />
-      <Chips
-        name="size"
-        legend={t("form.size")}
-        defaultValue={messages.contact.form.sizes[0]}
-        options={messages.contact.form.sizes.map((s) => ({ value: s, label: s }))}
       />
 
       <div className="grid gap-8 sm:grid-cols-2">
@@ -175,8 +191,8 @@ export function ContactForm() {
         <TextField id="company" label={t("form.company")} required error={errors.company}>
           <input id="company" name="company" autoComplete="organization" required className={input} {...err("company")} />
         </TextField>
-        <TextField id="role" label={t("form.role")}>
-          <input id="role" name="role" autoComplete="organization-title" className={input} />
+        <TextField id="country" label={t("form.country")}>
+          <input id="country" name="country" autoComplete="country-name" className={input} />
         </TextField>
         <TextField id="email" label={t("form.email")} required error={errors.email}>
           <input id="email" name="email" type="email" autoComplete="email" required dir="ltr" className={`${input} text-start`} {...err("email")} />

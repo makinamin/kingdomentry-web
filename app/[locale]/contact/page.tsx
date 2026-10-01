@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { buttonClass } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { ArrowIcon } from "@/components/icons";
 import { Label, RiseTitle, splitTitle } from "@/components/Label";
@@ -14,7 +15,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  return pageMeta(locale, "/contact", t("contact.title"), t("contact.intro"));
+  return pageMeta(locale, "/contact", t("contact.seo.title"), t("contact.seo.description"));
 }
 
 /** Zeyna contact: royal left half with the big line and contact lines, white form card on the right. */
@@ -34,17 +35,16 @@ export default async function Contact({ params }: Props) {
           <p className="m-0 mt-8 max-w-[40ch] text-[16px] leading-relaxed text-white/80">{t("contact.intro")}</p>
 
           <div className="mt-auto grid gap-8 pt-16 sm:grid-cols-2">
-            {c.contact.cities.map((city) => (
-              <Reveal key={city.city} className="border-t border-white/25 pt-5">
+            {c.offices.items.map((o) => (
+              <Reveal key={o.city} className="border-t border-white/25 pt-5">
                 <p className="m-0 flex items-center gap-3 text-[13px] text-white/70">
                   <span aria-hidden className="h-2.5 w-2.5 border border-white/70" />
-                  {city.city}
+                  {o.city}
                 </p>
-                {city.lines.map((l) => (
-                  <p key={l} dir="auto" className="m-0 mt-2 text-start text-[15px] text-white">
-                    {l}
-                  </p>
-                ))}
+                <p dir="auto" className="m-0 mt-2 text-start text-[15px] text-white">{o.phone}</p>
+                <a href={`mailto:${o.email}`} className="mt-1 block text-[15px] text-white no-underline hover:text-white/75">
+                  {o.email}
+                </a>
               </Reveal>
             ))}
             <Reveal className="border-t border-white/25 pt-5">
@@ -57,8 +57,18 @@ export default async function Contact({ params }: Props) {
               </a>
             </Reveal>
           </div>
-          <div className="mt-10 flex min-h-[150px] items-center justify-center border border-dashed border-white/35 px-6 text-center text-[14px] text-white/70">
-            {t("contact.calendar")}
+          <div id="book" className="mt-10 border border-white/25 p-6">
+            <p className="m-0 text-h6 text-white">{t("contact.alt.title")}</p>
+            <p className="m-0 mt-2 text-[15px] text-white/80">{t("contact.alt.text")}</p>
+            {site.bookingUrl ? (
+              <a href={site.bookingUrl} className={buttonClass("white", "mt-6")} target="_blank" rel="noopener noreferrer">
+                {t("buttons.call")}
+              </a>
+            ) : (
+              <div className="mt-6 flex min-h-[120px] items-center justify-center border border-dashed border-white/35 px-6 text-center text-[14px] text-white/70">
+                {t("contact.calendar")}
+              </div>
+            )}
           </div>
         </div>
         <Reveal delay={150}>

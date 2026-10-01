@@ -9,13 +9,14 @@ import { Reveal } from "@/components/Reveal";
 import { SkylineLines } from "@/components/SkylineLines";
 import { getContent } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
+import { founderLinks } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  return pageMeta(locale, "/about", t("about.title"), t.raw("about.story")[0] as string);
+  return pageMeta(locale, "/about", t("about.seo.title"), t("about.seo.description"));
 }
 
 export default async function About({ params }: Props) {
@@ -23,35 +24,17 @@ export default async function About({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations();
   const c = await getContent();
-  const [lead, ...rest] = c.about.story;
+  const [lead, ...rest] = c.about.story.paragraphs;
 
   return (
     <>
-      <PageHero label={t("about.label")} title={t("about.title")} intro={t("team.text")} crumbs={[{ label: t("nav.about") }]} />
+      <PageHero label={t("about.label")} title={t("about.title")} crumbs={[{ label: t("nav.about") }]} />
 
-      {/* Three cities, Zeyna's three blue cards */}
-      <section className="relative isolate overflow-hidden bg-royal text-white">
-        <SkylineLines className="-z-10 text-white" opacity={0.18} />
-        <div className="mx-auto grid w-full max-w-site gap-5 px-6 pb-[clamp(80px,9vw,130px)] pt-4 md:grid-cols-3">
-          {c.contact.cities.map((city, i) => (
-            <Reveal key={city.city} delay={i * 100} className="flex min-h-[300px] flex-col justify-between border border-white/25 bg-navy/30 p-7 backdrop-blur">
-              <span className="text-h5">{city.city}</span>
-              <span>
-                {city.lines.map((l) => (
-                  <span key={l} dir="auto" className="block text-start text-[14px] leading-relaxed text-white/75">
-                    {l}
-                  </span>
-                ))}
-              </span>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
+      {/* Our story */}
       <section className="bg-white">
         <div className="mx-auto grid w-full max-w-site gap-10 px-6 py-[clamp(90px,10vw,150px)] lg:grid-cols-[1fr_2fr]">
           <Reveal>
-            <Label>{t("team.label")}</Label>
+            <Label>{t("about.story.label")}</Label>
           </Reveal>
           <div>
             <Reveal delay={100}>
@@ -59,58 +42,105 @@ export default async function About({ params }: Props) {
             </Reveal>
             {rest.map((p, i) => (
               <Reveal key={p} delay={160 + i * 80}>
-                <p className="m-0 mt-6 max-w-[56ch] text-[17px] leading-relaxed text-navy/70">{p}</p>
+                <p className="m-0 mt-6 max-w-[60ch] text-[17px] leading-relaxed text-navy/75">{p}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto w-full max-w-site px-6">
-          <Reveal>
-            <ImagePlaceholder note={t("team.title")} ratio="21 / 9" tone="navy" />
-          </Reveal>
+      {/* Mission and vision on royal */}
+      <section className="relative isolate overflow-hidden bg-royal text-white">
+        <SkylineLines className="-z-10 text-white" opacity={0.18} />
+        <div className="mx-auto grid w-full max-w-site gap-5 px-6 py-[clamp(80px,9vw,130px)] md:grid-cols-2">
+          {(["mission", "vision"] as const).map((k, i) => (
+            <Reveal key={k} delay={i * 100} className="flex min-h-[320px] flex-col justify-between gap-10 border border-white/25 bg-navy/30 p-[clamp(24px,3vw,44px)] backdrop-blur">
+              <Label tone="dark">{t(`about.${k}.label`)}</Label>
+              <p className="m-0 text-h4 text-white">{t(`about.${k}.text`)}</p>
+            </Reveal>
+          ))}
         </div>
       </section>
 
+      {/* Values */}
       <section className="bg-white">
+        <div className="mx-auto w-full max-w-site px-6 py-[clamp(90px,10vw,150px)]">
+          <Reveal>
+            <Label>{t("about.values.label")}</Label>
+          </Reveal>
+          <div className="mt-10 grid border-s border-t border-line sm:grid-cols-2 lg:grid-cols-4">
+            {c.about.values.items.map((v, i) => (
+              <Reveal key={v.name} delay={i * 80} className="flex min-h-[240px] flex-col justify-between gap-8 border-b border-e border-line p-7">
+                <span className="text-[clamp(40px,3.4vw,56px)] font-light leading-none tracking-[-0.06em] text-royal">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span>
+                  <span className="block text-h6 text-navy">{v.name}</span>
+                  <span className="mt-2 block text-[15px] leading-relaxed text-navy/70">{v.text}</span>
+                </span>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Founders */}
+      <section className="bg-soft">
         <div className="mx-auto w-full max-w-site px-6 py-[clamp(90px,10vw,150px)]">
           <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
             <Reveal>
-              <Label>{t("about.teamLabel")}</Label>
+              <Label>{t("about.founders.label")}</Label>
             </Reveal>
             <Reveal delay={100}>
-              <h2 className="m-0 text-h2 text-navy">{t("team.title")}</h2>
+              <h2 className="m-0 max-w-[22ch] text-h2 text-navy">{t("about.founders.line")}</h2>
             </Reveal>
           </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {c.about.members.map((m, i) => (
-              <Reveal key={`${m.role}-${i}`} delay={i * 100} className="group">
-                <div className="relative overflow-hidden">
-                  <ImagePlaceholder note={m.photo} ratio="3 / 4" className="transition-transform duration-[1.2s] ease-out group-hover:scale-[1.04]" />
-                  {m.linkedin.startsWith("http") ? (
-                    <a
-                      href={m.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${m.name} ${m.linkedin}`}
-                      className="absolute end-4 top-4 flex h-10 w-10 items-center justify-center bg-white text-navy hover:bg-royal hover:text-white"
-                    >
-                      <LinkedInIcon />
-                    </a>
-                  ) : null}
-                </div>
-                <div className="flex items-baseline justify-between gap-4 border-b border-line py-4">
-                  <span className="text-[18px] text-navy">{m.name}</span>
-                  <span className="text-[13px] text-navy/60">{m.role}</span>
-                </div>
-              </Reveal>
-            ))}
+          <div className="mt-[clamp(50px,6vw,90px)] flex flex-col gap-5">
+            {c.about.founders.items.map((f, i) => {
+              const link = founderLinks[i];
+              return (
+                <Reveal key={f.name}>
+                  <article className="grid bg-white md:grid-cols-[minmax(240px,0.8fr)_2fr]">
+                    <ImagePlaceholder note={`${t("about.founders.photo")}: ${f.name}`} ratio="4 / 5" tone={i ? "navy" : "royal"} className="h-full" />
+                    <div className="flex flex-col p-[clamp(24px,3.4vw,52px)]">
+                      <div className="flex flex-wrap items-start justify-between gap-4 border-b border-line pb-6">
+                        <div>
+                          <h3 className="m-0 text-h4 text-navy">{f.name}</h3>
+                          <p className="m-0 mt-2 text-[15px] text-navy/70">
+                            {f.title} <span className="text-navy/40">|</span> {f.location}
+                          </p>
+                        </div>
+                        {link ? (
+                          <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 border border-line px-3 py-2 text-[12px] uppercase tracking-label text-navy no-underline hover:border-navy hover:text-navy"
+                          >
+                            <LinkedInIcon size={14} /> {t("about.founders.linkedin")}
+                          </a>
+                        ) : null}
+                      </div>
+                      {f.bio.map((p) => (
+                        <p key={p} className="m-0 mt-5 text-[16px] leading-relaxed text-navy/80">
+                          {p}
+                        </p>
+                      ))}
+                      {f.quote ? (
+                        <blockquote className="m-0 mt-8 border-s-2 border-royal ps-6">
+                          <p className="m-0 text-h5 text-royal">&ldquo;{f.quote}&rdquo;</p>
+                        </blockquote>
+                      ) : null}
+                    </div>
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
-      <CtaBand />
+
+      <CtaBand title={t("about.cta.title")} button={t("buttons.talk")} />
     </>
   );
 }

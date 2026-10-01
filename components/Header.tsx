@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { navItems, site } from "@/lib/site";
+import { moreItems, navItems, site } from "@/lib/site";
 import { buttonClass } from "./Button";
 import { ArrowIcon, CloseIcon } from "./icons";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -14,7 +14,7 @@ const isActive = (pathname: string, href: string) =>
 
 /**
  * Zeyna header: transparent with white text over the royal hero; white with a
- * hairline and navy text once you scroll. Under 1200px the nav moves into a
+ * hairline and navy text once you scroll. Under 1280px the nav moves into a
  * full-screen royal menu with oversized links.
  */
 export function Header() {
@@ -73,7 +73,7 @@ export function Header() {
             <Logo mark="current" size={30} lockup className="hidden min-[480px]:inline-flex" />
           </Link>
 
-          <nav className="hidden items-center gap-8 min-[1200px]:flex">
+          <nav className="hidden items-center gap-6 min-[1280px]:flex">
             {navItems.map((n) => {
               const active = isActive(pathname, n.href);
               return (
@@ -95,7 +95,7 @@ export function Header() {
             <LanguageSwitcher className="hidden sm:flex" />
             <Link
               href="/contact"
-              className={`${buttonClass(light ? "royal" : "white")} hidden min-[1200px]:inline-flex`}
+              className={`${buttonClass(light ? "royal" : "white")} hidden min-[1280px]:inline-flex`}
             >
               {t("cta")}
             </Link>
@@ -105,7 +105,7 @@ export function Header() {
               aria-expanded={open}
               aria-controls="site-menu"
               onClick={() => setOpen(true)}
-              className="flex cursor-pointer items-center gap-3 border-0 bg-transparent p-2 text-[13px] font-medium uppercase tracking-label text-current min-[1200px]:hidden"
+              className="flex cursor-pointer items-center gap-3 border-0 bg-transparent p-2 text-[13px] font-medium uppercase tracking-label text-current min-[1280px]:hidden"
             >
               {t("menu")}
               <span aria-hidden className="flex flex-col gap-[5px]">
@@ -149,13 +149,20 @@ export function Header() {
               key={n.key}
               href={n.href}
               aria-current={isActive(pathname, n.href) ? "page" : undefined}
-              className={`text-[clamp(40px,9vw,72px)] leading-[1.15] tracking-[-0.04em] no-underline transition-colors hover:text-white ${
+              className={`text-[clamp(36px,7vw,64px)] leading-[1.15] tracking-[-0.04em] no-underline transition-colors hover:text-white ${
                 isActive(pathname, n.href) ? "text-white" : "text-white/65"
               }`}
             >
               {t(n.key)}
             </Link>
           ))}
+          <div className="mt-8 flex flex-wrap gap-6">
+            {moreItems.map((n) => (
+              <Link key={n.key} href={n.href} className="text-[14px] uppercase tracking-label text-white/75 no-underline hover:text-white">
+                {t(n.key)}
+              </Link>
+            ))}
+          </div>
         </nav>
         <div className="mx-auto flex w-full max-w-site flex-wrap items-center justify-between gap-6 border-t border-white/25 px-6 py-8">
           <a href={`mailto:${site.email}`} className="flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/80">

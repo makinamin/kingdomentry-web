@@ -5,11 +5,11 @@ import { ArrowUpRight } from "./icons";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 import { SectorIcon } from "./SectorIcon";
 
-/** Card for the sectors carousel: image, icon, name, tagline. */
+/** Card for the sectors carousel: image, icon, name, the Saudi demand. */
 export function SectorTile({ sector, index }: { sector: Sector; index: number }) {
-  const t = useTranslations("gateway");
+  const t = useTranslations("sectors");
   return (
-    <Link href={`/sectors/${sector.id}`} className="group flex h-full flex-col bg-white text-navy no-underline hover:text-navy">
+    <Link href={`/sectors#${sector.id}`} className="group flex h-full flex-col bg-white text-navy no-underline hover:text-navy">
       <div className="overflow-hidden">
         <ImagePlaceholder
           note={sector.name}
@@ -24,9 +24,9 @@ export function SectorTile({ sector, index }: { sector: Sector; index: number })
           <span className="text-[12px] text-navy/50">{String(index + 1).padStart(2, "0")}</span>
         </span>
         <span className="text-h6 text-navy">{sector.name}</span>
-        <span className="text-[14px] leading-relaxed text-navy/65">{sector.tagline}</span>
+        <span className="text-[14px] leading-relaxed text-navy/65">{sector.demand}</span>
         <span className="mt-auto flex items-center gap-2 pt-3 text-[12px] font-medium uppercase tracking-label">
-          {t("explore")} <ArrowUpRight size={13} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          {t("fitLabel")} <ArrowUpRight size={13} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </span>
       </div>
     </Link>

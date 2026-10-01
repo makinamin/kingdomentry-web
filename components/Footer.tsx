@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { navItems, site } from "@/lib/site";
+import { moreItems, navItems, site } from "@/lib/site";
 import { ArrowIcon, DownloadIcon } from "./icons";
 import { Label } from "./Label";
 import { FooterLanguages } from "./LanguageSwitcher";
@@ -17,19 +17,22 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <Logo mark="current" size={36} lockup label="Kingdom Entry" />
-            <p className="m-0 mt-6 max-w-[36ch] text-[14px] leading-relaxed text-white/70">{t("gateway.utility")}</p>
+            <p className="m-0 mt-6 text-[13px] uppercase tracking-label text-white/75">{t("footer.cities")}</p>
             <p lang="ar" className="m-0 mt-5 font-arabic text-[22px] font-medium">
               {t("brand.arabicName")}
             </p>
           </div>
-          <p className="m-0 text-h3 text-white">{t("footer.tagline")}</p>
+          <div>
+            <p className="m-0 text-h3 text-white">{(t.raw("closing") as string[])[2]}</p>
+            <p className="m-0 mt-5 text-[16px] text-white/80">{t("footer.tagline")}</p>
+          </div>
         </div>
 
         <div className="mt-[clamp(60px,7vw,100px)] grid gap-12 border-t border-white/25 pt-10 lg:grid-cols-[1.2fr_1fr_0.6fr]">
           <div>
             <Label tone="dark">{t("footer.company")}</Label>
             <nav className="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-[clamp(32px,3.6vw,48px)] leading-[1.15] tracking-[-0.04em]">
-              {navItems.map((n) => (
+              {[...navItems, ...moreItems].map((n) => (
                 <Link key={n.key} href={n.href} className="text-white/65 no-underline hover:text-white">
                   {t(`nav.${n.key}`)}
                 </Link>
@@ -60,7 +63,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-white/25 py-6 text-[12px] text-white/70">
+        <p className="m-0 mt-16 max-w-[90ch] text-[12px] leading-relaxed text-white/70">{t("footer.disclaimer")}</p>
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/25 py-6 text-[12px] text-white/70">
           <span>{t("footer.rights")}</span>
           <span className="uppercase tracking-label">{t("brand.descriptor")}</span>
           <Link href="/privacy" className="text-white/70 no-underline hover:text-white">
