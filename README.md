@@ -1,5 +1,7 @@
 # Kingdom Entry website
 
+> Branch `design/zeyna`: the current site. Zeyna construction-company look (royal blue, hairlines, Geist) with the full KingdomEntry website content (10 pages, en/nl/ar). NL and AR are translations pending professional review.
+>
 > Branch `design/gilroy`: the full site restyled in the look of the Gilroy digital agency theme (night surfaces, violet gradient, Epilogue 900). `main` keeps the handoff design (blue and gold, Ubuntu). Theme colours live in `tailwind.config.ts`; swap `violet` and `indigo` there to move the accent.
 
 Next.js (App Router, TypeScript strict, Tailwind) static site for kingdomentry.com. Locales `/en`, `/nl`, `/ar`.
