@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { buttonClass } from "./Button";
 
 const KEY = "ke-consent";
 
-/** Bottom notice. The choice only gates analytics, which are off until accepted. */
+/** Bottom-start card. The choice only gates analytics, which stay off until accepted. */
 export function CookieNotice() {
   const t = useTranslations("cookie");
   const [open, setOpen] = useState(false);
@@ -33,22 +34,14 @@ export function CookieNotice() {
     <div
       role="region"
       aria-label={t("text")}
-      className="fixed inset-x-4 bottom-4 z-30 mx-auto flex max-w-[760px] flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-night-deep/95 px-6 py-5 text-white shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-md"
+      className="fixed bottom-4 start-4 z-30 w-[calc(100%-2rem)] max-w-[420px] border border-line bg-white p-6 text-navy shadow-[0_20px_60px_rgba(2,29,94,0.18)]"
     >
-      <p className="m-0 flex-[1_1_280px] text-[15px] text-white/80">{t("text")}</p>
-      <div className="flex gap-3">
-        <button
-          type="button"
-          onClick={() => choose("declined")}
-          className="cursor-pointer rounded-full border border-white/25 bg-transparent px-5 py-3 text-[14px] font-bold text-white transition-colors hover:border-white"
-        >
+      <p className="m-0 text-[14px] leading-relaxed text-navy/80">{t("text")}</p>
+      <div className="mt-5 flex gap-2">
+        <button type="button" onClick={() => choose("declined")} className={buttonClass("outline-navy", "!px-4 !py-3")}>
           {t("decline")}
         </button>
-        <button
-          type="button"
-          onClick={() => choose("accepted")}
-          className="cursor-pointer rounded-full border-0 bg-gd-violet px-6 py-3 text-[14px] font-bold text-white transition-transform hover:scale-105"
-        >
+        <button type="button" onClick={() => choose("accepted")} className={buttonClass("royal", "!px-4 !py-3")}>
           {t("accept")}
         </button>
       </div>

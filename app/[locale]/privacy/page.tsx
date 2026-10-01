@@ -21,14 +21,14 @@ export default async function Privacy({ params }: Props) {
   return (
     <>
       <PageHero title={t("privacy.title")} intro={t("privacy.intro")} crumbs={[{ label: t("footer.privacy") }]} />
-      <section className="bg-mist py-[clamp(70px,8vw,120px)]">
-        <div className="mx-auto flex w-full max-w-[860px] flex-col gap-6 px-6">
+      <section className="bg-white">
+        <div className="mx-auto w-full max-w-[920px] px-6 py-[clamp(70px,8vw,120px)]">
           {c.privacy.sections.map((s, i) => (
-            <article key={s.title} className="flex gap-6 rounded-xl bg-white p-8 shadow-card">
-              <span className="text-gradient text-[28px] font-black leading-none">{String(i + 1).padStart(2, "0")}</span>
+            <article key={s.title} className="grid gap-4 border-t border-line py-10 sm:grid-cols-[80px_1fr]">
+              <span className="text-[13px] text-navy/50">{String(i + 1).padStart(2, "0")}</span>
               <div>
-                <h2 className="m-0 text-[26px] font-black">{s.title}</h2>
-                <p className="m-0 mt-3 text-[17px] leading-relaxed text-ink-3">{s.text}</p>
+                <h2 className="m-0 text-h5 text-navy">{s.title}</h2>
+                <p className="m-0 mt-3 text-[16px] leading-relaxed text-navy/75">{s.text}</p>
               </div>
             </article>
           ))}

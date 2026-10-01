@@ -1,11 +1,19 @@
-import { Epilogue, Reem_Kufi, Ubuntu } from "next/font/google";
+import { Geist, IBM_Plex_Sans_Arabic, Ubuntu } from "next/font/google";
 
-// Gilroy theme typeface for all Latin text.
-export const epilogue = Epilogue({
+// Zeyna theme typeface for all Latin text.
+export const geist = Geist({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
-  variable: "--font-epilogue",
+  variable: "--font-geist",
+});
+
+// Arabic companion with the same light, neutral character as Geist.
+export const plexArabic = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+  variable: "--font-plex-arabic",
 });
 
 // Brand wordmark only (KINGDOMENTRY stays Ubuntu).
@@ -14,11 +22,4 @@ export const ubuntu = Ubuntu({
   weight: ["300", "500"],
   display: "swap",
   variable: "--font-ubuntu",
-});
-
-export const reemKufi = Reem_Kufi({
-  subsets: ["arabic", "latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  variable: "--font-reem-kufi",
 });

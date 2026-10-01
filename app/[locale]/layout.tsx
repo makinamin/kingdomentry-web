@@ -7,7 +7,7 @@ import { CookieNotice } from "@/components/CookieNotice";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { routing } from "@/i18n/routing";
-import { epilogue, reemKufi, ubuntu } from "@/lib/fonts";
+import { geist, plexArabic, ubuntu } from "@/lib/fonts";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -34,7 +34,7 @@ export default async function LocaleLayout({
   const dir = messages.dir === "rtl" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={dir} className={`${epilogue.variable} ${ubuntu.variable} ${reemKufi.variable}`}>
+    <html lang={locale} dir={dir} className={`${geist.variable} ${plexArabic.variable} ${ubuntu.variable}`}>
       <head>
         {/* Lets CSS hide reveal-on-scroll content only when JavaScript can show it again. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />

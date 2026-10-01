@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CtaBand } from "@/components/CtaBand";
+import { Label } from "@/components/Label";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { SectorCard } from "@/components/SectorCard";
+import { SectorRow } from "@/components/SectorRow";
 import { getContent } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
 
@@ -24,13 +25,21 @@ export default async function Sectors({ params }: Props) {
   return (
     <>
       <PageHero label={t("nav.sectors")} title={t("sectors.title")} intro={t("sectors.intro")} crumbs={[{ label: t("nav.sectors") }]} />
-      <section className="bg-mist py-[clamp(80px,10vw,140px)]">
-        <div className="mx-auto grid w-full max-w-site gap-6 px-6 sm:grid-cols-2 lg:grid-cols-6">
-          {c.sectors.items.map((s, i) => (
-            <Reveal key={s.id} delay={(i % 3) * 100} className={`h-full ${i < 3 ? "lg:col-span-2" : "lg:col-span-3"}`}>
-              <SectorCard sector={s} index={i} tone="light" />
+      <section className="bg-white">
+        <div className="mx-auto w-full max-w-site px-6 py-[clamp(80px,9vw,140px)]">
+          <div className="mb-12 grid gap-10 border-b border-line pb-10 lg:grid-cols-[1fr_2fr]">
+            <Reveal>
+              <Label>{t("gateway.sectorsLabel")}</Label>
             </Reveal>
-          ))}
+            <Reveal delay={100}>
+              <h2 className="m-0 text-h3 text-navy">{t("gateway.sectorsTitle")}</h2>
+            </Reveal>
+          </div>
+          <div className="flex flex-col gap-5">
+            {c.sectors.items.map((s, i) => (
+              <SectorRow key={s.id} sector={s} index={i} />
+            ))}
+          </div>
         </div>
       </section>
       <CtaBand />

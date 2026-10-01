@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CtaBand } from "@/components/CtaBand";
-import { Eyebrow, Title } from "@/components/Heading";
 import { ArrowUpRight } from "@/components/icons";
+import { Label } from "@/components/Label";
 import { PageHero } from "@/components/PageHero";
-import { ProcessSteps } from "@/components/ProcessSteps";
 import { Reveal } from "@/components/Reveal";
+import { StepsGrid } from "@/components/StepsGrid";
 import { Link } from "@/i18n/navigation";
 import { getContent } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
@@ -27,33 +27,34 @@ export default async function HowItWorks({ params }: Props) {
   return (
     <>
       <PageHero label={t("how.label")} title={t("how.title")} intro={t("how.intro")} crumbs={[{ label: t("nav.how") }]} />
-      <section className="relative isolate overflow-hidden bg-night-deep py-[clamp(80px,10vw,140px)] text-white">
-        <span aria-hidden className="absolute -end-40 top-0 -z-10 h-[420px] w-[420px] rounded-full bg-violet/40 blur-[90px]" />
-        <div className="mx-auto w-full max-w-site px-6">
-          <ProcessSteps steps={c.how.steps} tone="dark" />
+      <section className="bg-white">
+        <div className="mx-auto w-full max-w-site px-6 py-[clamp(90px,10vw,150px)]">
+          <StepsGrid steps={c.how.steps} />
         </div>
       </section>
-      <section className="bg-mist py-[clamp(80px,10vw,140px)]">
-        <div className="mx-auto w-full max-w-site px-6">
-          <Reveal>
-            <Eyebrow>{t("packages.label")}</Eyebrow>
-          </Reveal>
-          <Reveal delay={100}>
-            <Title className="mt-3">{t("packages.title")}</Title>
-          </Reveal>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <section className="bg-soft">
+        <div className="mx-auto w-full max-w-site px-6 py-[clamp(90px,10vw,150px)]">
+          <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
+            <Reveal>
+              <Label>{t("packages.label")}</Label>
+            </Reveal>
+            <Reveal delay={100}>
+              <h2 className="m-0 text-h2 text-navy">{t("packages.title")}</h2>
+            </Reveal>
+          </div>
+          <div className="mt-14 grid border-s border-t border-line md:grid-cols-3">
             {c.packages.items.map((p, i) => (
-              <Reveal key={p.name} delay={i * 100}>
-                <Link
-                  href="/services"
-                  className="group flex h-full items-center justify-between gap-6 rounded-xl bg-white p-8 text-ink no-underline shadow-card transition-colors duration-500 hover:bg-night hover:text-white"
-                >
-                  <span>
-                    <span className="block text-[14px] font-semibold text-muted group-hover:text-white/60">{p.duration}</span>
-                    <span className="mt-2 block text-[24px] font-black leading-tight">{p.name}</span>
+              <Reveal key={p.name} delay={i * 100} className="border-b border-e border-line">
+                <Link href="/services" className="group flex h-full min-h-[260px] flex-col justify-between gap-10 bg-white p-8 text-navy no-underline transition-colors duration-500 hover:bg-royal hover:text-white">
+                  <span className="flex items-center justify-between text-[12px] uppercase tracking-label opacity-60">
+                    {p.duration}
+                    <ArrowUpRight size={16} />
                   </span>
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gd-violet text-white transition-transform duration-500 group-hover:rotate-45 rtl:group-hover:-rotate-45">
-                    <ArrowUpRight />
+                  <span>
+                    <span className="block text-[clamp(48px,4vw,64px)] font-light leading-none tracking-[-0.06em] text-royal transition-colors group-hover:text-white">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="mt-4 block text-h5">{p.name}</span>
                   </span>
                 </Link>
               </Reveal>

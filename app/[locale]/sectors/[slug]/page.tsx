@@ -3,13 +3,12 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ButtonLink } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
-import { Eyebrow, Title } from "@/components/Heading";
-import { ArrowIcon, CheckIcon } from "@/components/icons";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import { Label } from "@/components/Label";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { SectorCard } from "@/components/SectorCard";
 import { SectorIcon, sectorIds } from "@/components/SectorIcon";
+import { SectorTile } from "@/components/SectorTile";
 import { routing } from "@/i18n/routing";
 import { getContent } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
@@ -30,14 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function List({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="rounded-xl bg-white p-8 shadow-card">
-      <h2 className="m-0 text-[22px] font-black">{title}</h2>
-      <ul className="m-0 mt-6 flex list-none flex-col gap-4 p-0">
-        {items.map((it) => (
-          <li key={it} className="flex items-start gap-3 text-[17px] leading-snug text-ink-2">
-            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gd-violet text-white">
-              <CheckIcon size={12} />
-            </span>
+    <div>
+      <Label>{title}</Label>
+      <ul className="m-0 mt-6 list-none border-t border-line p-0">
+        {items.map((it, i) => (
+          <li key={it} className="flex items-baseline gap-5 border-b border-line py-4 text-[17px] text-navy">
+            <span className="w-6 shrink-0 text-[12px] text-navy/45">{String(i + 1).padStart(2, "0")}</span>
             {it}
           </li>
         ))}
@@ -51,8 +48,7 @@ export default async function SectorPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations();
   const c = await getContent();
-  const index = c.sectors.items.findIndex((s) => s.id === slug);
-  const sector = c.sectors.items[index];
+  const sector = c.sectors.items.find((s) => s.id === slug);
   if (!sector) notFound();
   const others = c.sectors.items.filter((s) => s.id !== slug);
 
@@ -63,50 +59,50 @@ export default async function SectorPage({ params }: Props) {
         title={sector.name}
         intro={sector.tagline}
         crumbs={[{ label: t("nav.sectors"), href: "/sectors" }, { label: sector.name }]}
+        aside={
+          <span className="flex h-28 w-28 items-center justify-center border border-white/40 text-white">
+            <SectorIcon id={sector.id} size={56} />
+          </span>
+        }
       />
-      <section className="bg-mist py-[clamp(80px,10vw,140px)]">
-        <div className="mx-auto grid w-full max-w-site gap-12 px-6 lg:grid-cols-[1.1fr_1fr]">
-          <div className="flex flex-col gap-10">
-            <Reveal>
-              <span className="flex h-24 w-24 items-center justify-center rounded-full bg-gd-violet text-white shadow-glow">
-                <SectorIcon id={sector.id} size={50} />
-              </span>
-            </Reveal>
-            <Reveal delay={100}>
-              <Eyebrow>{t("sectors.opportunity")}</Eyebrow>
-              <p className="m-0 mt-4 text-[clamp(22px,2.4vw,32px)] font-black leading-[1.3] text-ink">{sector.opportunity}</p>
-            </Reveal>
-            <Reveal delay={150}>
-              <ImagePlaceholder note={sector.name} ratio="16 / 10" />
-            </Reveal>
-          </div>
-          <div className="flex flex-col gap-6">
-            <Reveal delay={100}>
-              <List title={t("sectors.buyers")} items={sector.buyers} />
-            </Reveal>
-            <Reveal delay={200}>
-              <List title={t("sectors.help")} items={sector.help} />
-            </Reveal>
-            <Reveal delay={300}>
-              <ButtonLink href="/contact" className="self-start">
-                {t("sectors.cta")} <ArrowIcon />
-              </ButtonLink>
-            </Reveal>
-          </div>
+      <section className="bg-white">
+        <div className="mx-auto grid w-full max-w-site gap-10 px-6 py-[clamp(90px,10vw,150px)] lg:grid-cols-[1fr_2fr]">
+          <Reveal>
+            <Label>{t("sectors.opportunity")}</Label>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="m-0 text-lead text-navy">{sector.opportunity}</p>
+          </Reveal>
         </div>
       </section>
-      <section className="bg-night-deep py-[clamp(80px,10vw,140px)] text-white">
-        <div className="mx-auto w-full max-w-site px-6">
-          <Reveal className="flex flex-wrap items-end justify-between gap-6">
-            <Title tone="dark">{t("gateway.sectorsTitle")}</Title>
-            <ButtonLink href="/sectors" variant="outline">
-              {t("sectors.back")} <ArrowIcon />
+      <section className="bg-white">
+        <div className="mx-auto grid w-full max-w-site gap-12 px-6 pb-[clamp(90px,10vw,150px)] lg:grid-cols-[1.1fr_1fr_1fr]">
+          <Reveal>
+            <ImagePlaceholder note={sector.name} ratio="4 / 5" tone="royal" />
+          </Reveal>
+          <Reveal delay={100}>
+            <List title={t("sectors.buyers")} items={sector.buyers} />
+          </Reveal>
+          <Reveal delay={200}>
+            <List title={t("sectors.help")} items={sector.help} />
+            <ButtonLink href="/contact" variant="royal" className="mt-10">
+              {t("sectors.cta")}
             </ButtonLink>
           </Reveal>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            {others.map((s, i) => (
-              <Reveal key={s.id} delay={i * 80} className="h-full">
-                <SectorCard sector={s} index={c.sectors.items.indexOf(s)} />
+        </div>
+      </section>
+      <section className="bg-soft">
+        <div className="mx-auto w-full max-w-site px-6 py-[clamp(90px,10vw,150px)]">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <h2 className="m-0 text-h3 text-navy">{t("gateway.sectorsTitle")}</h2>
+            <ButtonLink href="/sectors" variant="outline-navy">
+              {t("sectors.back")}
+            </ButtonLink>
+          </div>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {others.map((s) => (
+              <Reveal key={s.id} className="h-full">
+                <SectorTile sector={s} index={c.sectors.items.indexOf(s)} />
               </Reveal>
             ))}
           </div>

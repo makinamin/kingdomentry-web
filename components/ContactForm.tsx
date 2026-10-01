@@ -4,7 +4,8 @@ import { useRef, useState, type FormEvent, type ReactNode } from "react";
 import { useMessages, useTranslations } from "next-intl";
 import { site } from "@/lib/site";
 import { Button } from "./Button";
-import { ArrowIcon, CheckIcon } from "./icons";
+import { CheckIcon } from "./icons";
+import { Label } from "./Label";
 
 type Status = "idle" | "sending" | "sent" | "error";
 type Field = "name" | "company" | "email" | "sector";
@@ -12,22 +13,49 @@ const REQUIRED: Field[] = ["name", "company", "email", "sector"];
 const MIN_MS = 3000;
 
 const input =
-  "w-full rounded-xl border border-mist-line bg-mist px-5 py-4 text-[16px] text-ink outline-none transition-colors placeholder:text-muted focus:border-violet focus:bg-white aria-[invalid=true]:border-ember-2";
+  "w-full border-0 border-b border-line bg-transparent px-0 py-3 text-[16px] text-navy outline-none transition-colors placeholder:text-navy/35 focus:border-royal aria-[invalid=true]:border-alert";
 
-function FieldWrap({ id, label, required, error, children }: { id: string; label: string; required?: boolean; error?: string; children: ReactNode }) {
+function Err({ id, children }: { id: string; children?: string }) {
+  return children ? (
+    <p id={`${id}-error`} className="m-0 mt-2 text-[13px] font-medium text-alert">
+      {children}
+    </p>
+  ) : null;
+}
+
+function TextField({ id, label, required, error, children }: { id: string; label: string; required?: boolean; error?: string; children: ReactNode }) {
   return (
-    <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="text-[15px] font-semibold text-ink">
+    <div>
+      <label htmlFor={id} className="block text-[13px] text-navy/70">
         {label}
-        {required ? <span aria-hidden className="text-violet"> *</span> : null}
+        {required ? <span aria-hidden> *</span> : null}
       </label>
       {children}
-      {error ? (
-        <p id={`${id}-error`} className="m-0 text-[14px] font-medium text-ember-2">
-          {error}
-        </p>
-      ) : null}
+      <Err id={id}>{error}</Err>
     </div>
+  );
+}
+
+/** Zeyna-style choice chips: a radio group that looks like square tags. */
+function Chips({ name, legend, options, required, error, defaultValue }: { name: string; legend: string; options: Array<{ value: string; label: string }>; required?: boolean; error?: string; defaultValue?: string }) {
+  return (
+    <fieldset className="m-0 border-0 p-0" aria-describedby={error ? `${name}-error` : undefined}>
+      <legend className="mb-3 p-0 text-[13px] text-navy/70">
+        {legend}
+        {required ? <span aria-hidden> *</span> : null}
+      </legend>
+      <div className="flex flex-wrap gap-2">
+        {options.map((o) => (
+          <label key={o.value} className="cursor-pointer">
+            <input type="radio" name={name} value={o.value} defaultChecked={o.value === defaultValue} className="peer sr-only" />
+            <span className="inline-flex border border-line px-4 py-2.5 text-[14px] text-navy transition-colors hover:border-navy peer-checked:border-royal peer-checked:bg-royal peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-royal-2">
+              {o.label}
+            </span>
+          </label>
+        ))}
+      </div>
+      <Err id={name}>{error}</Err>
+    </fieldset>
   );
 }
 
@@ -53,14 +81,15 @@ export function ContactForm() {
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     if (String(data.get("website") ?? "")) return; // honeypot
     const next = validate(data);
     setErrors(next);
     setNotice("");
     const firstBad = REQUIRED.find((f) => next[f]);
     if (firstBad) {
-      e.currentTarget.querySelector<HTMLElement>(`[name="${firstBad}"]`)?.focus();
+      form.querySelector<HTMLElement>(`[name="${firstBad}"]`)?.focus();
       return;
     }
     if (Date.now() - startedAt.current < MIN_MS) {
@@ -96,15 +125,14 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div role="status" className="relative isolate flex flex-col items-start gap-6 overflow-hidden rounded-2xl bg-night p-[clamp(32px,5vw,60px)] text-white">
-        <span aria-hidden className="absolute -end-20 -top-20 -z-10 h-72 w-72 rounded-full bg-violet/50 blur-[80px]" />
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gd-violet">
-          <CheckIcon size={26} />
+      <div role="status" className="flex flex-col items-start gap-6 bg-white p-[clamp(28px,4vw,56px)]">
+        <span className="flex h-14 w-14 items-center justify-center bg-royal text-white">
+          <CheckIcon size={22} />
         </span>
-        <p className="m-0 text-[44px] font-black leading-none">{t("thanks.title")}</p>
-        <p className="m-0 text-[18px] text-white/80">{t("thanks.text")}</p>
+        <p className="m-0 text-h3 text-navy">{t("thanks.title")}</p>
+        <p className="m-0 text-[16px] text-navy/70">{t("thanks.text")}</p>
         <Button
-          variant="outline"
+          variant="outline-navy"
           onClick={() => {
             formRef.current?.reset();
             startedAt.current = Date.now();
@@ -120,48 +148,46 @@ export function ContactForm() {
   const err = (f: Field) => (errors[f] ? { "aria-invalid": true, "aria-describedby": `${f}-error` } : {});
 
   return (
-    <form ref={formRef} noValidate onSubmit={onSubmit} className="relative flex flex-col gap-6 rounded-2xl bg-white p-[clamp(24px,4vw,50px)] shadow-card">
-      <div className="grid gap-6 sm:grid-cols-2">
-        <FieldWrap id="name" label={t("form.name")} required error={errors.name}>
-          <input id="name" name="name" autoComplete="name" required className={input} {...err("name")} />
-        </FieldWrap>
-        <FieldWrap id="company" label={t("form.company")} required error={errors.company}>
-          <input id="company" name="company" autoComplete="organization" required className={input} {...err("company")} />
-        </FieldWrap>
-        <FieldWrap id="role" label={t("form.role")}>
-          <input id="role" name="role" autoComplete="organization-title" className={input} />
-        </FieldWrap>
-        <FieldWrap id="email" label={t("form.email")} required error={errors.email}>
-          <input id="email" name="email" type="email" autoComplete="email" required dir="ltr" className={`${input} text-start`} {...err("email")} />
-        </FieldWrap>
-        <FieldWrap id="phone" label={t("form.phone")}>
-          <input id="phone" name="phone" type="tel" autoComplete="tel" dir="ltr" className={`${input} text-start`} />
-        </FieldWrap>
-        <FieldWrap id="sector" label={t("form.sector")} required error={errors.sector}>
-          <select id="sector" name="sector" required defaultValue="" className={`${input} appearance-none`} {...err("sector")}>
-            <option value="" disabled>
-              {t("form.sectorPlaceholder")}
-            </option>
-            {messages.sectors.items.map((s) => (
-              <option key={s.id} value={s.id}>
-                {s.name}
-              </option>
-            ))}
-          </select>
-        </FieldWrap>
-        <FieldWrap id="size" label={t("form.size")}>
-          <select id="size" name="size" defaultValue={messages.contact.form.sizes[0]} className={`${input} appearance-none`}>
-            {messages.contact.form.sizes.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
-        </FieldWrap>
+    <form ref={formRef} noValidate onSubmit={onSubmit} className="relative flex flex-col gap-9 bg-white p-[clamp(24px,4vw,56px)]">
+      <div className="flex flex-wrap items-start justify-between gap-6">
+        <Label>{t("label")}</Label>
+        <p className="m-0 max-w-[24ch] text-h5 text-navy">{t("intro")}</p>
       </div>
-      <FieldWrap id="message" label={t("form.message")}>
-        <textarea id="message" name="message" rows={5} className={`${input} resize-y`} />
-      </FieldWrap>
+
+      <Chips
+        name="sector"
+        legend={t("form.sector")}
+        required
+        error={errors.sector}
+        options={messages.sectors.items.map((s) => ({ value: s.id, label: s.name }))}
+      />
+      <Chips
+        name="size"
+        legend={t("form.size")}
+        defaultValue={messages.contact.form.sizes[0]}
+        options={messages.contact.form.sizes.map((s) => ({ value: s, label: s }))}
+      />
+
+      <div className="grid gap-8 sm:grid-cols-2">
+        <TextField id="name" label={t("form.name")} required error={errors.name}>
+          <input id="name" name="name" autoComplete="name" required className={input} {...err("name")} />
+        </TextField>
+        <TextField id="company" label={t("form.company")} required error={errors.company}>
+          <input id="company" name="company" autoComplete="organization" required className={input} {...err("company")} />
+        </TextField>
+        <TextField id="role" label={t("form.role")}>
+          <input id="role" name="role" autoComplete="organization-title" className={input} />
+        </TextField>
+        <TextField id="email" label={t("form.email")} required error={errors.email}>
+          <input id="email" name="email" type="email" autoComplete="email" required dir="ltr" className={`${input} text-start`} {...err("email")} />
+        </TextField>
+        <TextField id="phone" label={t("form.phone")}>
+          <input id="phone" name="phone" type="tel" autoComplete="tel" dir="ltr" className={`${input} text-start`} />
+        </TextField>
+      </div>
+      <TextField id="message" label={t("form.message")}>
+        <textarea id="message" name="message" rows={4} className={`${input} resize-y`} />
+      </TextField>
 
       {/* Honeypot: hidden from people, tempting to bots. */}
       <div aria-hidden className="absolute -start-[9999px] h-px w-px overflow-hidden">
@@ -169,14 +195,14 @@ export function ContactForm() {
         <input id="website" name="website" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <p className="m-0 text-[15px] text-ink-3">{t("form.privacy")}</p>
+      <p className="m-0 text-[13px] text-navy/70">{t("form.privacy")}</p>
       {notice ? (
-        <p role="alert" className="m-0 rounded-xl bg-ember/10 px-5 py-4 text-[15px] font-medium text-ember-2">
+        <p role="alert" className="m-0 border-s-2 border-alert bg-soft px-4 py-3 text-[14px] text-navy">
           {notice}
         </p>
       ) : null}
-      <Button type="submit" disabled={status === "sending"} className="self-start disabled:opacity-60">
-        {status === "sending" ? t("form.sending") : t("form.submit")} <ArrowIcon />
+      <Button type="submit" variant="royal" disabled={status === "sending"} className="self-start disabled:opacity-60">
+        {status === "sending" ? t("form.sending") : t("form.submit")}
       </Button>
     </form>
   );

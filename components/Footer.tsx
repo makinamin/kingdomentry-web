@@ -1,81 +1,69 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { navItems, site } from "@/lib/site";
-import { Glow } from "./Glow";
-import { ArrowUpRight, DownloadIcon, LinkedInIcon, MailIcon } from "./icons";
+import { ArrowIcon, DownloadIcon } from "./icons";
+import { Label } from "./Label";
 import { FooterLanguages } from "./LanguageSwitcher";
 import { Logo } from "./Logo";
+import { SkylineLines } from "./SkylineLines";
 
-function ColumnTitle({ children }: { children: string }) {
-  return <h2 className="m-0 mb-5 text-[20px] font-black !text-white">{children}</h2>;
-}
-
-const link = "self-start text-[17px] text-muted no-underline hover:text-white";
-
-/** Gilroy footer-1: near-black, oversized call to action, four columns. */
+/** Zeyna footer: royal blue, oversized nav words, arrowed contact lines. */
 export function Footer() {
   const t = useTranslations();
   return (
-    <footer className="relative isolate overflow-hidden bg-night-deep text-white">
-      <Glow className="-start-40 top-0 h-[380px] w-[380px] opacity-50" />
-      <div className="relative mx-auto w-full max-w-site px-6 pt-[clamp(70px,8vw,110px)]">
-        <div className="flex flex-col justify-between gap-8 border-b border-white/10 pb-14 lg:flex-row lg:items-end">
-          <p className="m-0 max-w-[14ch] text-[clamp(40px,6.6vw,85px)] font-black leading-[1] tracking-[-0.01em] text-white">
-            {t("footer.tagline")}
-          </p>
-          <Link
-            href="/contact"
-            className="group flex h-[150px] w-[150px] shrink-0 flex-col items-center justify-center gap-2 rounded-full bg-gd-violet text-center text-[15px] font-bold leading-tight text-white no-underline shadow-glow transition-transform duration-500 ease-spring hover:scale-110 hover:text-white"
-          >
-            <ArrowUpRight size={26} className="transition-transform duration-500 group-hover:rotate-45" />
-            <span className="max-w-[11ch]">{t("nav.cta")}</span>
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr_1fr]">
-          <div className="flex flex-col gap-5">
-            <Logo mark="current" size={40} lockup label="Kingdom Entry" />
-            <p className="m-0 text-[13px] font-semibold uppercase tracking-label text-muted">{t("brand.descriptor")}</p>
-            <p lang="ar" className="m-0 text-start font-arabic text-[24px] font-semibold text-white">
+    <footer className="relative isolate overflow-hidden bg-royal text-white">
+      <SkylineLines className="text-white" opacity={0.12} />
+      <div className="relative mx-auto w-full max-w-site px-6 pt-[clamp(70px,8vw,120px)]">
+        <div className="grid gap-12 lg:grid-cols-2">
+          <div>
+            <Logo mark="current" size={36} lockup label="Kingdom Entry" />
+            <p className="m-0 mt-6 max-w-[36ch] text-[14px] leading-relaxed text-white/70">{t("gateway.utility")}</p>
+            <p lang="ar" className="m-0 mt-5 font-arabic text-[22px] font-medium">
               {t("brand.arabicName")}
             </p>
           </div>
+          <p className="m-0 text-h3 text-white">{t("footer.tagline")}</p>
+        </div>
 
-          <div className="flex flex-col gap-3">
-            <ColumnTitle>{t("footer.company")}</ColumnTitle>
-            {navItems.map((n) => (
-              <Link key={n.key} href={n.href} className={link}>
-                {t(`nav.${n.key}`)}
-              </Link>
-            ))}
+        <div className="mt-[clamp(60px,7vw,100px)] grid gap-12 border-t border-white/25 pt-10 lg:grid-cols-[1.2fr_1fr_0.6fr]">
+          <div>
+            <Label tone="dark">{t("footer.company")}</Label>
+            <nav className="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-[clamp(32px,3.6vw,48px)] leading-[1.15] tracking-[-0.04em]">
+              {navItems.map((n) => (
+                <Link key={n.key} href={n.href} className="text-white/65 no-underline hover:text-white">
+                  {t(`nav.${n.key}`)}
+                </Link>
+              ))}
+            </nav>
           </div>
-
           <div className="flex flex-col gap-3">
-            <ColumnTitle>{t("footer.contact")}</ColumnTitle>
-            <a href={`mailto:${site.email}`} className={`${link} flex items-center gap-3`}>
-              <MailIcon /> {t("footer.email")}
+            <Label tone="dark">{t("footer.contact")}</Label>
+            <a href={`mailto:${site.email}`} className="mt-3 flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
+              <ArrowIcon size={15} /> {t("footer.email")}
             </a>
-            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className={`${link} flex items-center gap-3`}>
-              <LinkedInIcon /> {t("footer.linkedin")}
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
+              <ArrowIcon size={15} /> {t("footer.linkedin")}
             </a>
             <a
               href={site.profilePdf}
               download
-              className="mt-4 inline-flex items-center gap-3 self-start rounded-full border border-white/20 px-5 py-3 text-[15px] font-semibold text-white no-underline transition-colors hover:border-violet hover:bg-violet hover:text-white"
+              className="mt-4 inline-flex items-center gap-3 self-start border border-white/40 px-4 py-3 text-[12px] font-medium uppercase tracking-label text-white no-underline transition-colors hover:bg-white hover:text-navy"
             >
-              <DownloadIcon /> {t("footer.download")}
+              <DownloadIcon size={14} /> {t("footer.download")}
             </a>
           </div>
-
-          <div className="flex flex-col gap-3">
-            <ColumnTitle>{t("footer.language")}</ColumnTitle>
-            <FooterLanguages />
+          <div className="flex flex-col gap-2">
+            <Label tone="dark">{t("footer.language")}</Label>
+            <div className="mt-3 flex flex-col gap-2">
+              <FooterLanguages />
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 py-8 text-[15px] text-muted">
+        <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-white/25 py-6 text-[12px] text-white/70">
           <span>{t("footer.rights")}</span>
-          <Link href="/privacy" className="text-muted no-underline hover:text-white">
+          <span className="uppercase tracking-label">{t("brand.descriptor")}</span>
+          <Link href="/privacy" className="text-white/70 no-underline hover:text-white">
             {t("footer.privacy")}
           </Link>
         </div>

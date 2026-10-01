@@ -1,4 +1,4 @@
-import { MarkShapes } from "./Logo";
+import { SkylineLines } from "./SkylineLines";
 
 /**
  * Stand-in for photography that has not arrived yet. Reserves the aspect ratio
@@ -7,26 +7,27 @@ import { MarkShapes } from "./Logo";
 export function ImagePlaceholder({
   note,
   ratio = "4 / 5",
+  tone = "soft",
   className = "",
-  rounded = "rounded-xl",
 }: {
   note: string;
   ratio?: string;
+  tone?: "soft" | "royal" | "navy";
   className?: string;
-  rounded?: string;
 }) {
+  const bg = {
+    soft: "bg-[linear-gradient(180deg,theme(colors.soft),theme(colors.line))] text-royal",
+    royal: "bg-[linear-gradient(180deg,theme(colors.royal.2),theme(colors.royal.DEFAULT))] text-white",
+    navy: "bg-[linear-gradient(180deg,theme(colors.navy.2),theme(colors.navy.DEFAULT))] text-white",
+  }[tone];
   return (
-    <div
-      role="img"
-      aria-label={note}
-      className={`relative isolate flex items-center justify-center overflow-hidden bg-[linear-gradient(140deg,theme(colors.night.soft)_0%,theme(colors.night.DEFAULT)_55%,theme(colors.indigo)_160%)] ${rounded} ${className}`}
-      style={{ aspectRatio: ratio }}
-    >
-      <span aria-hidden className="absolute -end-10 -top-10 -z-10 h-1/2 w-1/2 rounded-full bg-violet/50 blur-[60px]" />
-      <svg viewBox="0 0 120 120" aria-hidden className="h-[34%] w-[34%] text-white opacity-[0.14]">
-        <MarkShapes mark="currentColor" diamond="currentColor" />
-      </svg>
-      <span className="absolute bottom-4 start-4 rounded-full bg-white/10 px-3 py-1 text-[12px] font-medium text-white/70 backdrop-blur">
+    <div role="img" aria-label={note} className={`relative isolate overflow-hidden ${bg} ${className}`} style={{ aspectRatio: ratio }}>
+      <SkylineLines opacity={tone === "soft" ? 0.35 : 0.3} />
+      <span
+        className={`absolute bottom-4 start-4 px-2.5 py-1.5 text-[11px] font-medium uppercase tracking-label ${
+          tone === "soft" ? "bg-white text-navy/70" : "bg-white/10 text-white/80 backdrop-blur"
+        }`}
+      >
         {note}
       </span>
     </div>

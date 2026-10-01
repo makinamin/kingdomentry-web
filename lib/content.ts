@@ -1,7 +1,5 @@
 import { getMessages } from "next-intl/server";
-import type { Package } from "@/components/PackageCard";
-import type { Step } from "@/components/ProcessSteps";
-import type { Sector } from "@/components/SectorCard";
+import type { Package, Sector, Step } from "./types";
 
 /** Typed view of the list-shaped parts of messages/*.json. */
 export type Content = {

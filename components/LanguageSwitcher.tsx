@@ -15,15 +15,14 @@ function useSwitch() {
   };
 }
 
-/** EN / NL / AR pills. */
+/** EN / NL / AR, separated by hairlines. Inherits the header's text colour. */
 export function LanguageSwitcher({ className = "" }: { className?: string }) {
   const current = useLocale();
   const t = useTranslations("footer");
   const change = useSwitch();
-
   return (
-    <div role="group" aria-label={t("language")} className={`flex gap-1 rounded-full bg-white/10 p-1 ${className}`}>
-      {routing.locales.map((l) => {
+    <div role="group" aria-label={t("language")} className={`flex items-center ${className}`}>
+      {routing.locales.map((l, i) => {
         const active = l === current;
         return (
           <button
@@ -33,9 +32,9 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
             aria-pressed={active}
             aria-label={localeNames[l]}
             onClick={() => (active ? undefined : change(l))}
-            className={`cursor-pointer rounded-full px-3 py-1.5 font-sans text-[12px] font-bold uppercase leading-none tracking-[0.06em] transition-colors ${
-              active ? "bg-gd-violet text-white" : "bg-transparent text-white/75 hover:text-white"
-            }`}
+            className={`cursor-pointer border-0 bg-transparent px-2 py-1 font-sans text-[12px] font-medium uppercase tracking-label transition-opacity ${
+              i > 0 ? "border-s [border-inline-start-color:color-mix(in_srgb,currentColor_35%,transparent)]" : ""
+            } ${active ? "opacity-100" : "opacity-50 hover:opacity-100"}`}
           >
             {l}
           </button>
@@ -58,14 +57,10 @@ export function FooterLanguages() {
           lang={l}
           aria-pressed={l === current}
           onClick={() => change(l)}
-          className={`group flex cursor-pointer items-center gap-3 self-start bg-transparent p-0 text-start text-[17px] transition-colors hover:text-white ${
-            l === current ? "text-white" : "text-muted"
+          className={`cursor-pointer self-start border-0 bg-transparent p-0 text-start text-[15px] transition-colors hover:text-white ${
+            l === current ? "text-white" : "text-white/55"
           }`}
         >
-          <span
-            aria-hidden
-            className={`h-1.5 w-1.5 rounded-full ${l === current ? "bg-gd-violet" : "bg-white/25 group-hover:bg-white"}`}
-          />
           {localeNames[l]}
         </button>
       ))}
