@@ -1,4 +1,5 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { packagePhoto, showPhotos } from "@/lib/photos";
 import type { Package } from "@/lib/types";
 import { ButtonLink } from "./Button";
 import { ImagePlaceholder } from "./ImagePlaceholder";
@@ -7,6 +8,7 @@ import { Reveal } from "./Reveal";
 /** Zeyna "featured projects" row for the three ways to work with us. */
 export function PackageRow({ pkg, index }: { pkg: Package; index: number }) {
   const t = useTranslations();
+  const image = showPhotos(useLocale()) ? packagePhoto(index) : undefined;
   return (
     <Reveal className="grid gap-8 border-t border-line py-[clamp(40px,5vw,72px)] lg:grid-cols-[120px_1fr_1fr] lg:gap-12">
       <p className="m-0 text-[clamp(48px,5vw,80px)] font-light leading-none tracking-[-0.06em] text-royal">
@@ -29,7 +31,13 @@ export function PackageRow({ pkg, index }: { pkg: Package; index: number }) {
           {t("buttons.touch")}
         </ButtonLink>
       </div>
-      <ImagePlaceholder note={pkg.name} ratio="4 / 3" tone={index === 1 ? "royal" : "soft"} />
+      <ImagePlaceholder
+        note={pkg.name}
+        ratio="4 / 3"
+        tone={index === 1 ? "royal" : "soft"}
+        image={image}
+        alt={t("images.jeddahOffice")}
+      />
     </Reveal>
   );
 }

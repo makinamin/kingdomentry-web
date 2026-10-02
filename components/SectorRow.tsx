@@ -1,5 +1,5 @@
 import { useLocale, useTranslations } from "next-intl";
-import { sectorPhotos, showPhotos } from "@/lib/photos";
+import { sectorPhoto, showPhotos } from "@/lib/photos";
 import type { Sector } from "@/lib/types";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 import { Reveal } from "./Reveal";
@@ -9,7 +9,7 @@ import { SectorIcon } from "./SectorIcon";
 export function SectorRow({ sector, index }: { sector: Sector; index: number }) {
   const t = useTranslations("sectors");
   const tImg = useTranslations("images");
-  const image = showPhotos(useLocale()) ? sectorPhotos[sector.id] : undefined;
+  const image = showPhotos(useLocale()) ? sectorPhoto(sector.id) : undefined;
   return (
     <Reveal>
       <article id={sector.id} className="grid scroll-mt-28 bg-soft text-navy md:grid-cols-[1.5fr_1fr]">
@@ -44,7 +44,7 @@ export function SectorRow({ sector, index }: { sector: Sector; index: number }) 
           tone={index % 2 ? "navy" : "royal"}
           fill="md"
           image={image}
-          alt={image ? tImg(sector.id as "healthcare") : undefined}
+          alt={image ? tImg(sector.id as Parameters<typeof tImg>[0]) : undefined}
         />
       </article>
     </Reveal>

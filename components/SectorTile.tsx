@@ -1,6 +1,6 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { sectorPhotos, showPhotos } from "@/lib/photos";
+import { sectorPhoto, showPhotos } from "@/lib/photos";
 import type { Sector } from "@/lib/types";
 import { ArrowUpRight } from "./icons";
 import { ImagePlaceholder } from "./ImagePlaceholder";
@@ -10,14 +10,14 @@ import { SectorIcon } from "./SectorIcon";
 export function SectorTile({ sector, index }: { sector: Sector; index: number }) {
   const t = useTranslations("sectors");
   const tImg = useTranslations("images");
-  const image = showPhotos(useLocale()) ? sectorPhotos[sector.id] : undefined;
+  const image = showPhotos(useLocale()) ? sectorPhoto(sector.id) : undefined;
   return (
     <Link href={`/sectors#${sector.id}`} className="group flex h-full flex-col bg-white text-navy no-underline hover:text-navy">
       <div className="overflow-hidden">
         <ImagePlaceholder
           note={sector.name}
           image={image}
-          alt={image ? tImg(sector.id as "healthcare") : undefined}
+          alt={image ? tImg(sector.id as Parameters<typeof tImg>[0]) : undefined}
           sizes="300px"
           ratio="4 / 5"
           tone={index % 2 ? "navy" : "royal"}
