@@ -591,7 +591,7 @@
         "text": "قاعدتنا للشركات الأوروبية. هنا تبدأ رحلتك السعودية: جلسات الاستراتيجية ومسوح السوق والتحضير مع فريق يفهم كيف تفكر الشركات الأوروبية وتقرر. تركيز قوي على الشركات الهولندية في الصحة والمياه والغذاء والزراعة والتقنية النظيفة والذكاء الاصطناعي والصناعة.",
         "address": "[PLACEHOLDER address]",
         "phone": "+31 624 66 4290",
-        "email": "amsterdam@kingdomentry.com"
+        "email": "info@kingdomentry.com"
       },
       {
         "city": "الدار البيضاء",
@@ -599,7 +599,7 @@
         "text": "جسرنا إلى المغرب وأفريقيا والعالم الناطق بالفرنسية. تربط الدار البيضاء الشركات الأفريقية بالفرص السعودية وتمنح عملاءنا وصولًا إلى كفاءات متعددة اللغات ودعم المكتب الخلفي. العربية والفرنسية والإنجليزية تحت سقف واحد.",
         "address": "[PLACEHOLDER address]",
         "phone": "[PLACEHOLDER +212]",
-        "email": "casablanca@kingdomentry.com"
+        "email": "info@kingdomentry.com"
       },
       {
         "city": "جدة",
@@ -607,7 +607,7 @@
         "text": "مقرنا السعودي على ساحل البحر الأحمر. جدة هي البوابة التجارية للمملكة، وموطن أحد أكبر موانئ المنطقة، وعلى مسافة قصيرة من الرياض. هنا تُقدَّم التسجيلات ويُلتقى الشركاء وتهبط الفرق.",
         "address": "Red Sea Mall, Prince Faisal Ibn Fahd, Ash Shati, Jeddah 21146",
         "phone": "+966 9200 17540",
-        "email": "jeddah@kingdomentry.com"
+        "email": "info@kingdomentry.com"
       }
     ],
     "cta": {
@@ -697,7 +697,7 @@
         "required": "حقل مطلوب.",
         "email": "أدخل بريدًا إلكترونيًا صحيحًا.",
         "tooFast": "كان ذلك سريعًا. انتظر لحظة ثم أعد الإرسال.",
-        "failed": "لم يتم الإرسال. راسلنا على hello@kingdomentry.com."
+        "failed": "لم يتم الإرسال. راسلنا على info@kingdomentry.com."
       }
     },
     "thanks": {
@@ -723,7 +723,7 @@
     "company": "الشركة",
     "contact": "تواصل",
     "download": "تنزيل ملف الشركة (PDF)",
-    "email": "hello@kingdomentry.com",
+    "email": "info@kingdomentry.com",
     "linkedin": "لينكدإن",
     "rights": "© 2026 KingdomEntry. جميع الحقوق محفوظة.",
     "privacy": "الخصوصية",
@@ -752,7 +752,7 @@
       },
       {
         "title": "حقوقك",
-        "text": "الاطلاع والتصحيح والحذف والاعتراض. راسل privacy@kingdomentry.com."
+        "text": "الاطلاع والتصحيح والحذف والاعتراض. راسل info@kingdomentry.com."
       },
       {
         "title": "ملفات تعريف الارتباط",

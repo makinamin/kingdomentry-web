@@ -665,7 +665,7 @@
         "text": "Our base for European companies. This is where your Saudi journey starts: strategy sessions, market scans and preparation with a team that understands how European businesses think and decide. Strong focus on Dutch companies in health, water, agri-food, cleantech, AI and industry.",
         "address": "[PLACEHOLDER address]",
         "phone": "+31 624 66 4290",
-        "email": "amsterdam@kingdomentry.com"
+        "email": "info@kingdomentry.com"
       },
       {
         "city": "Casablanca",
@@ -673,7 +673,7 @@
         "text": "Our bridge to Morocco, Africa and the French-speaking world. Casablanca connects African companies to Saudi opportunity and gives our clients access to multilingual talent and back-office support. Arabic, French and English under one roof.",
         "address": "[PLACEHOLDER address]",
         "phone": "[PLACEHOLDER +212]",
-        "email": "casablanca@kingdomentry.com"
+        "email": "info@kingdomentry.com"
       },
       {
         "city": "Jeddah",
@@ -681,7 +681,7 @@
         "text": "Our Saudi headquarters on the Red Sea coast. Jeddah is the Kingdom's commercial gateway, home to one of the region's largest ports and a short hop to Riyadh. This is where registrations get filed, partners get met and teams get landed.",
         "address": "Red Sea Mall, Prince Faisal Ibn Fahd, Ash Shati, Jeddah 21146",
         "phone": "+966 9200 17540",
-        "email": "jeddah@kingdomentry.com"
+        "email": "info@kingdomentry.com"
       }
     ],
     "cta": {
@@ -775,7 +775,7 @@
         "required": "Required.",
         "email": "Enter a valid email.",
         "tooFast": "That was quick. Give it a moment and send again.",
-        "failed": "That did not go through. Email us at hello@kingdomentry.com."
+        "failed": "That did not go through. Email us at info@kingdomentry.com."
       }
     },
     "thanks": {
@@ -801,7 +801,7 @@
     "company": "Company",
     "contact": "Contact",
     "download": "Download company profile (PDF)",
-    "email": "hello@kingdomentry.com",
+    "email": "info@kingdomentry.com",
     "linkedin": "LinkedIn",
     "rights": "© 2026 KingdomEntry. All rights reserved.",
     "privacy": "Privacy",
@@ -830,7 +830,7 @@
       },
       {
         "title": "Your rights",
-        "text": "Access, correction, deletion, objection. Email privacy@kingdomentry.com."
+        "text": "Access, correction, deletion, objection. Email info@kingdomentry.com."
       },
       {
         "title": "Cookies",
