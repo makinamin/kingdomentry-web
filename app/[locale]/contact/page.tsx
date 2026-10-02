@@ -34,15 +34,17 @@ export default async function Contact({ params }: Props) {
           <RiseTitle as="h1" lines={splitTitle(t("contact.title"))} className="mt-6 text-display text-white" />
           <p className="m-0 mt-8 max-w-[40ch] text-[16px] leading-relaxed text-white/80">{t("contact.intro")}</p>
 
-          <div className="mt-auto grid gap-8 pt-16 sm:grid-cols-2">
+          <div className="mt-auto grid gap-x-8 gap-y-6 pt-14 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
             {c.offices.items.map((o) => (
               <Reveal key={o.city} className="border-t border-white/25 pt-5">
                 <p className="m-0 flex items-center gap-3 text-[13px] text-white/70">
                   <span aria-hidden className="h-2.5 w-2.5 border border-white/70" />
                   {o.city}
                 </p>
-                <p dir="auto" className="m-0 mt-2 text-start text-[15px] text-white">{o.phone}</p>
-                <a href={`mailto:${o.email}`} className="[overflow-wrap:anywhere] mt-1 block text-[15px] text-white no-underline hover:text-white/75">
+                <p className="m-0 mt-2 text-start text-[15px] text-white">
+                  <bdi>{o.phone}</bdi>
+                </p>
+                <a href={`mailto:${o.email}`} className="[overflow-wrap:anywhere] flex min-h-11 items-center text-[15px] text-white no-underline hover:text-white/75">
                   {o.email}
                 </a>
               </Reveal>
@@ -52,7 +54,7 @@ export default async function Contact({ params }: Props) {
                 <span aria-hidden className="h-2.5 w-2.5 border border-white/70" />
                 {t("footer.contact")}
               </p>
-              <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] mt-2 flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
+              <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] mt-2 flex min-h-11 items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
                 <ArrowIcon size={15} /> {site.email}
               </a>
             </Reveal>

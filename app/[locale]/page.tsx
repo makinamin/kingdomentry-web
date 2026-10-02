@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ButtonLink } from "@/components/Button";
+import { Cities } from "@/components/Cities";
 import { CtaBand } from "@/components/CtaBand";
 import { EntryFinder } from "@/components/EntryFinder";
 import { ArrowUpRight } from "@/components/icons";
@@ -55,12 +56,14 @@ export default async function Home({ params }: Props) {
             </div>
           </div>
           <div className="lg:justify-self-end">
-            <Link href="/offices" className="group grid w-full max-w-[460px] grid-cols-[1fr_1.15fr] bg-white text-navy no-underline hover:text-navy">
-              <div className="flex flex-col justify-between gap-6 p-5">
+            <Link href="/offices" className="group grid w-full max-w-[460px] grid-cols-1 bg-white min-[480px]:grid-cols-[1fr_1.15fr] text-navy no-underline hover:text-navy">
+              <div className="flex flex-wrap justify-between gap-x-6 gap-y-2 p-5 min-[480px]:flex-col min-[480px]:flex-nowrap min-[480px]:gap-6">
                 <span className="text-[12px] text-navy/60">{t("home.proof.label")}</span>
-                <span className="text-[12px] uppercase tracking-label text-navy/60">{t("footer.cities")}</span>
+                <span className="text-[12px] uppercase tracking-label text-navy/60">
+                  <Cities text={t("footer.cities")} />
+                </span>
               </div>
-              <div className="flex flex-col gap-3 border-s border-line p-5">
+              <div className="flex flex-col gap-3 border-t border-line p-5 min-[480px]:border-s min-[480px]:border-t-0">
                 <ImagePlaceholder note={c.offices.items[2]?.city ?? ""} ratio="16 / 10" tone="royal" />
                 <span className="text-[16px] leading-snug text-navy">{t("home.proof.title")}</span>
                 <span className="flex items-center gap-2 text-[12px] uppercase tracking-label text-navy/60">
@@ -91,7 +94,7 @@ export default async function Home({ params }: Props) {
                   </li>
                 ))}
               </ul>
-              <p className="m-0 mt-4 text-[15px] text-navy/60">{t("home.intro.painsLine")}</p>
+              <p className="m-0 mt-6 text-[15px] text-navy/60">{t("home.intro.painsLine")}</p>
             </Reveal>
             <Reveal delay={240}>
               <p className="m-0 mt-10 max-w-[30ch] text-h5 text-royal">{t("home.intro.resolve")}</p>
@@ -129,7 +132,9 @@ export default async function Home({ params }: Props) {
           </Reveal>
           <Reveal delay={100} className="flex flex-col justify-end lg:border-e lg:border-white/25 lg:px-10">
             <Label tone="dark">{t("nav.offices")}</Label>
-            <p className="m-0 mt-4 text-h6 text-white">{t("home.proof.cities")}</p>
+            <p className="m-0 mt-4 text-h6 text-white">
+              <Cities text={t("home.proof.cities")} />
+            </p>
           </Reveal>
           <Reveal delay={200} className="flex flex-col justify-end lg:ps-10">
             <Label tone="dark">{t("about.founders.label")}</Label>
@@ -179,7 +184,7 @@ export default async function Home({ params }: Props) {
               </ButtonLink>
             </Reveal>
           </div>
-          <div className="-mx-6 mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 [scrollbar-width:thin]">
+          <div className="-mx-6 mt-14 flex snap-x snap-mandatory scroll-px-6 gap-5 overflow-x-auto px-6 pb-4 [scrollbar-width:thin]">
             {c.sectors.items.map((s, i) => (
               <Reveal key={s.id} delay={Math.min(i, 5) * 70} className="w-[76vw] max-w-[300px] shrink-0 snap-start sm:w-[40vw] lg:w-[23%]">
                 <SectorTile sector={s} index={i} />
@@ -210,7 +215,7 @@ export default async function Home({ params }: Props) {
           <div className="mt-[clamp(50px,6vw,90px)] grid border-s border-t border-line sm:grid-cols-2 lg:grid-cols-4">
             {c.services.items.map((s, i) => (
               <Reveal key={s.name} delay={(i % 4) * 70} className="border-b border-e border-line">
-                <Link href="/services" className="group flex h-full min-h-[200px] flex-col justify-between gap-8 p-6 text-navy no-underline transition-colors duration-500 hover:bg-royal hover:text-white">
+                <Link href="/services" className="group flex h-full flex-col justify-between gap-5 p-6 sm:min-h-[200px] sm:gap-8 text-navy no-underline transition-colors duration-500 hover:bg-royal hover:text-white">
                   <span className="flex items-center justify-between text-[12px] opacity-60">
                     {String(i + 1).padStart(2, "0")}
                     <ArrowUpRight size={14} className="opacity-0 transition-opacity group-hover:opacity-100" />

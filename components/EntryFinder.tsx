@@ -20,7 +20,7 @@ export function EntryFinder() {
   const [stage, setStage] = useState("");
 
   const select =
-    "w-full cursor-pointer appearance-none border-0 bg-transparent p-0 pe-6 text-[14px] text-white outline-none [&>option]:text-navy";
+    "w-full cursor-pointer appearance-none border-0 bg-transparent py-2 pe-6 ps-0 text-[16px] lg:text-[15px] text-white outline-none [&>option]:text-navy";
   const Caret = () => (
     <span aria-hidden className="pointer-events-none absolute end-0 top-1/2 -translate-y-1/2 text-[10px] text-white/70">
       ▼
@@ -39,8 +39,8 @@ export function EntryFinder() {
       }}
       className="grid w-full max-w-[860px] grid-cols-1 border border-white/25 bg-navy/35 backdrop-blur-md sm:grid-cols-[1fr_1fr_auto]"
     >
-      <label className="flex flex-col gap-1 border-b border-white/20 px-5 py-4 text-start sm:border-b-0 sm:border-e">
-        <span className="text-[11px] uppercase tracking-label text-white/65">{t("home.hero.finderSector")}</span>
+      <label className="flex flex-col gap-1 border-b border-white/20 px-5 py-3 text-start sm:border-b-0 sm:border-e">
+        <span className="text-[12px] uppercase tracking-label text-white/70">{t("home.hero.finderSector")}</span>
         <span className="relative">
           <select value={sector} onChange={(e) => setSector(e.target.value)} className={select}>
             <option value="">{t("home.hero.finderSectorAny")}</option>
@@ -53,8 +53,8 @@ export function EntryFinder() {
           <Caret />
         </span>
       </label>
-      <label className="flex flex-col gap-1 border-b border-white/20 px-5 py-4 text-start sm:border-b-0 sm:border-e">
-        <span className="text-[11px] uppercase tracking-label text-white/65">{t("home.hero.finderStage")}</span>
+      <label className="flex flex-col gap-1 border-b border-white/20 px-5 py-3 text-start sm:border-b-0 sm:border-e">
+        <span className="text-[12px] uppercase tracking-label text-white/70">{t("home.hero.finderStage")}</span>
         <span className="relative">
           <select value={stage} onChange={(e) => setStage(e.target.value)} className={select}>
             <option value="">{t("home.hero.finderStageAny")}</option>

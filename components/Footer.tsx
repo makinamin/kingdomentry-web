@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { moreItems, navItems, site } from "@/lib/site";
+import { Cities } from "./Cities";
 import { ArrowIcon, DownloadIcon } from "./icons";
 import { Label } from "./Label";
 import { FooterLanguages } from "./LanguageSwitcher";
@@ -17,7 +18,9 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <Logo mark="current" size={36} lockup label="Kingdom Entry" />
-            <p className="m-0 mt-6 text-[13px] uppercase tracking-label text-white/75">{t("footer.cities")}</p>
+            <p className="m-0 mt-6 text-[13px] uppercase tracking-label text-white/75">
+              <Cities text={t("footer.cities")} />
+            </p>
             <p lang="ar" className="m-0 mt-5 font-arabic text-[22px] font-medium">
               {t("brand.arabicName")}
             </p>
@@ -31,9 +34,9 @@ export function Footer() {
         <div className="mt-[clamp(60px,7vw,100px)] grid gap-12 border-t border-white/25 pt-10 lg:grid-cols-[1.2fr_1fr_0.6fr]">
           <div>
             <Label tone="dark">{t("footer.company")}</Label>
-            <nav className="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-[clamp(32px,3.6vw,48px)] leading-[1.15] tracking-[-0.04em]">
+            <nav className="mt-6 grid grid-cols-2 gap-x-6 text-[clamp(22px,2.6vw,34px)] leading-[1.2] tracking-[-0.03em] sm:grid-cols-3">
               {[...navItems, ...moreItems].map((n) => (
-                <Link key={n.key} href={n.href} className="text-white/65 no-underline hover:text-white">
+                <Link key={n.key} href={n.href} className="self-start py-2 text-white/65 no-underline hover:text-white">
                   {t(`nav.${n.key}`)}
                 </Link>
               ))}
@@ -41,7 +44,7 @@ export function Footer() {
           </div>
           <div className="flex flex-col gap-3">
             <Label tone="dark">{t("footer.contact")}</Label>
-            <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] mt-3 flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
+            <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] mt-3 flex min-h-11 items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
               <ArrowIcon size={15} /> {t("footer.email")}
             </a>
             {site.linkedin ? (
@@ -61,7 +64,7 @@ export function Footer() {
           </div>
           <div className="flex flex-col gap-2">
             <Label tone="dark">{t("footer.language")}</Label>
-            <div className="mt-3 flex flex-col gap-2">
+            <div className="mt-1 flex flex-col">
               <FooterLanguages />
             </div>
           </div>
@@ -71,7 +74,7 @@ export function Footer() {
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/25 py-6 text-[12px] text-white/70">
           <span>{t("footer.rights")}</span>
           <span className="uppercase tracking-label">{t("brand.descriptor")}</span>
-          <Link href="/privacy" className="text-white/70 no-underline hover:text-white">
+          <Link href="/privacy" className="inline-flex min-h-11 items-center text-white/70 no-underline hover:text-white">
             {t("footer.privacy")}
           </Link>
         </div>

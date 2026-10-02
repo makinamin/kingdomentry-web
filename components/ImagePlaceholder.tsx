@@ -41,7 +41,7 @@ export function ImagePlaceholder({
     >
       <SkylineLines opacity={tone === "soft" ? 0.35 : 0.3} />
       <span
-        className={`absolute bottom-4 start-4 px-2.5 py-1.5 text-[11px] font-medium uppercase tracking-label ${
+        className={`absolute bottom-4 start-4 px-2.5 py-1.5 text-[12px] font-medium uppercase tracking-label ${
           tone === "soft" ? "bg-white text-navy/70" : "bg-white/10 text-white/80 backdrop-blur"
         }`}
       >

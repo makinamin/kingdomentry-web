@@ -14,7 +14,7 @@ export function CtaBand({ title, button, href = "/contact" }: { title: string; b
         <Reveal>
           <Label>{t("nav.contact")}</Label>
           <p className="m-0 mt-6 max-w-[34ch] text-[15px] leading-relaxed text-navy/70">{t("contact.alt.text")}</p>
-          <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] mt-10 flex items-center gap-3 text-[18px] text-navy no-underline hover:text-royal">
+          <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] mt-10 flex min-h-11 items-center gap-3 text-[18px] text-navy no-underline hover:text-royal">
             <ArrowIcon size={16} /> {site.email}
           </a>
           <p className="m-0 mt-3 text-[13px] uppercase tracking-label text-navy/55">{t("footer.cities")}</p>

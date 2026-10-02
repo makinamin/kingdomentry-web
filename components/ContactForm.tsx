@@ -162,10 +162,7 @@ export function ContactForm() {
 
   return (
     <form ref={formRef} noValidate onSubmit={onSubmit} className="relative flex flex-col gap-9 bg-white p-[clamp(24px,4vw,56px)]">
-      <div className="flex flex-wrap items-start justify-between gap-6">
-        <Label>{t("label")}</Label>
-        <p className="m-0 max-w-[26ch] text-h5 text-navy">{t("alt.title")} {t("alt.text")}</p>
-      </div>
+      <Label>{t("label")}</Label>
 
       <Chips
         name="stage"

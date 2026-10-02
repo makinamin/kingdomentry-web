@@ -68,7 +68,7 @@ export function Header() {
           {t("skip")}
         </a>
         <div className="mx-auto flex h-[78px] w-full max-w-site items-center justify-between gap-6 px-6">
-          <Link href="/" aria-label="Kingdom Entry" className="text-current no-underline hover:text-current">
+          <Link href="/" aria-label="Kingdom Entry" className="flex min-h-11 min-w-11 items-center text-current no-underline hover:text-current">
             <Logo mark="current" size={30} className="min-[480px]:hidden" />
             <Logo mark="current" size={30} lockup className="hidden min-[480px]:inline-flex" />
           </Link>
@@ -81,7 +81,7 @@ export function Header() {
                   key={n.key}
                   href={n.href}
                   aria-current={active ? "page" : undefined}
-                  className={`text-[14px] text-current no-underline transition-opacity hover:text-current hover:opacity-100 ${
+                  className={`min-w-11 py-3 text-center text-[14px] text-current no-underline transition-opacity hover:text-current hover:opacity-100 ${
                     active ? "opacity-100" : "opacity-60"
                   }`}
                 >
@@ -105,7 +105,7 @@ export function Header() {
               aria-expanded={open}
               aria-controls="site-menu"
               onClick={() => setOpen(true)}
-              className="flex cursor-pointer items-center gap-3 border-0 bg-transparent p-2 text-[13px] font-medium uppercase tracking-label text-current min-[1280px]:hidden"
+              className="flex min-h-11 cursor-pointer items-center gap-3 border-0 bg-transparent px-2 py-3 text-[13px] font-medium uppercase tracking-label text-current min-[1280px]:hidden"
             >
               {t("menu")}
               <span aria-hidden className="flex flex-col gap-[5px]">
@@ -129,7 +129,7 @@ export function Header() {
           open ? "[clip-path:inset(0_0_0_0)]" : "[clip-path:inset(0_0_100%_0)]"
         }`}
       >
-        <div className="mx-auto flex h-[78px] w-full max-w-site items-center justify-between px-6">
+        <div className="mx-auto flex h-[78px] shrink-0 w-full max-w-site items-center justify-between px-6">
           <Logo mark="current" size={30} lockup />
           <button
             ref={closeButton}
@@ -138,34 +138,34 @@ export function Header() {
               setOpen(false);
               menuButton.current?.focus();
             }}
-            className="flex cursor-pointer items-center gap-3 border-0 bg-transparent p-2 text-[13px] font-medium uppercase tracking-label text-white"
+            className="flex min-h-11 cursor-pointer items-center gap-3 border-0 bg-transparent px-2 py-3 text-[13px] font-medium uppercase tracking-label text-white"
           >
             {t("close")} <CloseIcon size={20} />
           </button>
         </div>
-        <nav className="mx-auto flex w-full max-w-site flex-1 flex-col justify-center px-6 py-10">
+        <nav className="mx-auto flex w-full max-w-site flex-1 flex-col justify-center px-6 py-[clamp(16px,4vh,40px)]">
           {navItems.map((n) => (
             <Link
               key={n.key}
               href={n.href}
               aria-current={isActive(pathname, n.href) ? "page" : undefined}
-              className={`text-[clamp(36px,7vw,64px)] leading-[1.15] tracking-[-0.04em] no-underline transition-colors hover:text-white ${
+              className={`self-start text-[clamp(26px,min(9.5vw,6.4vh),64px)] leading-[1.15] tracking-[-0.04em] no-underline transition-colors hover:text-white ${
                 isActive(pathname, n.href) ? "text-white" : "text-white/65"
               }`}
             >
               {t(n.key)}
             </Link>
           ))}
-          <div className="mt-8 flex flex-wrap gap-6">
+          <div className="mt-6 flex flex-wrap gap-x-6">
             {moreItems.map((n) => (
-              <Link key={n.key} href={n.href} className="text-[14px] uppercase tracking-label text-white/75 no-underline hover:text-white">
+              <Link key={n.key} href={n.href} className="inline-flex min-h-11 items-center text-[14px] uppercase tracking-label text-white/75 no-underline hover:text-white">
                 {t(n.key)}
               </Link>
             ))}
           </div>
         </nav>
-        <div className="mx-auto flex w-full max-w-site flex-wrap items-center justify-between gap-6 border-t border-white/25 px-6 py-8">
-          <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/80">
+        <div className="mx-auto flex w-full max-w-site shrink-0 flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-white/25 px-6 py-[clamp(12px,3vh,32px)]">
+          <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] flex min-h-11 items-center gap-3 text-[16px] text-white no-underline hover:text-white/80">
             <ArrowIcon size={16} /> {site.email}
           </a>
           <LanguageSwitcher />

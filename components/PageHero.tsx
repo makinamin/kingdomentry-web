@@ -33,7 +33,7 @@ export function PageHero({
       <nav aria-label="Breadcrumb" className="relative mx-auto mt-14 w-full max-w-site px-6">
         <ol className="m-0 flex list-none flex-wrap items-center gap-3 border-t border-white/25 p-0 pt-5 text-[13px]">
           <li>
-            <Link href="/" className="text-white/70 no-underline hover:text-white">
+            <Link href="/" className="-my-3 inline-block min-w-11 py-3 text-white/70 no-underline hover:text-white">
               {t("home")}
             </Link>
           </li>

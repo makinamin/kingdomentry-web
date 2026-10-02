@@ -38,7 +38,7 @@ export default async function FaqPage({ params }: Props) {
         <div className="mx-auto grid w-full max-w-site gap-10 px-6 py-[clamp(80px,9vw,140px)] lg:grid-cols-[1fr_2fr]">
           <Reveal>
             <Label>{t("faq.more")}</Label>
-            <p className="m-0 mt-6 max-w-[30ch] text-[15px] leading-relaxed text-navy/70">{t("contact.intro")}</p>
+            <p className="m-0 mt-6 max-w-[52ch] text-[15px] leading-relaxed text-navy/70 lg:max-w-[30ch]">{t("contact.intro")}</p>
           </Reveal>
           <Faq items={c.faq.items} />
         </div>

@@ -54,7 +54,7 @@ export default async function About({ params }: Props) {
         <SkylineLines className="-z-10 text-white" opacity={0.18} />
         <div className="mx-auto grid w-full max-w-site gap-5 px-6 py-[clamp(80px,9vw,130px)] md:grid-cols-2">
           {(["mission", "vision"] as const).map((k, i) => (
-            <Reveal key={k} delay={i * 100} className="flex min-h-[320px] flex-col justify-between gap-10 border border-white/25 bg-navy/30 p-[clamp(24px,3vw,44px)] backdrop-blur">
+            <Reveal key={k} delay={i * 100} className="flex flex-col justify-between gap-6 border md:min-h-[320px] md:gap-10 border-white/25 bg-navy/30 p-[clamp(24px,3vw,44px)] backdrop-blur">
               <Label tone="dark">{t(`about.${k}.label`)}</Label>
               <p className="m-0 text-h4 text-white">{t(`about.${k}.text`)}</p>
             </Reveal>
@@ -70,7 +70,7 @@ export default async function About({ params }: Props) {
           </Reveal>
           <div className="mt-10 grid border-s border-t border-line sm:grid-cols-2 lg:grid-cols-4">
             {c.about.values.items.map((v, i) => (
-              <Reveal key={v.name} delay={i * 80} className="flex min-h-[240px] flex-col justify-between gap-8 border-b border-e border-line p-7">
+              <Reveal key={v.name} delay={i * 80} className="flex flex-col justify-between gap-5 border-b sm:min-h-[240px] sm:gap-8 border-e border-line p-7">
                 <span className="text-[clamp(40px,3.4vw,56px)] font-light leading-none tracking-[-0.06em] text-royal">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -128,7 +128,7 @@ export default async function About({ params }: Props) {
                       ))}
                       {f.quote ? (
                         <blockquote className="m-0 mt-8 border-s-2 border-royal ps-6">
-                          <p className="m-0 text-h5 text-royal">&ldquo;{f.quote}&rdquo;</p>
+                          <p className="m-0 text-h5 text-royal">{locale === "ar" ? <>&laquo;{f.quote}&raquo;</> : <>&ldquo;{f.quote}&rdquo;</>}</p>
                         </blockquote>
                       ) : null}
                     </div>

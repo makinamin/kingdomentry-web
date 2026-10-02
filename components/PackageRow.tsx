@@ -17,7 +17,7 @@ export function PackageRow({ pkg, index }: { pkg: Package; index: number }) {
         <p className="m-0 mt-6 text-[12px] uppercase tracking-label text-navy/55">{t("how.packages.forLabel")}</p>
         <p className="m-0 mt-2 text-[17px] text-navy">{pkg.for}</p>
         <p className="m-0 mt-8 text-[12px] uppercase tracking-label text-navy/55">{t("how.packages.getLabel")}</p>
-        <ul className="m-0 mt-3 w-full max-w-[480px] list-none p-0">
+        <ul className="m-0 mt-3 w-full list-none p-0 lg:max-w-[480px]">
           {pkg.get.map((g) => (
             <li key={g} className="flex items-start gap-3 border-b border-line py-3 text-[15px] text-navy">
               <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 bg-royal" />
