@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { site } from "@/lib/site";
 import { buttonClass } from "./Button";
 
 const KEY = "ke-consent";
@@ -12,6 +13,7 @@ export function CookieNotice() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    if (!site.analyticsDomain) return; // Nothing to consent to.
     try {
       setOpen(!localStorage.getItem(KEY));
     } catch {

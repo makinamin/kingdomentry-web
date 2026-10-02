@@ -44,16 +44,20 @@ export function Footer() {
             <a href={`mailto:${site.email}`} className="mt-3 flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
               <ArrowIcon size={15} /> {t("footer.email")}
             </a>
-            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
-              <ArrowIcon size={15} /> {t("footer.linkedin")}
-            </a>
-            <a
-              href={site.profilePdf}
-              download
-              className="mt-4 inline-flex items-center gap-3 self-start border border-white/40 px-4 py-3 text-[12px] font-medium uppercase tracking-label text-white no-underline transition-colors hover:bg-white hover:text-navy"
-            >
-              <DownloadIcon size={14} /> {t("footer.download")}
-            </a>
+            {site.linkedin ? (
+              <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
+                <ArrowIcon size={15} /> {t("footer.linkedin")}
+              </a>
+            ) : null}
+            {site.profilePdf ? (
+              <a
+                href={site.profilePdf}
+                download
+                className="mt-4 inline-flex items-center gap-3 self-start border border-white/40 px-4 py-3 text-[12px] font-medium uppercase tracking-label text-white no-underline transition-colors hover:bg-white hover:text-navy"
+              >
+                <DownloadIcon size={14} /> {t("footer.download")}
+              </a>
+            ) : null}
           </div>
           <div className="flex flex-col gap-2">
             <Label tone="dark">{t("footer.language")}</Label>

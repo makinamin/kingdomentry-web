@@ -20,7 +20,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  return { ...pageMeta(locale, "/", t("home.seo.title"), t("home.seo.description")), title: { absolute: t("home.seo.title") } };
+  return pageMeta(locale, "/", t("home.seo.title"), t("home.seo.description"));
 }
 
 export default async function Home({ params }: Props) {
@@ -38,12 +38,12 @@ export default async function Home({ params }: Props) {
         </div>
         <div className="mx-auto flex w-full max-w-site flex-col items-center px-6 text-center">
           <RiseTitle as="h1" lines={splitTitle(t("home.hero.title"))} className="text-display text-white" />
-          <Reveal delay={350} className="mt-[clamp(40px,5vw,72px)] flex w-full justify-center">
+          <div className="mt-[clamp(40px,5vw,72px)] flex w-full justify-center">
             <EntryFinder />
-          </Reveal>
+          </div>
         </div>
         <div className="mx-auto mt-auto grid w-full max-w-site items-end gap-8 px-6 pb-10 pt-20 lg:grid-cols-[1.2fr_1fr]">
-          <Reveal delay={500}>
+          <div>
             <p className="m-0 max-w-[52ch] text-[15px] leading-relaxed text-white/85">{t("home.hero.sub")}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink href={bookingHref} variant="white">
@@ -53,8 +53,8 @@ export default async function Home({ params }: Props) {
                 {t("buttons.explore")}
               </ButtonLink>
             </div>
-          </Reveal>
-          <Reveal delay={600} className="lg:justify-self-end">
+          </div>
+          <div className="lg:justify-self-end">
             <Link href="/offices" className="group grid w-full max-w-[460px] grid-cols-[1fr_1.15fr] bg-white text-navy no-underline hover:text-navy">
               <div className="flex flex-col justify-between gap-6 p-5">
                 <span className="text-[12px] text-navy/60">{t("home.proof.label")}</span>
@@ -68,7 +68,7 @@ export default async function Home({ params }: Props) {
                 </span>
               </div>
             </Link>
-          </Reveal>
+          </div>
         </div>
       </section>
 

@@ -28,7 +28,7 @@ export default async function HowWeWork({ params }: Props) {
       <PageHero label={t("how.label")} title={t("how.title")} intro={t("how.intro")} crumbs={[{ label: t("nav.how") }]} />
       <section className="bg-white">
         <div className="mx-auto w-full max-w-site px-6 py-[clamp(90px,10vw,150px)]">
-          <StepsGrid steps={c.how.steps} />
+          <StepsGrid steps={c.how.steps} level={2} />
         </div>
       </section>
       <section className="border-t border-line bg-white">

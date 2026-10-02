@@ -9,7 +9,7 @@ export function ServiceRow({ service, index }: { service: Service; index: number
         {String(index + 1).padStart(2, "0")}
       </p>
       <div>
-        <h3 className="m-0 text-h5 text-navy">{service.name}</h3>
+        <h2 className="m-0 text-h5 text-navy">{service.name}</h2>
         <p className="m-0 mt-3 text-[17px] text-navy/65">{service.tagline}</p>
       </div>
       <ul className="m-0 list-none border-t border-line p-0 lg:border-t-0">

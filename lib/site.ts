@@ -2,12 +2,14 @@
 export const site = {
   url: "https://kingdomentry.com",
   email: "hello@kingdomentry.com",
-  // [PLACEHOLDER] Company LinkedIn page. The prototype links to linkedin.com.
-  linkedin: "https://www.linkedin.com",
-  // [PLACEHOLDER] Company profile PDF. Drop the file in public/ at this path.
-  profilePdf: "/kingdom-entry-profile.pdf",
+  // [PLACEHOLDER] Company LinkedIn page URL. Empty: the link is hidden.
+  linkedin: "",
+  // [PLACEHOLDER] Company profile PDF, e.g. "/kingdom-entry-profile.pdf" with the file in public/. Empty: the button is hidden.
+  profilePdf: "",
   // [PLACEHOLDER] Calendar link for the 30-minute Kingdom Readiness Call. Empty: buttons go to the contact form.
   bookingUrl: "",
+  // Plausible (EU-hosted, cookieless) domain, e.g. "kingdomentry.com". Unset: no analytics and no cookie notice.
+  analyticsDomain: process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ?? "",
   // Form endpoint (serverless function or form service). Unset: the form opens a prefilled email instead.
   formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? "",
 } as const;
