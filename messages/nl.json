@@ -769,5 +769,12 @@
     "code": "404",
     "title": "Deze deur is dicht. Probeer een andere.",
     "link": "Terug naar home"
+  },
+  "images": {
+    "skyline": "De skyline van Riyad rijst op uit de woestijn bij zonsopkomst",
+    "gateway": "Een open stenen poort met Arabische ornamenten, van binnenuit verlicht",
+    "jeddahOffice": "Kantoorlounge met uitzicht op de Rode Zee bij zonsondergang",
+    "handshake": "Twee zakenpartners schudden elkaar de hand bij Arabische koffie",
+    "healthcare": "Een arts bekijkt scans in een moderne beeldvormingsruimte"
   }
 }

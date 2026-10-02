@@ -5,6 +5,7 @@ import { Cities } from "@/components/Cities";
 import { CtaBand } from "@/components/CtaBand";
 import { EntryFinder } from "@/components/EntryFinder";
 import { ArrowUpRight } from "@/components/icons";
+import { HeroPhoto } from "@/components/HeroPhoto";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { Label, RiseTitle, splitTitle } from "@/components/Label";
 import { Reveal } from "@/components/Reveal";
@@ -15,6 +16,7 @@ import { Link } from "@/i18n/navigation";
 import { getContent } from "@/lib/content";
 import { bookingHref } from "@/lib/links";
 import { pageMeta } from "@/lib/meta";
+import { officePhotos, showPhotos } from "@/lib/photos";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -29,13 +31,15 @@ export default async function Home({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations();
   const c = await getContent();
+  const photos = showPhotos(locale);
 
   return (
     <>
       {/* Hero */}
       <section className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-[linear-gradient(180deg,theme(colors.royal.2)_0%,theme(colors.royal.DEFAULT)_55%,theme(colors.navy.DEFAULT)_100%)] pt-[clamp(140px,14vw,200px)] text-white">
+        {photos ? <HeroPhoto image="riyadh-skyline" /> : null}
         <div className="absolute inset-0 -z-10 animate-drift">
-          <SkylineLines className="text-white" opacity={0.24} />
+          <SkylineLines className="text-white" opacity={photos ? 0.12 : 0.24} />
         </div>
         <div className="mx-auto flex w-full max-w-site flex-col items-center px-6 text-center">
           <RiseTitle as="h1" lines={splitTitle(t("home.hero.title"))} className="text-display text-white" />
@@ -64,7 +68,14 @@ export default async function Home({ params }: Props) {
                 </span>
               </div>
               <div className="flex flex-col gap-3 border-t border-line p-5 min-[480px]:border-s min-[480px]:border-t-0">
-                <ImagePlaceholder note={c.offices.items[2]?.city ?? ""} ratio="16 / 10" tone="royal" />
+                <ImagePlaceholder
+                  note={c.offices.items[2]?.city ?? ""}
+                  ratio="16 / 10"
+                  tone="royal"
+                  image={photos ? officePhotos[2] : undefined}
+                  alt={t("images.jeddahOffice")}
+                  sizes="260px"
+                />
                 <span className="text-[16px] leading-snug text-navy">{t("home.proof.title")}</span>
                 <span className="flex items-center gap-2 text-[12px] uppercase tracking-label text-navy/60">
                   {t("nav.offices")} <ArrowUpRight size={12} />
@@ -277,7 +288,14 @@ export default async function Home({ params }: Props) {
             </Reveal>
           </div>
           <Reveal delay={150}>
-            <ImagePlaceholder note={t("footer.cities")} ratio="5 / 6" tone="navy" fill="lg" />
+            <ImagePlaceholder
+              note={t("footer.cities")}
+              ratio="5 / 6"
+              tone="navy"
+              fill="lg"
+              image={photos ? "gateway" : undefined}
+              alt={t("images.gateway")}
+            />
           </Reveal>
         </div>
       </section>

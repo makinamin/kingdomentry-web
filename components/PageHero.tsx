@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Label, RiseTitle, splitTitle } from "./Label";
+import { HeroPhoto } from "./HeroPhoto";
 import { SkylineLines } from "./SkylineLines";
 import type { ReactNode } from "react";
 
@@ -11,17 +12,21 @@ export function PageHero({
   intro,
   crumbs,
   aside,
+  image,
 }: {
   label?: string;
   title: string;
   intro?: string;
   crumbs: Array<{ label: string; href?: string }>;
   aside?: ReactNode;
+  /** Background photo name in public/images. */
+  image?: string;
 }) {
   const t = useTranslations("nav");
   return (
     <section className="relative isolate overflow-hidden bg-royal pb-[clamp(56px,7vw,100px)] pt-[clamp(150px,15vw,220px)] text-white">
-      <SkylineLines className="text-white" opacity={0.28} />
+      {image ? <HeroPhoto image={image} /> : null}
+      <SkylineLines className="text-white" opacity={image ? 0.12 : 0.28} />
       <div className="relative mx-auto grid w-full max-w-site gap-12 px-6 lg:grid-cols-[1.5fr_1fr] lg:items-end">
         <div>
           {label ? <Label tone="dark">{label}</Label> : null}

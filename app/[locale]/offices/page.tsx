@@ -8,6 +8,7 @@ import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { getContent } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
+import { officePhotos, showPhotos } from "@/lib/photos";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -31,7 +32,14 @@ export default async function Offices({ params }: Props) {
           {c.offices.items.map((o, i) => (
             <Reveal key={o.city}>
               <article className={`grid bg-soft md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
-                <ImagePlaceholder note={o.city} ratio="4 / 3" tone={i === 1 ? "navy" : "royal"} fill="md" />
+                <ImagePlaceholder
+                  note={o.city}
+                  ratio="4 / 3"
+                  tone={i === 1 ? "navy" : "royal"}
+                  fill="md"
+                  image={showPhotos(locale) && officePhotos[i] ? officePhotos[i] : undefined}
+                  alt={t("images.jeddahOffice")}
+                />
                 <div className="flex flex-col p-[clamp(24px,3.4vw,52px)]">
                   <Label>{o.role}</Label>
                   <h2 className="m-0 mt-6 text-h2 text-navy">{o.city}</h2>

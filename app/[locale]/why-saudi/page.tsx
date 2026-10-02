@@ -9,6 +9,7 @@ import { SkylineLines } from "@/components/SkylineLines";
 import { getContent } from "@/lib/content";
 import { bookingHref } from "@/lib/links";
 import { pageMeta } from "@/lib/meta";
+import { showPhotos } from "@/lib/photos";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -26,7 +27,12 @@ export default async function WhySaudi({ params }: Props) {
 
   return (
     <>
-      <PageHero label={t("why.label")} title={t("why.title")} crumbs={[{ label: t("nav.why") }]} />
+      <PageHero
+        label={t("why.label")}
+        title={t("why.title")}
+        crumbs={[{ label: t("nav.why") }]}
+        image={showPhotos(locale) ? "riyadh-skyline" : undefined}
+      />
 
       <section className="bg-white">
         <div className="mx-auto grid w-full max-w-site gap-10 px-6 py-[clamp(90px,10vw,150px)] lg:grid-cols-[1fr_2fr]">
@@ -124,7 +130,13 @@ export default async function WhySaudi({ params }: Props) {
             </Reveal>
           </div>
           <Reveal delay={150}>
-            <ImagePlaceholder note={t("why.introLabel")} ratio="4 / 3" tone="royal" />
+            <ImagePlaceholder
+              note={t("why.introLabel")}
+              ratio="4 / 3"
+              tone="royal"
+              image={showPhotos(locale) ? "handshake" : undefined}
+              alt={t("images.handshake")}
+            />
           </Reveal>
         </div>
       </section>

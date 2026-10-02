@@ -1,4 +1,5 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { sectorPhotos, showPhotos } from "@/lib/photos";
 import type { Sector } from "@/lib/types";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 import { Reveal } from "./Reveal";
@@ -7,6 +8,8 @@ import { SectorIcon } from "./SectorIcon";
 /** Zeyna projects-archive row: name, the Saudi demand, where you fit as chips, image beside it. */
 export function SectorRow({ sector, index }: { sector: Sector; index: number }) {
   const t = useTranslations("sectors");
+  const tImg = useTranslations("images");
+  const image = showPhotos(useLocale()) ? sectorPhotos[sector.id] : undefined;
   return (
     <Reveal>
       <article id={sector.id} className="grid scroll-mt-28 bg-soft text-navy md:grid-cols-[1.5fr_1fr]">
@@ -35,7 +38,14 @@ export function SectorRow({ sector, index }: { sector: Sector; index: number }) 
           </div>
           <span className="mt-auto pt-10 text-[13px] text-navy/55">{String(index + 1).padStart(2, "0")}</span>
         </div>
-        <ImagePlaceholder note={sector.name} ratio="4 / 3" tone={index % 2 ? "navy" : "royal"} fill="md" />
+        <ImagePlaceholder
+          note={sector.name}
+          ratio="4 / 3"
+          tone={index % 2 ? "navy" : "royal"}
+          fill="md"
+          image={image}
+          alt={image ? tImg(sector.id as "healthcare") : undefined}
+        />
       </article>
     </Reveal>
   );

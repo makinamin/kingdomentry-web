@@ -847,5 +847,12 @@
     "code": "404",
     "title": "This door is closed. Try another.",
     "link": "Back home"
+  },
+  "images": {
+    "skyline": "Riyadh skyline rising from the desert at sunrise",
+    "gateway": "An open stone gateway with Arabic carving, lit from inside",
+    "jeddahOffice": "Office lounge overlooking the Red Sea at sunset",
+    "handshake": "Two business partners shaking hands over Arabic coffee",
+    "healthcare": "A doctor reviewing scans in a modern imaging room"
   }
 }
