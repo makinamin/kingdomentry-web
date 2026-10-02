@@ -19,6 +19,7 @@ export function generateStaticParams() {
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: "KingdomEntry",
+  ...(site.noindex ? { robots: { index: false, follow: false } } : {}),
 };
 
 // Organization structured data for search engines.

@@ -1,6 +1,9 @@
 // Site-wide facts that are not copy. Copy lives in messages/*.json.
 export const site = {
-  url: "https://kingdomentry.com",
+  // Public address of the site. Previews override it with NEXT_PUBLIC_SITE_URL.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kingdomentry.com",
+  // Preview builds (NEXT_PUBLIC_NOINDEX=1) ask search engines to stay away.
+  noindex: process.env.NEXT_PUBLIC_NOINDEX === "1",
   email: "hello@kingdomentry.com",
   // [PLACEHOLDER] Company LinkedIn page URL. Empty: the link is hidden.
   linkedin: "",
