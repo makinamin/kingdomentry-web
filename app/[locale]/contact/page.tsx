@@ -6,8 +6,10 @@ import { ArrowIcon } from "@/components/icons";
 import { Label, RiseTitle, splitTitle } from "@/components/Label";
 import { Reveal } from "@/components/Reveal";
 import { SkylineLines } from "@/components/SkylineLines";
+import { HeroPhoto } from "@/components/HeroPhoto";
 import { getContent } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
+import { showPhotos } from "@/lib/photos";
 import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -27,7 +29,8 @@ export default async function Contact({ params }: Props) {
 
   return (
     <section className="relative isolate overflow-hidden bg-royal pb-[clamp(60px,7vw,110px)] pt-[clamp(140px,14vw,200px)] text-white">
-      <SkylineLines className="-z-10 text-white" opacity={0.24} />
+      {showPhotos(locale) ? <HeroPhoto image="jeddah-office" /> : null}
+      <SkylineLines className="-z-10 text-white" opacity={showPhotos(locale) ? 0.12 : 0.24} />
       <div className="mx-auto grid w-full max-w-site gap-14 px-6 lg:grid-cols-[1fr_1.15fr]">
         <div className="flex flex-col">
           <Label tone="dark">{t("contact.label")}</Label>

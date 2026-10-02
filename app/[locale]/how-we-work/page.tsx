@@ -8,6 +8,7 @@ import { Reveal } from "@/components/Reveal";
 import { StepsGrid } from "@/components/StepsGrid";
 import { getContent } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
+import { showPhotos } from "@/lib/photos";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -25,7 +26,13 @@ export default async function HowWeWork({ params }: Props) {
 
   return (
     <>
-      <PageHero label={t("how.label")} title={t("how.title")} intro={t("how.intro")} crumbs={[{ label: t("nav.how") }]} />
+      <PageHero
+        label={t("how.label")}
+        title={t("how.title")}
+        intro={t("how.intro")}
+        crumbs={[{ label: t("nav.how") }]}
+        image={showPhotos(locale) ? "gateway" : undefined}
+      />
       <section className="bg-white">
         <div className="mx-auto w-full max-w-site px-6 py-[clamp(90px,10vw,150px)]">
           <StepsGrid steps={c.how.steps} level={2} />

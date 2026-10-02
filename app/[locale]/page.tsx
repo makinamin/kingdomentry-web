@@ -37,7 +37,7 @@ export default async function Home({ params }: Props) {
     <>
       {/* Hero */}
       <section className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-[linear-gradient(180deg,theme(colors.royal.2)_0%,theme(colors.royal.DEFAULT)_55%,theme(colors.navy.DEFAULT)_100%)] pt-[clamp(140px,14vw,200px)] text-white">
-        {photos ? <HeroPhoto image="riyadh-skyline" /> : null}
+        {photos ? <HeroPhoto image="jeddah-arch" /> : null}
         <div className="absolute inset-0 -z-10 animate-drift">
           <SkylineLines className="text-white" opacity={photos ? 0.12 : 0.24} />
         </div>
@@ -72,8 +72,8 @@ export default async function Home({ params }: Props) {
                   note={c.offices.items[2]?.city ?? ""}
                   ratio="16 / 10"
                   tone="royal"
-                  image={photos ? "jeddah-arch" : undefined}
-                  alt={t("images.jeddahArch")}
+                  image={photos ? "office-jeddah" : undefined}
+                  alt={t("images.jeddah")}
                   sizes="260px"
                 />
                 <span className="text-[16px] leading-snug text-navy">{t("home.proof.title")}</span>

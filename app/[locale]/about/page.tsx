@@ -9,6 +9,7 @@ import { Reveal } from "@/components/Reveal";
 import { SkylineLines } from "@/components/SkylineLines";
 import { getContent } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
+import { showPhotos } from "@/lib/photos";
 import { founderLinks } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -28,7 +29,12 @@ export default async function About({ params }: Props) {
 
   return (
     <>
-      <PageHero label={t("about.label")} title={t("about.title")} crumbs={[{ label: t("nav.about") }]} />
+      <PageHero
+        label={t("about.label")}
+        title={t("about.title")}
+        crumbs={[{ label: t("nav.about") }]}
+        image={showPhotos(locale) ? "handshake" : undefined}
+      />
 
       {/* Our story */}
       <section className="bg-white">
