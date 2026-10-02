@@ -5,42 +5,86 @@
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-pearl font-sans text-blue;
+    @apply bg-white font-sans text-navy;
     font-size: 16px;
     line-height: 1.6;
   }
 
-  /* Arabic sets every text run in Reem Kufi. The wordmark opts back into Ubuntu. */
   html[lang="ar"] body {
     @apply font-arabic;
   }
 
+  /* Arabic has no negative tracking. */
+  html[lang="ar"] * {
+    letter-spacing: 0 !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-normal;
+  }
+
   a {
-    @apply text-blue transition-colors hover:text-gold;
+    @apply transition-colors duration-300;
   }
 
   :focus-visible {
-    outline: 2px solid theme("colors.gold.DEFAULT");
+    outline: 2px solid theme("colors.royal.2");
     outline-offset: 3px;
+  }
+
+  ::selection {
+    @apply bg-royal text-white;
   }
 }
 
 @layer utilities {
-  /* Arabic labels drop the tracking (prototype: labelSpacing 0 for ar). */
-  html[lang="ar"] .tracking-label,
-  html[lang="ar"] .tracking-wide {
-    letter-spacing: 0;
+  /* Scroll reveal, driven by components/Reveal.tsx. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+  html:not(.js) .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Line-by-line title rise. */
+  .rise-line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+  }
+  .rise-line > span {
+    display: inline-block;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

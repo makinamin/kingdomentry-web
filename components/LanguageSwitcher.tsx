@@ -15,20 +15,14 @@ function useSwitch() {
   };
 }
 
-/** EN / NL / AR segmented control in the header. */
-export function LanguageSwitcher({ tone = "light" }: { tone?: "light" | "dark" }) {
+/** EN / NL / AR, separated by hairlines. Inherits the header's text colour. */
+export function LanguageSwitcher({ className = "" }: { className?: string }) {
   const current = useLocale();
   const t = useTranslations("footer");
   const change = useSwitch();
-  const dark = tone === "dark";
-
   return (
-    <div
-      role="group"
-      aria-label={t("language")}
-      className={`flex gap-0.5 rounded-sm border p-0.5 ${dark ? "border-gold-light/[0.28]" : "border-stone/30"}`}
-    >
-      {routing.locales.map((l) => {
+    <div role="group" aria-label={t("language")} className={`flex items-center ${className}`}>
+      {routing.locales.map((l, i) => {
         const active = l === current;
         return (
           <button
@@ -38,17 +32,13 @@ export function LanguageSwitcher({ tone = "light" }: { tone?: "light" | "dark" }
             aria-pressed={active}
             aria-label={localeNames[l]}
             onClick={() => (active ? undefined : change(l))}
-            className={`cursor-pointer rounded-[6px] px-[9px] py-[5px] font-sans text-[12px] font-medium uppercase tracking-[0.08em] focus-visible:outline-offset-2 ${
-              active
-                ? dark
-                  ? "bg-pearl text-blue-deep"
-                  : "bg-blue text-pearl"
-                : dark
-                  ? "bg-transparent text-pearl hover:text-gold-light"
-                  : "bg-transparent text-blue hover:text-gold"
+            className={`relative inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center border-0 bg-transparent px-2 font-sans text-[12px] font-medium uppercase tracking-label ${
+              i > 0
+                ? "before:absolute before:start-0 before:top-1/2 before:h-3.5 before:w-px before:-translate-y-1/2 before:bg-current before:opacity-35 before:content-['']"
+                : ""
             }`}
           >
-            {l}
+            <span className={`transition-opacity ${active ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>{l}</span>
           </button>
         );
       })}
@@ -69,8 +59,8 @@ export function FooterLanguages() {
           lang={l}
           aria-pressed={l === current}
           onClick={() => change(l)}
-          className={`cursor-pointer self-start bg-transparent p-0 text-start text-[15px] hover:text-gold ${
-            l === current ? "text-gold-light" : "text-pearl"
+          className={`min-h-11 min-w-11 cursor-pointer self-start border-0 bg-transparent p-0 text-start text-[15px] transition-colors hover:text-white ${
+            l === current ? "text-white" : "text-white/55"
           }`}
         >
           {localeNames[l]}

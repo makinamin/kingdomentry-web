@@ -1,41 +1,40 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { arrow } from "@/lib/dir";
-import { SectorIcon, type SectorId } from "./SectorIcon";
+import { sectorPhoto, showPhotos } from "@/lib/photos";
+import type { Sector } from "@/lib/types";
+import { ArrowUpRight } from "./icons";
+import { ImagePlaceholder } from "./ImagePlaceholder";
+import { SectorIcon } from "./SectorIcon";
 
-export type Sector = { id: SectorId; name: string; tagline: string };
-
-/** light: sectors index card. glass: immersive home tile. */
-export function SectorTile({ sector, variant = "light" }: { sector: Sector; variant?: "light" | "glass" }) {
-  const t = useTranslations();
-  const locale = useLocale();
-
-  if (variant === "glass") {
-    return (
-      <Link
-        href={`/sectors/${sector.id}`}
-        className="flex min-h-[220px] flex-col gap-[18px] rounded-lg border border-gold-light/[0.22] bg-pearl/[0.04] px-6 py-[30px] text-pearl no-underline backdrop-blur-[8px] transition-[transform,background-color,border-color] duration-300 hover:-translate-y-1 hover:border-gold-light hover:bg-gold-light/[0.08] hover:text-pearl"
-      >
-        <span className="flex h-16 w-16 items-center justify-center rounded-full border border-gold-light/40 bg-blue/60">
-          <SectorIcon id={sector.id} size={36} />
-        </span>
-        <span className="mt-auto text-[25px] font-medium leading-[1.15]">{sector.name}</span>
-        <span className="text-[12px] font-medium uppercase tracking-label text-horizon">{t("gateway.explore")}</span>
-      </Link>
-    );
-  }
-
+/** Card for the sectors carousel: image, icon, name, the Saudi demand. */
+export function SectorTile({ sector, index }: { sector: Sector; index: number }) {
+  const t = useTranslations("sectors");
+  const tImg = useTranslations("images");
+  const image = showPhotos(useLocale()) ? sectorPhoto(sector.id) : undefined;
   return (
-    <Link
-      href={`/sectors/${sector.id}`}
-      className="flex min-h-[260px] flex-col gap-5 rounded-md border border-stone/30 bg-white px-8 py-9 text-blue no-underline transition-colors hover:border-gold hover:text-blue"
-    >
-      <SectorIcon id={sector.id} size={48} />
-      <h2 className="m-0 text-[32px] font-medium leading-[1.1]">{sector.name}</h2>
-      <p className="m-0 text-pretty text-ink-soft">{sector.tagline}</p>
-      <span className="mt-auto flex items-center gap-2 text-[15px] font-medium">
-        {t("sectors.opportunity")} <span aria-hidden>{arrow(locale)}</span>
-      </span>
+    <Link href={`/sectors#${sector.id}`} className="group flex h-full flex-col bg-white text-navy no-underline hover:text-navy">
+      <div className="overflow-hidden">
+        <ImagePlaceholder
+          note={sector.name}
+          image={image}
+          alt={image ? tImg(sector.id as Parameters<typeof tImg>[0]) : undefined}
+          sizes="300px"
+          ratio="4 / 5"
+          tone={index % 2 ? "navy" : "royal"}
+          className="transition-transform duration-[1.2s] ease-out group-hover:scale-[1.04]"
+        />
+      </div>
+      <div className="flex flex-1 flex-col gap-3 border border-t-0 border-line p-6">
+        <span className="flex items-center justify-between text-royal">
+          <SectorIcon id={sector.id} size={30} />
+          <span className="text-[12px] text-navy/50">{String(index + 1).padStart(2, "0")}</span>
+        </span>
+        <span className="text-h6 text-navy">{sector.name}</span>
+        <span className="text-[14px] leading-relaxed text-navy/65">{sector.demand}</span>
+        <span className="mt-auto flex items-center gap-2 pt-3 text-[12px] font-medium uppercase tracking-label">
+          {t("fitLabel")} <ArrowUpRight size={13} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        </span>
+      </div>
     </Link>
   );
 }
