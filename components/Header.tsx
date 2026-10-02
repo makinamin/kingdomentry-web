@@ -165,7 +165,7 @@ export function Header() {
           </div>
         </nav>
         <div className="mx-auto flex w-full max-w-site flex-wrap items-center justify-between gap-6 border-t border-white/25 px-6 py-8">
-          <a href={`mailto:${site.email}`} className="flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/80">
+          <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/80">
             <ArrowIcon size={16} /> {site.email}
           </a>
           <LanguageSwitcher />

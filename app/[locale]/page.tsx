@@ -272,7 +272,7 @@ export default async function Home({ params }: Props) {
             </Reveal>
           </div>
           <Reveal delay={150}>
-            <ImagePlaceholder note={t("footer.cities")} ratio="5 / 6" tone="navy" className="h-full" />
+            <ImagePlaceholder note={t("footer.cities")} ratio="5 / 6" tone="navy" fill="lg" />
           </Reveal>
         </div>
       </section>

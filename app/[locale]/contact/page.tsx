@@ -42,7 +42,7 @@ export default async function Contact({ params }: Props) {
                   {o.city}
                 </p>
                 <p dir="auto" className="m-0 mt-2 text-start text-[15px] text-white">{o.phone}</p>
-                <a href={`mailto:${o.email}`} className="mt-1 block text-[15px] text-white no-underline hover:text-white/75">
+                <a href={`mailto:${o.email}`} className="[overflow-wrap:anywhere] mt-1 block text-[15px] text-white no-underline hover:text-white/75">
                   {o.email}
                 </a>
               </Reveal>
@@ -52,7 +52,7 @@ export default async function Contact({ params }: Props) {
                 <span aria-hidden className="h-2.5 w-2.5 border border-white/70" />
                 {t("footer.contact")}
               </p>
-              <a href={`mailto:${site.email}`} className="mt-2 flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
+              <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] mt-2 flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
                 <ArrowIcon size={15} /> {site.email}
               </a>
             </Reveal>

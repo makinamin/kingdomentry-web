@@ -31,12 +31,12 @@ export default async function Offices({ params }: Props) {
           {c.offices.items.map((o, i) => (
             <Reveal key={o.city}>
               <article className={`grid bg-soft md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
-                <ImagePlaceholder note={o.city} ratio="4 / 3" tone={i === 2 ? "royal" : i ? "navy" : "royal"} className="h-full" />
+                <ImagePlaceholder note={o.city} ratio="4 / 3" tone={i === 1 ? "navy" : "royal"} fill="md" />
                 <div className="flex flex-col p-[clamp(24px,3.4vw,52px)]">
                   <Label>{o.role}</Label>
                   <h2 className="m-0 mt-6 text-h2 text-navy">{o.city}</h2>
                   <p className="m-0 mt-5 max-w-[52ch] text-[16px] leading-relaxed text-navy/75">{o.text}</p>
-                  <dl className="m-0 mt-auto grid gap-0 border-t border-line pt-2 sm:grid-cols-3">
+                  <dl className="m-0 mt-auto grid gap-0 border-t border-line pt-2 sm:grid-cols-2 [&>div:first-child]:sm:col-span-2">
                     {(
                       [
                         [t("offices.addressLabel"), o.address],
@@ -44,11 +44,11 @@ export default async function Offices({ params }: Props) {
                         [t("offices.emailLabel"), o.email],
                       ] as const
                     ).map(([k, v]) => (
-                      <div key={k} className="border-b border-line py-4 sm:border-b-0 sm:pe-4">
+                      <div key={k} className="min-w-0 border-b border-line py-4 sm:pe-4">
                         <dt className="text-[12px] uppercase tracking-label text-navy/55">{k}</dt>
-                        <dd dir="auto" className="m-0 mt-1 text-start text-[14px] text-navy">
+                        <dd dir="auto" className="m-0 mt-1 min-w-0 text-start text-[14px] text-navy [overflow-wrap:anywhere]">
                           {k === t("offices.emailLabel") ? (
-                            <a href={`mailto:${v}`} className="inline-flex items-center gap-2 text-navy no-underline hover:text-royal">
+                            <a href={`mailto:${v}`} className="inline-flex max-w-full items-center gap-2 text-navy no-underline hover:text-royal">
                               <ArrowIcon size={13} /> {v}
                             </a>
                           ) : (

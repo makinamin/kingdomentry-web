@@ -101,7 +101,7 @@ export default async function About({ params }: Props) {
               return (
                 <Reveal key={f.name}>
                   <article className="grid bg-white md:grid-cols-[minmax(240px,0.8fr)_2fr]">
-                    <ImagePlaceholder note={`${t("about.founders.photo")}: ${f.name}`} ratio="4 / 5" tone={i ? "navy" : "royal"} className="h-full" />
+                    <ImagePlaceholder note={`${t("about.founders.photo")}: ${f.name}`} ratio="4 / 3" tone={i ? "navy" : "royal"} fill="md" />
                     <div className="flex flex-col p-[clamp(24px,3.4vw,52px)]">
                       <div className="flex flex-wrap items-start justify-between gap-4 border-b border-line pb-6">
                         <div>

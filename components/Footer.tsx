@@ -41,7 +41,7 @@ export function Footer() {
           </div>
           <div className="flex flex-col gap-3">
             <Label tone="dark">{t("footer.contact")}</Label>
-            <a href={`mailto:${site.email}`} className="mt-3 flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
+            <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] mt-3 flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
               <ArrowIcon size={15} /> {t("footer.email")}
             </a>
             {site.linkedin ? (

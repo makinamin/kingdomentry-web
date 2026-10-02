@@ -35,7 +35,7 @@ export function SectorRow({ sector, index }: { sector: Sector; index: number }) 
           </div>
           <span className="mt-auto pt-10 text-[13px] text-navy/55">{String(index + 1).padStart(2, "0")}</span>
         </div>
-        <ImagePlaceholder note={sector.name} ratio="4 / 3" tone={index % 2 ? "navy" : "royal"} className="h-full" />
+        <ImagePlaceholder note={sector.name} ratio="4 / 3" tone={index % 2 ? "navy" : "royal"} fill="md" />
       </article>
     </Reveal>
   );

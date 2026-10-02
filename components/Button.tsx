@@ -14,7 +14,7 @@ const variants = {
 export type ButtonVariant = keyof typeof variants;
 
 const base =
-  "group inline-flex cursor-pointer items-center justify-center gap-6 whitespace-nowrap px-5 py-4 text-[12px] font-medium uppercase leading-none tracking-label no-underline transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-royal-2";
+  "group inline-flex max-w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-start text-[12px] font-medium uppercase leading-[1.35] tracking-label sm:gap-6 sm:whitespace-nowrap no-underline transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-royal-2";
 
 export function buttonClass(variant: ButtonVariant = "white", className = "") {
   return `${base} ${variants[variant]} ${className}`;
@@ -23,7 +23,7 @@ export function buttonClass(variant: ButtonVariant = "white", className = "") {
 const Icon = () => (
   <ArrowUpRight
     size={14}
-    className="transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+    className="shrink-0 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
   />
 );
 
