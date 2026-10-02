@@ -9,7 +9,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { RevealObserver } from "@/components/RevealObserver";
 import { routing } from "@/i18n/routing";
-import { geist, plexArabic, ubuntu } from "@/lib/fonts";
+import { geist, cairo, ubuntu } from "@/lib/fonts";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -54,7 +54,7 @@ export default async function LocaleLayout({
   const dir = messages.dir === "rtl" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={dir} className={`${geist.variable} ${plexArabic.variable} ${ubuntu.variable}`}>
+    <html lang={locale} dir={dir} className={`${geist.variable} ${cairo.variable} ${ubuntu.variable}`}>
       <head>
         {/* Lets CSS hide reveal-on-scroll content only when JavaScript can show it again. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />

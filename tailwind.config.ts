@@ -23,7 +23,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-geist)", "system-ui", "sans-serif"],
-        arabic: ["var(--font-plex-arabic)", "var(--font-geist)", "sans-serif"],
+        arabic: ["var(--font-cairo)", "var(--font-geist)", "sans-serif"],
         brand: ["var(--font-ubuntu)", "system-ui", "sans-serif"],
       },
       fontSize: {

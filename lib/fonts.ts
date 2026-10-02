@@ -1,4 +1,4 @@
-import { Geist, IBM_Plex_Sans_Arabic, Ubuntu } from "next/font/google";
+import { Cairo, Geist, Ubuntu } from "next/font/google";
 
 // Zeyna theme typeface for all Latin text.
 export const geist = Geist({
@@ -8,15 +8,13 @@ export const geist = Geist({
   variable: "--font-geist",
 });
 
-// Arabic companion with the same light, neutral character as Geist.
-export const plexArabic = IBM_Plex_Sans_Arabic({
+// Arabic typeface. Cairo is variable, so one file covers every weight, light display type included.
+export const cairo = Cairo({
   subsets: ["arabic"],
-  // Display type is 400, labels and buttons 500. Light text falls back to 400.
-  weight: ["400", "500"],
   display: "swap",
   // Only Arabic pages lean on it; elsewhere it is one footer line, so skip the preload.
   preload: false,
-  variable: "--font-plex-arabic",
+  variable: "--font-cairo",
 });
 
 // Brand wordmark only (KINGDOMENTRY stays Ubuntu).
