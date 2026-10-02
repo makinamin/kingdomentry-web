@@ -72,8 +72,8 @@ export default async function Home({ params }: Props) {
                   note={c.offices.items[2]?.city ?? ""}
                   ratio="16 / 10"
                   tone="royal"
-                  image={photos ? officePhotos[2] : undefined}
-                  alt={t("images.jeddahOffice")}
+                  image={photos ? "jeddah-arch" : undefined}
+                  alt={t("images.jeddahArch")}
                   sizes="260px"
                 />
                 <span className="text-[16px] leading-snug text-navy">{t("home.proof.title")}</span>
