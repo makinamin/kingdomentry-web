@@ -10,7 +10,7 @@ export const site = {
   // [PLACEHOLDER] Company profile PDF, e.g. "/kingdom-entry-profile.pdf" with the file in public/. Empty: the button is hidden.
   profilePdf: "",
   // [PLACEHOLDER] Calendar link for the 30-minute Kingdom Readiness Call. Empty: buttons go to the contact form.
-  bookingUrl: "",
+  bookingUrl: "https://calendly.com/larouz/kingdom-readiness-call",
   // Plausible (EU-hosted, cookieless) domain, e.g. "kingdomentry.com". Unset: no analytics and no cookie notice.
   analyticsDomain: process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ?? "",
   // Form endpoint (serverless function or form service). Unset: the form opens a prefilled email instead.

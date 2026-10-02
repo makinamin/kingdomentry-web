@@ -36,6 +36,15 @@ export function ButtonLink({
   icon = true,
   ...rest
 }: Common & Omit<ComponentProps<typeof Link>, "className" | "children">) {
+  // Outside links (the booking calendar) open in a new tab instead of going through the locale router.
+  if (typeof rest.href === "string" && /^https?:\/\//.test(rest.href)) {
+    return (
+      <a href={rest.href} target="_blank" rel="noopener noreferrer" className={buttonClass(variant, className)}>
+        {children}
+        {icon ? <Icon /> : null}
+      </a>
+    );
+  }
   return (
     <Link className={buttonClass(variant, className)} {...rest}>
       {children}
