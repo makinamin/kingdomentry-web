@@ -16,7 +16,7 @@ import { Link } from "@/i18n/navigation";
 import { getContent } from "@/lib/content";
 import { bookingHref } from "@/lib/links";
 import { pageMeta } from "@/lib/meta";
-import { officePhotos, showPhotos } from "@/lib/photos";
+import { showPhotos } from "@/lib/photos";
 
 type Props = { params: Promise<{ locale: string }> };
 
