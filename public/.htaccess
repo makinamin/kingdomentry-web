@@ -20,7 +20,8 @@ ErrorDocument 404 /404.html
   <FilesMatch "\.(js|css|woff2)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-  <FilesMatch "\.html$">
+  # Pages and the page data that menu links load must always be checked for a newer version.
+  <FilesMatch "\.(html|txt|xml)$">
     Header set Cache-Control "public, max-age=0, must-revalidate"
   </FilesMatch>
   Header always set X-Content-Type-Options "nosniff"
