@@ -1,22 +1,30 @@
 import { useTranslations } from "next-intl";
+import { site } from "@/lib/site";
 import { ButtonLink } from "./Button";
-import { DiamondPattern } from "./DiamondPattern";
-import { OversizedMark } from "./OversizedMark";
+import { ArrowIcon } from "./icons";
+import { Label } from "./Label";
+import { Reveal } from "./Reveal";
 
-/** Blue band before the footer. Not on contact, privacy or 404. */
-export function CtaBand() {
-  const t = useTranslations("ctaBand");
+/** Closing band: big statement, one button, contact lines. Not on contact, privacy or 404. */
+export function CtaBand({ title, button, href = "/contact" }: { title: string; button?: string; href?: string }) {
+  const t = useTranslations();
   return (
-    <section className="relative overflow-hidden border-t border-gold/40 bg-blue text-pearl">
-      <DiamondPattern opacity={0.4} />
-      <OversizedMark className="-top-[120px] -start-[160px] h-[520px] w-[520px]" />
-      <div className="relative mx-auto flex w-full max-w-site flex-col items-center gap-8 px-6 py-[clamp(72px,9vw,128px)] text-center">
-        <h2 className="m-0 max-w-[22ch] text-balance text-[clamp(34px,4.6vw,62px)] font-medium leading-[1.06]">
-          {t("title")}
-        </h2>
-        <ButtonLink href="/contact" variant="gold">
-          {t("cta")}
-        </ButtonLink>
+    <section className="border-t border-line bg-soft">
+      <div className="mx-auto grid w-full max-w-site gap-12 px-6 py-[clamp(80px,9vw,140px)] lg:grid-cols-[1fr_1.6fr]">
+        <Reveal>
+          <Label>{t("nav.contact")}</Label>
+          <p className="m-0 mt-6 max-w-[34ch] text-[15px] leading-relaxed text-navy/70">{t("contact.alt.text")}</p>
+          <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] mt-10 flex min-h-11 items-center gap-3 text-[18px] text-navy no-underline hover:text-royal">
+            <ArrowIcon size={16} /> {site.email}
+          </a>
+          <p className="m-0 mt-3 text-[13px] uppercase tracking-label text-navy/55">{t("footer.cities")}</p>
+        </Reveal>
+        <Reveal delay={120}>
+          <h2 className="m-0 max-w-[20ch] text-h2 text-navy">{title}</h2>
+          <ButtonLink href={href} variant="royal" className="mt-10">
+            {button ?? t("buttons.readiness")}
+          </ButtonLink>
+        </Reveal>
       </div>
     </section>
   );

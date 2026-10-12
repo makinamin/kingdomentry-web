@@ -1,4 +1,8 @@
 import type { Config } from "tailwindcss";
+
+// Base: tokens/tailwind.config.ts from the handoff (brand blue and gold, used by the logo).
+// Theme layer: the Zeyna "construction company" look. Navy text, royal-blue bands,
+// hairline dividers, square buttons, Geist throughout.
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
@@ -6,21 +10,45 @@ const config: Config = {
       colors: {
         blue: { DEFAULT: "#033CB2", deep: "#022A7D", lift: "#1A52C7" },
         gold: { DEFAULT: "#B18767", light: "#D2B497", deep: "#86634A", hover: "#C29B7C" },
-        pearl: "#F7F7F5", stone: "#939598", horizon: "#BFD0F5", "ink-soft": "#4A4D57"
+        pearl: "#F7F7F5",
+        stone: "#939598",
+        horizon: "#BFD0F5",
+        "ink-soft": "#4A4D57",
+        // Zeyna theme
+        navy: { DEFAULT: "#021D5E", 2: "#0A2A73" },
+        royal: { DEFAULT: "#003DA5", 2: "#043DC3", line: "#0F41BC" },
+        line: "#C6CAD9",
+        soft: "#F3F4F8",
+        alert: "#C2261B",
       },
-      fontFamily: { sans: ["var(--font-ubuntu)", "system-ui", "sans-serif"], arabic: ["var(--font-reem-kufi)", "sans-serif"] },
-      borderRadius: { sm: "8px", md: "12px", lg: "16px" },
-      maxWidth: { site: "1200px" },
-      letterSpacing: { label: "0.22em", wide: "0.34em" },
-      boxShadow: { card: "0 24px 60px rgba(3,60,178,0.35)", raised: "0 30px 80px rgba(1,24,72,0.6), inset 0 1px 0 rgba(210,180,151,0.3)", glow: "0 12px 40px rgba(177,135,103,0.35)" },
+      fontFamily: {
+        sans: ["var(--font-geist)", "system-ui", "sans-serif"],
+        arabic: ["var(--font-cairo)", "var(--font-geist)", "sans-serif"],
+        brand: ["var(--font-ubuntu)", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        // Zeyna scale (rem at 16px root), tight negative tracking.
+        display: ["clamp(48px,6.2vw,90px)", { lineHeight: "1.06", letterSpacing: "-0.05em" }],
+        h2: ["clamp(38px,4.6vw,67px)", { lineHeight: "1.12", letterSpacing: "-0.04em" }],
+        h3: ["clamp(30px,3.4vw,50px)", { lineHeight: "1.18", letterSpacing: "-0.03em" }],
+        h4: ["clamp(24px,2.4vw,38px)", { lineHeight: "1.3", letterSpacing: "-0.02em" }],
+        h5: ["clamp(20px,1.8vw,28px)", { lineHeight: "1.4", letterSpacing: "-0.01em" }],
+        h6: ["21px", { lineHeight: "1.4" }],
+        lead: ["clamp(22px,2.2vw,32px)", { lineHeight: "1.35", letterSpacing: "-0.02em" }],
+      },
+      maxWidth: { site: "1360px" },
+      letterSpacing: { label: "0.08em", wide: "0.12em" },
+      transitionTimingFunction: { out: "cubic-bezier(.16,1,.3,1)" },
       keyframes: {
-        keFloat: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-18px)" } },
-        keDust: { "0%,100%": { opacity: "0.2" }, "50%": { opacity: "0.9" } },
-        keMilestone: { "0%,15%": { boxShadow: "0 0 0 0 rgba(210,180,151,0)", background: "#86634A" }, "25%,100%": { boxShadow: "0 0 24px 4px rgba(210,180,151,0.55)", background: "#D2B497" } }
+        rise: { from: { transform: "translateY(110%)" }, to: { transform: "translateY(0)" } },
+        drift: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-10px)" } },
       },
-      animation: { float: "keFloat 7s ease-in-out infinite", dust: "keDust 4s ease-in-out infinite", milestone: "keMilestone 8s ease-in-out infinite" }
-    }
+      animation: {
+        rise: "rise 1.1s cubic-bezier(.16,1,.3,1) both",
+        drift: "drift 12s ease-in-out infinite",
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
 export default config;

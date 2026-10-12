@@ -10,397 +10,784 @@
   },
   "nav": {
     "home": "Home",
-    "services": "Diensten",
+    "why": "Waarom Saudi",
     "sectors": "Sectoren",
-    "how": "Hoe het werkt",
+    "services": "Diensten",
+    "how": "Werkwijze",
     "about": "Over ons",
     "contact": "Contact",
-    "cta": "Plan een kennismaking",
+    "offices": "Onze kantoren",
+    "faq": "FAQ",
+    "cta": "Plan een gesprek",
     "menu": "Menu",
     "close": "Sluiten",
     "skip": "Naar de inhoud"
   },
-  "hero": {
-    "label": "Soft landing · Saudi-Arabië",
-    "title": "Het Koninkrijk is open. Stap binnen.",
-    "sub": "Wij verbinden Europese bedrijven met Saoedische kopers, partners en licenties. Van het eerste gesprek tot je eigen entiteit.",
-    "cta1": "Plan een kennismaking",
-    "cta2": "Zo werkt het",
-    "proof": "Amsterdam · Jeddah · Riyad"
+  "buttons": {
+    "readiness": "Plan je Kingdom Readiness Call",
+    "call": "Plan een gesprek",
+    "explore": "Bekijk onze diensten",
+    "start": "Start mijn Kingdom-reis",
+    "map": "Breng mijn kans in kaart",
+    "talk": "Praat met ons",
+    "touch": "Neem contact op",
+    "why": "Waarom Saudi-Arabië",
+    "how": "Onze werkwijze",
+    "about": "Maak kennis met de oprichters",
+    "offices": "Onze kantoren",
+    "faq": "Lees de FAQ",
+    "sectors": "Alle sectoren"
   },
-  "gateway": {
-    "utility": "Soft landing partner voor Europese bedrijven die Saudi-Arabië betreden",
-    "label": "Jouw toegang tot Saudi-Arabië",
-    "title": "Het Koninkrijk is open. Stap binnen.",
-    "sub": "Wij verbinden Europese bedrijven met Saoedische kopers, partners en licenties. Van het eerste gesprek tot je eigen entiteit.",
-    "quick": "Begin hier",
-    "statsLabel": "Waarom nu",
-    "statsTitle": "Saudi-Arabië koopt. Europa bouwt.",
-    "stats": [
-      {
-        "figure": "[PLACEHOLDER]",
-        "caption": "Snelst groeiende G20-economie"
-      },
-      {
-        "figure": "[PLACEHOLDER]",
-        "caption": "Gigaprojecten in aanbouw"
-      },
-      {
-        "figure": "[PLACEHOLDER]",
-        "caption": "Investeringspijplijn zorg"
-      },
-      {
-        "figure": "[PLACEHOLDER]",
-        "caption": "Lokalisatiedoel industrie"
-      },
-      {
-        "figure": "[PLACEHOLDER]",
-        "caption": "Nederlandse bedrijven al in KSA"
-      }
-    ],
-    "statsNote": "Cijfers worden voor lancering gebronneerd en geverifieerd.",
-    "sectorsLabel": "Sectoren",
-    "sectorsTitle": "Waar Europa past.",
-    "explore": "Bekijk sector",
-    "packagesLabel": "Drie routes",
-    "packagesTitle": "Kies je tempo."
+  "home": {
+    "seo": {
+      "title": "KingdomEntry: soft landing in Saudi-Arabië",
+      "description": "Betreed de Saudische markt met vertrouwen. Markttoetreding, bedrijfsoprichting, vergunningen, visa en groei vanuit Amsterdam, Casablanca en Jeddah."
+    },
+    "hero": {
+      "title": "Het Koninkrijk staat open. Stap goed binnen.",
+      "sub": "KingdomEntry is je soft-landing partner in Saudi-Arabië. Van de eerste vraag tot volledig operationeel begeleiden we internationale bedrijven naar de snelst groeiende G20-economie. Op de grond in Jeddah. Verbonden vanuit Amsterdam en Casablanca.",
+      "finderSector": "Jouw sector",
+      "finderStage": "Jouw reis",
+      "finderSectorAny": "Alle sectoren",
+      "finderStageAny": "Waar sta je nu?",
+      "finderGo": "Begin hier"
+    },
+    "intro": {
+      "label": "Waarom KingdomEntry",
+      "text": "Saudi-Arabië bouwt op een schaal die de wereld zelden heeft gezien. Vision 2030 zet ambitie om in infrastructuur, steden, industrieën en contracten. De kans is echt. De complexiteit ook.",
+      "pains": ["Registratie", "Vergunningen", "Bankzaken", "Visa", "Saudisering", "Partners", "Cultuur"],
+      "painsLine": "Eén verkeerde stap kost maanden.",
+      "resolve": "Wij halen het giswerk weg. Eén partner. Eén roadmap. Eén team aan beide kanten van de tafel."
+    },
+    "pillars": {
+      "label": "Drie pijlers",
+      "title": "Van de eerste vraag tot volledig operationeel.",
+      "items": [
+        {
+          "name": "Strategie vóór oprichting.",
+          "text": "We beginnen bij de markt, niet bij het papierwerk. Is Saudi-Arabië iets voor jou? Welke stad, welke structuur, welke partner? Dat beantwoorden we eerst."
+        },
+        {
+          "name": "Oprichting zonder frictie.",
+          "text": "MISA-registratie, Commercial Registration, vergunningen, bankrekening, visa, kantoor. We regelen het van begin tot eind met ons Saudische team en erkende partners."
+        },
+        {
+          "name": "Groei na de landing.",
+          "text": "Landen is dag één, niet de finish. We blijven betrokken bij compliance, werving, partnerschappen en expansie."
+        }
+      ]
+    },
+    "proof": {
+      "label": "Aan beide kanten van de tafel",
+      "title": "Drie kantoren. Twee continenten. Eén Koninkrijk.",
+      "cities": "Amsterdam · Casablanca · Jeddah",
+      "founders": "Oprichters met decennia ervaring in grensoverschrijdend ondernemen, overheid en ecosystemen"
+    },
+    "whyNow": {
+      "label": "Waarom nu",
+      "title": "De regels zijn veranderd.",
+      "text": "In 2025 verving Saudi-Arabië de vergunningsplicht voor buitenlandse investeringen door een eenvoudiger registratiesysteem en introduceerde het één nationale Commercial Registration. Gelijke behandeling van buitenlandse en lokale investeerders is nu wet. Deuren die zwaar waren, staan nu open.",
+      "kicker": "De vraag is niet langer óf je Saudi-Arabië betreedt. De vraag is hoe goed."
+    },
+    "sectors": {
+      "label": "Sectoren",
+      "title": "Waar het Koninkrijk bouwt. Waar jij kunt groeien."
+    },
+    "services": {
+      "label": "Diensten",
+      "title": "Twaalf dienstenlijnen. Eén verantwoordelijke partner."
+    },
+    "how": {
+      "label": "Werkwijze",
+      "title": "Vijf stappen. Eén drempel. Nul giswerk."
+    },
+    "serve": {
+      "label": "Voor wie we werken",
+      "items": [
+        "Scale-ups klaar voor hun eerste Golfmarkt.",
+        "Mkb-bedrijven met bewezen producten.",
+        "Corporates die een regionaal hoofdkantoor verplaatsen.",
+        "Investeerders op zoek naar de juiste Saudische deal."
+      ],
+      "note": "Gebouwd voor Europese en Afrikaanse bedrijven, met een sterke focus op Nederland."
+    },
+    "cta": {
+      "title": "Grote markten belonen vroege starters. Laten we het over de jouwe hebben.",
+      "tagline": "Jouw toegangspoort tot het Koninkrijk."
+    }
   },
-  "whyNow": {
-    "label": "Waarom nu",
-    "title": "Saudi-Arabië koopt. Europa bouwt.",
-    "points": [
-      {
-        "title": "Zorg",
-        "text": "Nieuwe ziekenhuizen, nieuwe klinieken, digitale zorg op schaal. Kopers willen Europese systemen die al werken. [PLACEHOLDER]"
-      },
-      {
-        "title": "Energie en water",
-        "text": "Gigaprojecten hebben cleantech nodig die bestand is tegen hitte en zand. Bewezen wint van beloofd. [PLACEHOLDER]"
-      },
-      {
-        "title": "AI, voeding en industrie",
-        "text": "Lokalisatiedoelen openen de deur voor Europese kennis. Maak het hier, verkoop het hier. [PLACEHOLDER]"
-      }
-    ]
-  },
-  "packages": {
-    "label": "Drie routes",
-    "title": "Kies je tempo.",
-    "cta": "Bespreek je entree",
-    "includesLabel": "Wat zit erin",
-    "outcomeLabel": "Resultaat",
-    "items": [
-      {
-        "name": "Market Validation Sprint",
-        "duration": "6 tot 8 weken",
-        "includes": [
-          "Marktscan",
-          "5 tot 8 gesprekken met kopers in KSA",
-          "Go/no-go advies"
-        ],
-        "outcome": "Een helder ja of nee, gebaseerd op echte kopersgesprekken."
-      },
-      {
-        "name": "Market Entry",
-        "duration": "3 tot 6 maanden",
-        "includes": [
-          "Delegatiereis",
-          "Pilotdeal",
-          "Selectie lokale partner",
-          "Licentieroute"
-        ],
-        "outcome": "Een getekende pilot en een gekozen partner."
-      },
-      {
-        "name": "Soft Landing",
-        "duration": "6 tot 12 maanden",
-        "includes": [
-          "Oprichting entiteit",
-          "Kantoor",
-          "Eerste lokale medewerkers",
-          "Doorlopende business development"
-        ],
-        "outcome": "Je eigen entiteit, je eigen mensen, je eerste omzet."
-      }
-    ]
-  },
-  "sectorsStrip": {
-    "label": "Sectoren",
-    "title": "Waar Europa past.",
-    "all": "Alle sectoren"
-  },
-  "how": {
-    "label": "Hoe het werkt",
-    "title": "Vier stappen. Eén deur.",
-    "intro": "Elke klant loopt hetzelfde pad. Het tempo bepaal jij.",
-    "steps": [
-      {
-        "name": "Valideren",
-        "text": "We scannen de markt en spreken echte kopers. Jij krijgt een go of een no-go."
-      },
-      {
-        "name": "Verbinden",
-        "text": "We openen deuren. Delegatiereis, pilotdeal, de juiste lokale partner."
-      },
-      {
-        "name": "Landen",
-        "text": "We richten je entiteit op, je kantoor en je eerste medewerkers."
-      },
-      {
-        "name": "Groeien",
-        "text": "We blijven. Business development ter plaatse tot je ons niet meer nodig hebt."
-      }
-    ]
-  },
-  "team": {
-    "label": "Wie we zijn",
-    "title": "Nederlands en Saoedisch. Aanwezig in beide.",
-    "text": "Eén team, twee landen. We zitten met jou in Amsterdam en met je kopers in Jeddah en Riyad.",
-    "cta": "Ontmoet het team"
-  },
-  "ctaBand": {
-    "title": "Je eerste stap in het Koninkrijk begint met één gesprek.",
-    "cta": "Plan een kennismaking"
-  },
-  "services": {
-    "title": "Drie pakketten. Geen verrassingen.",
-    "intro": "Elke entree is anders. Elk pakket is vast in scope en tijd. Geen prijzen op de site. We offreren na het eerste gesprek."
+  "why": {
+    "seo": {
+      "title": "Waarom investeren in Saudi-Arabië: Vision 2030",
+      "description": "De snelst groeiende G20-economie, een nieuwe investeringswet en sterke incentives. Ontdek waarom dit het moment is om Saudi-Arabië te betreden."
+    },
+    "label": "Investeringsklimaat",
+    "title": "Een land dat zichzelf opnieuw bouwt. Een markt die de wereld uitnodigt.",
+    "intro": "Saudi-Arabië is de grootste economie van het Midden-Oosten en de snelst groeiende economie van de G20, volgens het Ministerie van Investeringen (MISA). Vision 2030 verbreedt de economie, weg van olie, richting technologie, zorg, toerisme, industrie en schone energie. Voor internationale bedrijven is dit een kans die je maar één keer per generatie krijgt.",
+    "introLabel": "Vision 2030",
+    "reasons": {
+      "label": "Vijf redenen",
+      "title": "Vijf redenen waarom het Koninkrijk op je kaart hoort",
+      "items": [
+        {
+          "name": "Snelst groeiende G20-economie.",
+          "text": "Een jonge, digitale en snel verstedelijkende bevolking. Sterke koopkracht. Enorme publieke en private investeringen."
+        },
+        {
+          "name": "Vision 2030.",
+          "text": "Een nationaal transformatieprogramma met heldere doelen, eigen financiering en gigaprojecten zoals NEOM, de Red Sea en Qiddiya die vraag creëren in elke sector."
+        },
+        {
+          "name": "Wereldwijde markttoegang.",
+          "text": "Gelegen tussen Europa, Azië en Afrika. Een logistieke en handelshub met directe toegang tot de GCC en de bredere MENA-regio."
+        },
+        {
+          "name": "Investeerdersvriendelijk ecosysteem.",
+          "text": "Gestroomlijnde regelgeving, digitale overheidsdiensten en investeerdersvriendelijk beleid."
+        },
+        {
+          "name": "Kansen in overheidsopdrachten.",
+          "text": "Grootschalige projecten in infrastructuur, zorg, energie en digitalisering, open voor gekwalificeerde internationale leveranciers."
+        }
+      ]
+    },
+    "rules": {
+      "label": "Nieuwe regels",
+      "title": "De regels zijn in jouw voordeel veranderd",
+      "items": [
+        {
+          "tag": "Februari 2025",
+          "name": "Nieuwe investeringswet",
+          "text": "De vergunningsplicht voor buitenlandse investeringen is vervangen door registratie bij MISA. Buitenlandse en lokale investeerders worden gelijk behandeld. Er blijft een beperkte lijst uitgesloten activiteiten, gepubliceerd in de investeerdersgids van MISA."
+        },
+        {
+          "tag": "April 2025",
+          "name": "Eén Commercial Registration",
+          "text": "Eén nationale Commercial Registration zonder vervaldatum vervangt de afzonderlijke regionale registraties."
+        },
+        {
+          "tag": "December 2022",
+          "name": "Apostilleverdrag",
+          "text": "Saudi-Arabië accepteert documenten met apostille. Dat verkort de legalisatieroute voor Nederlandse, Marokkaanse en andere buitenlandse documenten."
+        },
+        {
+          "tag": "Doorlopend",
+          "name": "Digitale overheid",
+          "text": "Bedrijfsregistratie, visa, vergunningen en compliance lopen steeds vaker via online platforms."
+        }
+      ]
+    },
+    "programs": {
+      "label": "Programma's en incentives",
+      "title": "Programma's en incentives die je moet kennen",
+      "items": [
+        {
+          "name": "Regional Headquarters (RHQ) Program",
+          "text": "Multinationals die hun MENA-activiteiten vanuit Saudi-Arabië aansturen, krijgen toegang tot langetermijnincentives (naar verluidt tot 30 jaar), visumfacilitering, premium residency voor senior executives en betere toegang tot overheidsopdrachten. Echte substance is vereist: een RHQ moet de regio daadwerkelijk vanuit het Koninkrijk aansturen."
+        },
+        {
+          "name": "Special Economic Zones (SEZ's)",
+          "text": "Gelanceerd in 2023 om industrie, logistiek en technologie aan te trekken, met concurrerende belasting- en douaneregimes en soepelere regels. Zones zijn onder meer Jazan, Ras Al Khair, King Abdullah Economic City en de Cloud Computing SEZ in Riyad."
+        },
+        {
+          "name": "Premium Residency",
+          "text": "Langdurige verblijfsopties voor investeerders, executives en vakprofessionals, zonder lokale sponsor."
+        },
+        {
+          "name": "Financiering en ondersteuning",
+          "text": "Nationale ontwikkelingsfondsen, mkb-steun via Monsha'at, industriële financiering en local-content-programma's die bedrijven belonen die in het Koninkrijk bouwen."
+        }
+      ]
+    },
+    "means": {
+      "label": "Wat dit voor jou betekent",
+      "text": "De deur staat open. Het pad is duidelijker dan ooit. Maar duidelijk is niet hetzelfde als eenvoudig. Sectorvergunningen, Saudiseringsquota, lokale partners en culturele nuance bepalen nog steeds wie wint.",
+      "kicker": "Daar komen wij in beeld."
+    },
+    "cta": {
+      "title": "Ontdek of jouw bedrijf Kingdom-ready is."
+    }
   },
   "sectors": {
-    "title": "Vijf sectoren. Eén vraag: werkt het hier?",
-    "intro": "We richten ons op waar Saoedische vraag en Europese kracht elkaar raken.",
-    "opportunity": "De Saoedische kans",
-    "buyers": "Typische kopers",
-    "help": "Hoe wij helpen",
-    "cta": "Bespreek je entree",
-    "back": "Alle sectoren",
+    "seo": {
+      "title": "Saudische investeringssectoren: zorg, cleantech, AI",
+      "description": "Ontdek kansen in Saudi-Arabië in zorg, cleantech, AI, agrifood, logistiek en industrie, en waar jouw bedrijf past."
+    },
+    "label": "Sectoren & kansen",
+    "title": "Waar het Koninkrijk bouwt. Waar jij kunt groeien.",
+    "intro": "Invest Saudi wijst op kansen in technologie, energie, maakindustrie, toerisme, entertainment, zorg, mijnbouw, landbouw, financiële dienstverlening, logistiek en vastgoed. Wij focussen waar Europese en Afrikaanse expertise de Saudische vraag ontmoet.",
+    "focus": "Onze focussectoren",
+    "demandLabel": "De Saudische vraag",
+    "fitLabel": "Waar jij past",
     "items": [
       {
-        "id": "medical",
-        "icon": "icon-medical",
-        "name": "Medisch & Zorg",
-        "tagline": "De zorg schaalt op. Het boodschappenlijstje ook.",
-        "opportunity": "Het Koninkrijk bouwt ziekenhuizen, privatiseert zorg en digitaliseert. Het wil systemen die al werken. [PLACEHOLDER]",
-        "buyers": [
-          "Clusters van het ministerie van Volksgezondheid",
-          "Private ziekenhuisgroepen",
-          "Zorgverzekeraars",
-          "Medische distributeurs"
-        ],
-        "help": [
-          "Regulatoire route en registratie",
-          "Introducties bij kopers",
-          "Selectie lokale distributeur"
-        ]
+        "id": "healthcare",
+        "name": "Zorg & Life Sciences",
+        "demand": "Transformatie van de zorgsector, nieuwe ziekenhuizen, digitale zorg, lokale productie van farma en medtech",
+        "fit": ["Medische hulpmiddelen", "E-health", "Diagnostiek", "Zorgmodellen", "Zorg-AI"]
       },
       {
         "id": "cleantech",
-        "icon": "icon-cleantech",
-        "name": "Cleantech & Water",
-        "tagline": "Water is het schaarste goed. Los het op.",
-        "opportunity": "Ontzilting, hergebruik, zon, koeling. Gigaprojecten willen technologie die bewezen is in hitte. [PLACEHOLDER]",
-        "buyers": [
-          "Waterbedrijven",
-          "Ontwikkelaars van gigaprojecten",
-          "EPC-aannemers",
-          "Industrieparken"
-        ],
-        "help": [
-          "Selectie pilotlocatie",
-          "Matching met partners en EPC",
-          "Lokalisatieplan"
-        ]
+        "name": "Cleantech & Energie",
+        "demand": "Grootschalige hernieuwbare energie, groene waterstof, energie-efficiëntie, circulaire economie",
+        "fit": ["Zon- en windtechnologie", "Water-energieoplossingen", "Duurzaamheidsadvies"]
       },
       {
         "id": "ai",
-        "icon": "icon-ai",
-        "name": "AI & ICT",
-        "tagline": "Data is de nieuwe olie. Het Koninkrijk weet het.",
-        "opportunity": "Cloudregio's, smart cities en digitalisering van de overheid. De vraag naar toegepaste AI is groter dan het aanbod. [PLACEHOLDER]",
-        "buyers": [
-          "Digitale overheidsdiensten",
-          "Telecomoperators",
-          "Banken",
-          "Systeemintegrators"
-        ],
-        "help": [
-          "Route voor dataresidentie",
-          "Partnerschappen met integrators",
-          "Pilot met een ankerklant"
-        ]
+        "name": "AI, ICT & Digitaal",
+        "demand": "Cloud, datacenters, smart cities, cybersecurity, digitalisering van de overheid",
+        "fit": ["SaaS", "AI-oplossingen", "Cybersecurity", "Data- en IoT-platforms"]
       },
       {
-        "id": "agri",
-        "icon": "icon-agri",
-        "name": "Landbouw & Food Tech",
-        "tagline": "Voedselzekerheid is nationaal beleid. Jouw techniek hoort hier.",
-        "opportunity": "Kassen, verticale landbouw, aquacultuur, koelketen. Voedselzekerheid stuurt de investeringen. [PLACEHOLDER]",
-        "buyers": [
-          "Agri-investeringsfondsen",
-          "Voedselproducenten",
-          "Retailgroepen",
-          "Ministerieprogramma's"
-        ],
-        "help": [
-          "Lokale telerpartners",
-          "Pilotboerderij",
-          "Import- en licentieroute"
-        ]
+        "id": "agrifood",
+        "name": "Agrifood & Water",
+        "demand": "Voedselzekerheid, teelt in gecontroleerde omgevingen, waterschaarste",
+        "fit": ["Kassentechnologie", "Agritech", "Irrigatie", "Ontzilting", "Voedselverwerking"]
       },
       {
         "id": "industry",
-        "icon": "icon-industry",
         "name": "Industrie & Maakindustrie",
-        "tagline": "Maak het in het Koninkrijk.",
-        "opportunity": "Lokalisatiedoelen belonen bedrijven die lokaal produceren. Industriesteden bieden grond, energie en incentives. [PLACEHOLDER]",
-        "buyers": [
-          "Autoriteiten van industriesteden",
-          "Olie-, gas- en petrochemiebedrijven",
-          "Lokale fabrikanten",
-          "Defensie- en mobiliteitsprogramma's"
-        ],
-        "help": [
-          "Scan van locaties en incentives",
-          "Selectie JV-partner",
-          "Oprichting entiteit en licentie"
+        "demand": "Lokalisatie van productie, industriesteden, local-content-regels",
+        "fit": ["Geavanceerde productie", "Automatisering", "Componenten", "Engineering"]
+      },
+      {
+        "id": "logistics",
+        "name": "Logistiek & Havens",
+        "demand": "Ambitie om een wereldwijde logistieke hub te worden, havens aan de Rode Zee, spoor en luchthavens",
+        "fit": ["Haventechnologie", "Supply chain", "Warehousing", "Maritieme diensten"]
+      },
+      {
+        "id": "tourism",
+        "name": "Toerisme, Cultuur & Entertainment",
+        "demand": "Nieuwe bestemmingen, evenementen, hospitality en gigaprojecten",
+        "fit": ["Design", "Hospitality", "Eventtechnologie", "Belevingsconcepten"]
+      },
+      {
+        "id": "construction",
+        "name": "Bouw & Vastgoed",
+        "demand": "Gigaprojecten, woningbouw, stedelijke ontwikkeling",
+        "fit": ["Architectuur", "Engineering", "Bouwmaterialen", "Projectmanagement"]
+      },
+      {
+        "id": "education",
+        "name": "Onderwijs & Human Capital",
+        "demand": "Vaardigheidsontwikkeling, Saudisering, beroepsonderwijs",
+        "fit": ["EdTech", "Opleiders", "Talentprogramma's"]
+      },
+      {
+        "id": "fintech",
+        "name": "Financiële diensten & FinTech",
+        "demand": "Ontwikkeling van de financiële sector, digitale betalingen",
+        "fit": ["FinTech", "Insurtech", "Advies"]
+      }
+    ],
+    "win": {
+      "label": "De natuurlijke match",
+      "title": "Waarom Nederlandse en Europese bedrijven hier winnen",
+      "text": "Water. Agrifood. Zorg. Logistiek. Schone energie. Precies de sectoren waarin Nederlandse expertise wereldwijd leidend is, en precies waar Saudi-Arabië het meest investeert. De match is natuurlijk. Het moment is nu."
+    },
+    "cta": {
+      "title": "Staat jouw sector op de lijst? Laten we je kans in kaart brengen."
+    }
+  },
+  "services": {
+    "seo": {
+      "title": "Bedrijf oprichten en markttoetreding Saudi-Arabië",
+      "description": "MISA-registratie, Commercial Registration, vergunningen, bank, visa, Saudisering, partners en nazorg. Eén partner, van begin tot eind."
+    },
+    "label": "Diensten",
+    "title": "Alles wat je nodig hebt om te landen. Niets wat je niet nodig hebt.",
+    "intro": "Twaalf dienstenlijnen. Eén verantwoordelijke partner. Kies één dienst of laat ons je volledige soft landing verzorgen, van strategie tot opschaling.",
+    "partners": "Juridische, fiscale en auditdiensten leveren we met erkende Saudische partners onder onze coördinatie.",
+    "items": [
+      {
+        "name": "Markttoetredingsstrategie",
+        "tagline": "Weet het voordat je gaat.",
+        "points": [
+          "Marktomvang, vraagvalidatie en haalbaarheidsstudies",
+          "Concurrentie- en prijsanalyse",
+          "Regelgevingsscan: is jouw activiteit open, beperkt of vergunningplichtig?",
+          "Advies over het toetredingsmodel: distributeur, agent, filiaal, LLC, joint venture of RHQ",
+          "Keuze van stad en locatie: Jeddah, Riyad, Dammam of een SEZ",
+          "Saudisch businessplan en go-to-market-roadmap"
+        ]
+      },
+      {
+        "name": "Bedrijfsoprichting & vergunningen",
+        "tagline": "Van nul tot Commercial Registration.",
+        "points": [
+          "MISA-investeringsregistratie",
+          "Reservering van de handelsnaam en statuten",
+          "Commercial Registration bij het Ministerie van Handel",
+          "Lidmaatschap van de Kamer van Koophandel en National Address",
+          "Sectorvergunningen (bijvoorbeeld SFDA voor voeding, geneesmiddelen en medische hulpmiddelen, CST voor telecom en IT)",
+          "Gemeentelijke vergunning en goedkeuring brandweer",
+          "Registratie bij ZATCA (belasting, btw, zakat), GOSI, Qiwa en Muqeem"
+        ]
+      },
+      {
+        "name": "RHQ & Special Economic Zones",
+        "tagline": "Bouw je regionale basis op de slimme manier.",
+        "points": [
+          "RHQ-toets en ondersteuning bij de aanvraag",
+          "Substance-planning: mensen, locatie en besluitvorming in het Koninkrijk",
+          "Vergelijking van SEZ's en overzicht van incentives",
+          "Aanvragen voor incentives en belastingvrijstellingen"
+        ]
+      },
+      {
+        "name": "Juridisch, fiscaal & compliance",
+        "tagline": "Vanaf dag één goed geregeld.",
+        "points": [
+          "Contractbeoordeling: agentuur-, distributie-, JV- en arbeidsovereenkomsten",
+          "Vennootschapsstructuur en aandeelhoudersovereenkomsten",
+          "Btw, zakat, vennootschapsbelasting en bronbelasting",
+          "Voorbereiding op e-facturatie (Fatoora)",
+          "Naleving van de Personal Data Protection Law (PDPL)",
+          "Boekhouding, administratie, salarisadministratie en jaarlijkse audit",
+          "Compliancekalender en verlengingen"
+        ]
+      },
+      {
+        "name": "Bankzaken & financiering",
+        "tagline": "Geld in beweging.",
+        "points": [
+          "Openen van een zakelijke bankrekening",
+          "Begeleiding bij de kapitaalstorting",
+          "Toegang tot financieringsprogramma's, ontwikkelingsfondsen en subsidies",
+          "Introducties bij Saudische investeerders, family offices en venturefondsen",
+          "Investeringsgereedheid voor bedrijven die Saudisch kapitaal zoeken"
+        ]
+      },
+      {
+        "name": "Overheidsrelaties & PRO-diensten",
+        "tagline": "Wij spreken de taal van het systeem.",
+        "points": [
+          "Apostille, vertaling en legalisatie van documenten",
+          "Contact met ministeries, autoriteiten en instanties",
+          "Verlenging en wijziging van vergunningen",
+          "Doorlopende vertegenwoordiging bij routinematige overheidstransacties"
+        ]
+      },
+      {
+        "name": "Visa, immigratie & mobiliteit",
+        "tagline": "Jouw mensen ter plaatse.",
+        "points": [
+          "Zakenvisa voor verkenningsreizen",
+          "Werkvisa en Iqama (verblijfsvergunning)",
+          "Aanvragen voor Premium Residency",
+          "Gezinsvisa en gezinsleden",
+          "Relocatie: huisvesting, scholen, zorg, onboarding"
+        ]
+      },
+      {
+        "name": "Talent, HR & Saudisering",
+        "tagline": "Het juiste team, compliant vanaf de start.",
+        "points": [
+          "Saudisering (Nitaqat): planning en quotastrategie",
+          "Werving van Saudisch en internationaal talent",
+          "Employer of Record (EOR): aannemen vóór je eigen entiteit",
+          "HR-beleid, contracten en naleving van het arbeidsrecht",
+          "Salarisadministratie en GOSI-administratie"
+        ]
+      },
+      {
+        "name": "Partner- & business-matchmaking",
+        "tagline": "In Saudi-Arabië openen relaties deuren.",
+        "points": [
+          "Gescreende distributeurs, agenten en joint-venturepartners",
+          "Due diligence en achtergrondonderzoek van partners",
+          "B2B- en B2G-introducties",
+          "Leveranciersregistratie bij gigaprojecten en grote inkopers",
+          "Overheidsaanbestedingen (Etimad) en local-content-gereedheid"
+        ]
+      },
+      {
+        "name": "Kantoor, werkplek & vastgoed",
+        "tagline": "Een basis die past bij je fase.",
+        "points": [
+          "Virtueel kantoor en vestigingsadres",
+          "Coworking en serviced offices",
+          "Zoeken naar kantoor, magazijn en industrieterrein",
+          "Huuronderhandeling en coördinatie van de inrichting",
+          "Huisvesting voor medewerkers"
+        ]
+      },
+      {
+        "name": "Marktactivatie & lokalisatie",
+        "tagline": "Lanceer als een local.",
+        "points": [
+          "Handelsmissies en samengestelde delegatieprogramma's",
+          "Aanwezigheid op toonaangevende Saudische platforms zoals LEAP en het Future Investment Initiative",
+          "Arabische lokalisatie van merk, website en salesmateriaal",
+          "PR, positionering en lanceringscampagnes",
+          "Training in zakencultuur en etiquette voor je team"
+        ]
+      },
+      {
+        "name": "Nazorg & groei",
+        "tagline": "Wij blijven als anderen vertrekken.",
+        "points": [
+          "Beheerde backoffice: boekhouding, HR, PRO en compliance",
+          "Kwartaalreviews van prestaties en compliance",
+          "Uitbreiding naar nieuwe steden en GCC-markten",
+          "Ondersteuning bij opschaling: nieuwe vergunningen, entiteiten en partners"
         ]
       }
-    ]
+    ],
+    "cta": {
+      "title": "Weet je niet waar je moet beginnen? Begin met een gesprek."
+    }
+  },
+  "how": {
+    "seo": {
+      "title": "Onze soft landing in Saudi-Arabië in 5 stappen",
+      "description": "Ontdekken, Ontwerpen, Opzetten, Landen, Groeien. Een bewezen roadmap om je bedrijf in Saudi-Arabië op te zetten en op te schalen."
+    },
+    "label": "Werkwijze",
+    "title": "Vijf stappen. Eén drempel. Nul giswerk.",
+    "intro": "Elke soft landing volgt hetzelfde bewezen pad. Het tempo is aan jou. De roadmap is van ons.",
+    "steps": [
+      {
+        "name": "Ontdekken",
+        "text": "Een Kingdom Readiness Call en marktscan. We toetsen je product, sector en ambitie aan de Saudische vraag en regelgeving. Je krijgt een helder go, bijsturen of wachten."
+      },
+      {
+        "name": "Ontwerpen",
+        "text": "Jouw toetredingsblauwdruk: structuur, locatie, partners, vergunningen, budget en planning. Geen verrassingen later, omdat we er nu al rekening mee houden."
+      },
+      {
+        "name": "Opzetten",
+        "text": "We registreren, regelen vergunningen en richten op. Bankrekening, belastingregistraties, kantoor en eerste visa. Jouw Saudische entiteit, klaar om te handelen."
+      },
+      {
+        "name": "Landen",
+        "text": "Je team arriveert. We ondersteunen bij werving, Saudisering, relocatie, eerste partners en eerste klanten. Dag één voelt als dag honderd."
+      },
+      {
+        "name": "Groeien",
+        "text": "Nazorg die zich opstapelt. Compliance, backoffice, nieuwe partners, nieuwe steden, nieuwe markten in de GCC."
+      }
+    ],
+    "packages": {
+      "label": "Pakketten",
+      "title": "Drie manieren om met ons te werken",
+      "forLabel": "Voor wie",
+      "getLabel": "Wat je krijgt",
+      "items": [
+        {
+          "name": "Explore",
+          "for": "Bedrijven die de Saudische markt testen",
+          "get": [
+            "Marktscan",
+            "Regelgevingscheck",
+            "Toetredingsadvies",
+            "Samengestelde verkenningsreis naar Jeddah of Riyad met partnergesprekken"
+          ]
+        },
+        {
+          "name": "Establish",
+          "for": "Bedrijven die klaar zijn om te starten",
+          "get": [
+            "Volledige bedrijfsoprichting",
+            "Vergunningen",
+            "Bankzaken",
+            "Visa",
+            "Kantoor en eerste medewerkers, van begin tot eind geregeld"
+          ]
+        },
+        {
+          "name": "Expand",
+          "for": "Bedrijven die al ter plaatse zijn",
+          "get": ["Beheerde backoffice", "Compliance", "Partnerontwikkeling", "RHQ en groei in meerdere steden"]
+        }
+      ],
+      "note": "Nog niet klaar voor een eigen entiteit? Begin met een distributeursmodel of Employer of Record en test de markt met weinig verplichtingen."
+    },
+    "cta": {
+      "title": "Bij welke stap ben jij? Vertel het ons en wij nemen het vanaf daar over."
+    }
   },
   "about": {
+    "seo": {
+      "title": "Over KingdomEntry: Ahmed Larouz & Amer Assiri",
+      "description": "Een brug tussen Europa, Afrika en Saudi-Arabië, opgericht door Ahmed Larouz en Dr. Amer Assiri."
+    },
     "label": "Over ons",
-    "title": "Een Nederlands-Saoedisch partnerschap.",
-    "story": [
-      "Kingdom Entry begon met een simpele observatie. Europese bedrijven hadden de technologie die Saudi-Arabië wilde. Ze wisten alleen niet hoe ze binnen moesten komen.",
-      "Dus bouwden wij de deur. Een team in Nederland dat scale-up spreekt. Een team in Saudi-Arabië dat koper, partner en licentie spreekt.",
-      "Amsterdam. Jeddah. Riyad. Ter plaatse in alle drie."
-    ],
-    "teamLabel": "Het team",
-    "members": [
-      {
-        "name": "[NAAM]",
-        "role": "[ROL] · Amsterdam",
-        "photo": "[FOTO]",
-        "linkedin": "[LINKEDIN]"
-      },
-      {
-        "name": "[NAAM]",
-        "role": "[ROL] · Jeddah",
-        "photo": "[FOTO]",
-        "linkedin": "[LINKEDIN]"
-      },
-      {
-        "name": "[NAAM]",
-        "role": "[ROL] · Riyad",
-        "photo": "[FOTO]",
-        "linkedin": "[LINKEDIN]"
-      },
-      {
-        "name": "[NAAM]",
-        "role": "[ROL] · Amsterdam",
-        "photo": "[FOTO]",
-        "linkedin": "[LINKEDIN]"
-      }
-    ]
+    "title": "Gebouwd op vriendschap. Ontworpen voor jouw toekomst.",
+    "story": {
+      "label": "Ons verhaal",
+      "paragraphs": [
+        "Amsterdam, 2016. Een Saudische wetenschapper die in de stad woont, ontmoet een Amsterdamse ondernemer die bruggen bouwt tussen Europa, Marokko en Afrika. Twee werelden. Eén gedeelde overtuiging: de beste zaken ontstaan wanneer mensen elkaar echt begrijpen.",
+        "De vriendschap groeide uit tot een partnerschap. Amer keerde terug naar Jeddah om in het Koninkrijk te bouwen en te investeren. Ahmed bleef ecosystemen bouwen in Europa, Marokko en Afrika. Samen zagen ze Saudi-Arabië opengaan, en zagen ze te veel internationale bedrijven struikelen bij de deur.",
+        "KingdomEntry is het antwoord. Een soft-landing partner met wortels aan beide kanten. We kennen niet alleen de regels. We kennen de mensen, de cultuur en het ritme van zakendoen in het Koninkrijk."
+      ]
+    },
+    "mission": {
+      "label": "Missie",
+      "text": "Saudi-Arabië toegankelijk, begrijpelijk en succesvol maken voor elk ambitieus bedrijf dat er wil groeien."
+    },
+    "vision": {
+      "label": "Visie",
+      "text": "De meest vertrouwde brug zijn tussen Europa, Afrika en het Koninkrijk Saudi-Arabië."
+    },
+    "values": {
+      "label": "Onze waarden",
+      "items": [
+        { "name": "Vertrouwen eerst.", "text": "In Saudi-Arabië is zakendoen persoonlijk. Onze service ook." },
+        { "name": "Altijd helderheid.", "text": "Duidelijke antwoorden, eerlijke planningen, geen verborgen stappen." },
+        { "name": "Lokale diepgang, wereldwijde blik.", "text": "Saudisch op de grond. Internationaal in denken." },
+        { "name": "De lange termijn.", "text": "We meten succes aan waar jij over vijf jaar staat, niet over vijf weken." }
+      ]
+    },
+    "founders": {
+      "label": "Maak kennis met de oprichters",
+      "line": "Eén gebouwd in Amsterdam. Eén geworteld in Jeddah. Allebei geobsedeerd door jouw succes.",
+      "linkedin": "LinkedIn",
+      "photo": "Portret oprichter",
+      "items": [
+        {
+          "name": "Ahmed Larouz",
+          "title": "Medeoprichter & Managing Partner",
+          "location": "Amsterdam · Casablanca",
+          "bio": [
+            "Ahmed bouwt al meer dan 25 jaar bedrijven, ecosystemen en bruggen tussen Europa, Marokko en Afrika. In 1999 richtte hij zijn eerste adviesbureau op, Mexit, liet het groeien tot 22 consultants en verkocht het. In 2007 richtte hij Bridgizz op, een organisatie voor cleantech en sociaal ondernemerschap, actief in Europa, Afrika en de MENA-regio.",
+            "Hij is National Lead van ClimateLaunchpad Morocco, leidt het initiatief Women in Cleantech en is medeoprichter van Morocco Fonds, het eerste Nederlandse fonds voor de ontwikkeling van Marokko en bilaterale samenwerking. Hij adviseerde overheden en publieke instellingen in Marokko en Afrika over strategie en investeringen, zat in het bestuur van een lokale Rabobank en in talloze besturen op twee continenten, en coachte leiders in ministeriële en ondernemerskringen.",
+            "Als bouwer op schaal liet hij het Ramadan Festival uitgroeien tot een van de grootste festivals van Nederland, in 42 Nederlandse en 5 internationale steden. Hij is auteur van 180Amsterdammers en heeft een diploma Informatica van de Haagse Hogeschool."
+          ],
+          "quote": "Wie stopt met leren, stopt met leiden."
+        },
+        {
+          "name": "Dr. Amer Assiri, PhD",
+          "title": "Medeoprichter & Managing Partner",
+          "location": "Jeddah",
+          "bio": [
+            "Amer is wetenschapper, academicus en ondernemer, geworteld in Jeddah en verbonden met de wereld. Als microbioloog en medisch expert is hij hoogleraar aan de King Abdulaziz University, waar hij verantwoordelijk is voor E-Health en Artificial Intelligence.",
+            "Hij is oprichter en CEO van WellnessMap, een Saudisch precisiezorgplatform dat genetica, diagnostiek en digitale zorg combineert. Na zijn tijd in Amsterdam keerde hij terug naar Jeddah om te bouwen en te investeren in de lokale gemeenschap en het ondernemersecosysteem. Amer brengt diepgaande kennis van het Saudische zorg-, onderzoeks- en innovatielandschap mee, en het vertrouwde netwerk dat deuren opent in het Koninkrijk."
+          ],
+          "quote": ""
+        }
+      ]
+    },
+    "cta": {
+      "title": "Betreed niet alleen de markt. Hoor er echt bij."
+    }
   },
-  "contact": {
-    "label": "Contact",
-    "title": "Plan een kennismaking.",
-    "intro": "Dertig minuten. Jouw product, onze lezing van de markt. Geen pitch.",
-    "form": {
-      "name": "Naam",
-      "company": "Bedrijf",
-      "role": "Functie",
-      "email": "E-mail",
-      "phone": "Telefoon",
-      "sector": "Sector",
-      "sectorPlaceholder": "Kies een sector",
-      "size": "Bedrijfsgrootte",
-      "sizes": [
-        "1 tot 10",
-        "11 tot 50",
-        "51 tot 200",
-        "200+"
-      ],
-      "message": "Bericht",
-      "submit": "Plan het gesprek",
-      "privacy": "We reageren binnen twee werkdagen. Je gegevens blijven bij ons."
+  "offices": {
+    "seo": {
+      "title": "Onze kantoren: Amsterdam, Casablanca, Jeddah",
+      "description": "Drie steden. Eén naadloze brug. Ontmoet KingdomEntry in Amsterdam, Casablanca en Jeddah."
     },
-    "thanks": {
-      "title": "Ontvangen.",
-      "text": "We komen binnen twee werkdagen bij je terug.",
-      "again": "Nog een bericht"
-    },
-    "calendar": "Agenda-embed [PLACEHOLDER]",
-    "cities": [
+    "label": "Onze kantoren",
+    "title": "Drie steden. Eén naadloze brug.",
+    "intro": "We ontmoeten je waar je bent en brengen je waar je wilt zijn.",
+    "addressLabel": "Adres",
+    "phoneLabel": "Telefoon",
+    "emailLabel": "E-mail",
+    "items": [
       {
         "city": "Amsterdam",
-        "lines": [
-          "[PLACEHOLDER adres]",
-          "NL +31 624 66 4290"
-        ]
+        "role": "De Europese voordeur",
+        "text": "Onze basis voor Europese bedrijven. Hier begint je Saudische reis: strategiesessies, marktscans en voorbereiding met een team dat begrijpt hoe Europese bedrijven denken en beslissen. Sterke focus op Nederlandse bedrijven in zorg, water, agrifood, cleantech, AI en industrie.",
+        "address": "[PLACEHOLDER address]",
+        "phone": "+31 624 66 4290",
+        "email": "info@kingdomentry.com"
+      },
+      {
+        "city": "Casablanca",
+        "role": "De poort naar Afrika en de Franstalige wereld",
+        "text": "Onze brug naar Marokko, Afrika en de Franstalige wereld. Casablanca verbindt Afrikaanse bedrijven met Saudische kansen en geeft onze klanten toegang tot meertalig talent en backofficeondersteuning. Arabisch, Frans en Engels onder één dak.",
+        "address": "[PLACEHOLDER address]",
+        "phone": "[PLACEHOLDER +212]",
+        "email": "info@kingdomentry.com"
       },
       {
         "city": "Jeddah",
-        "lines": [
-          "Red Sea Mall, Prince Faisal Ibn Fahd",
-          "Ash Shati, Jeddah 21146",
-          "KSA +966 9200 17540"
-        ]
+        "role": "Op de grond in het Koninkrijk",
+        "text": "Ons Saudische hoofdkantoor aan de Rode Zee. Jeddah is de commerciële toegangspoort van het Koninkrijk, met een van de grootste havens van de regio en op een korte vlucht van Riyad. Hier worden registraties ingediend, partners ontmoet en teams geland.",
+        "address": "Red Sea Mall, Prince Faisal Ibn Fahd, Ash Shati, Jeddah 21146",
+        "phone": "+966 9200 17540",
+        "email": "info@kingdomentry.com"
+      }
+    ],
+    "cta": {
+      "title": "De deur staat open. Wij lopen met je mee naar binnen."
+    }
+  },
+  "faq": {
+    "seo": {
+      "title": "FAQ: zakendoen in Saudi-Arabië",
+      "description": "Heldere antwoorden over eigendom, MISA-registratie, doorlooptijd, kapitaal, partners, Saudisering, RHQ en de keuze tussen Jeddah en Riyad."
+    },
+    "label": "FAQ",
+    "title": "Heldere antwoorden op de vragen die iedereen stelt.",
+    "items": [
+      {
+        "q": "Kan een buitenlands bedrijf 100% van een Saudisch bedrijf bezitten?",
+        "a": "In de meeste sectoren wel. Onder de investeringswet van 2025 registreren buitenlandse investeerders zich bij MISA en worden ze gelijk behandeld met lokale investeerders. Een korte lijst uitgesloten activiteiten blijft beperkt. We toetsen jouw activiteit in het eerste gesprek."
       },
       {
-        "city": "Riyad",
-        "lines": [
-          "[PLACEHOLDER adres]"
-        ]
+        "q": "Heb ik nog een MISA-vergunning nodig?",
+        "a": "Nee. De oude MISA-vergunning is in 2025 vervangen door een investeringsregistratie bij MISA. Dat is eenvoudiger en sneller, maar de rest van de oprichting (Commercial Registration, sectorvergunningen, fiscale en arbeidsregistraties) blijft van toepassing."
+      },
+      {
+        "q": "Hoe lang duurt de oprichting?",
+        "a": "Dat hangt af van je activiteit, structuur en sectorvergunningen. Een eenvoudig bedrijf gaat veel sneller dan een gereguleerd zorg- of voedingsbedrijf. Je krijgt een realistische planning in je toetredingsblauwdruk, geen verkoopbelofte."
+      },
+      {
+        "q": "Wat is het minimumkapitaal?",
+        "a": "Kapitaalvereisten hangen af van activiteit en structuur, en sommige sectoren hanteren eigen drempels. We adviseren over het juiste bedrag voor jouw plan en je visumbehoefte."
+      },
+      {
+        "q": "Heb ik een Saudische partner nodig?",
+        "a": "Juridisch gezien in de meeste sectoren niet. Commercieel maakt de juiste lokale partner, distributeur of adviseur vaak het verschil. We helpen je kiezen en de juiste te vinden."
+      },
+      {
+        "q": "Wat is Saudisering?",
+        "a": "Saudisering (Nitaqat) verplicht bedrijven om een percentage Saudische staatsburgers in dienst te hebben, afhankelijk van sector en omvang. Wie dit vanaf dag één plant, beschermt zijn visumquotum en zijn reputatie."
+      },
+      {
+        "q": "Kan ik de markt testen voordat ik een bedrijf opricht?",
+        "a": "Ja. Opties zijn een distributeurs- of agentmodel, een verkenningsreis, of een Employer of Record om personeel aan te nemen zonder eigen entiteit."
+      },
+      {
+        "q": "Moet ik kiezen voor Jeddah of Riyad?",
+        "a": "Riyad is de hoofdstad en het centrum van de overheid en van veel hoofdkantoren. Jeddah is de commerciële en logistieke toegangspoort aan de Rode Zee. De juiste keuze hangt af van je klanten, sector en incentives. Veel klanten gebruiken beide."
+      },
+      {
+        "q": "Wat is het RHQ Program?",
+        "a": "Een programma voor multinationals die hun MENA-activiteiten vanuit Saudi-Arabië aansturen, met langetermijnincentives en betere toegang tot overheidsopdrachten. Het vereist echte substance in het Koninkrijk. We beoordelen of het bij je past."
+      },
+      {
+        "q": "Geven jullie zelf juridisch en fiscaal advies?",
+        "a": "We coördineren de hele reis en werken met erkende Saudische advocaten-, belasting- en accountantskantoren voor gereguleerd advies. Je hebt één aanspreekpunt en deskundige goedkeuring waar de wet dat vereist."
+      },
+      {
+        "q": "Werken jullie alleen met Nederlandse bedrijven?",
+        "a": "Nee. We hebben een sterke focus op Nederland en Europa, en bedienen Afrikaanse en internationale bedrijven via onze kantoren in Casablanca en Jeddah."
       }
-    ]
+    ],
+    "more": "Nog een vraag?",
+    "cta": {
+      "title": "Kansen kloppen één keer aan. In Saudi-Arabië kloppen ze luid."
+    }
+  },
+  "contact": {
+    "seo": {
+      "title": "Contact KingdomEntry: Amsterdam, Casablanca, Jeddah",
+      "description": "Plan je Kingdom Readiness Call en zet de eerste stap op de Saudische markt."
+    },
+    "label": "Contact",
+    "title": "Je Saudische reis begint met één gesprek.",
+    "intro": "Vertel ons waar je staat en waar je naartoe wilt. Binnen twee werkdagen neemt een partner uit ons team contact met je op. Vrijblijvend. Zonder jargon. Gewoon helderheid.",
+    "form": {
+      "name": "Naam",
+      "company": "Bedrijf",
+      "country": "Land",
+      "sector": "Sector",
+      "email": "E-mail",
+      "phone": "Telefoon",
+      "stage": "Waar sta je in je reis?",
+      "stages": ["Aan het verkennen", "Klaar om te starten", "Al actief in Saudi-Arabië"],
+      "message": "Bericht",
+      "submit": "Start mijn Kingdom-reis",
+      "sending": "Versturen",
+      "privacy": "Je gegevens gebruiken we alleen om je te antwoorden. Zie onze privacypagina.",
+      "errors": {
+        "required": "Verplicht.",
+        "email": "Vul een geldig e-mailadres in.",
+        "tooFast": "Dat ging snel. Wacht even en verstuur opnieuw.",
+        "failed": "Dat is niet gelukt. Mail ons op info@kingdomentry.com."
+      }
+    },
+    "thanks": {
+      "title": "Dank je wel.",
+      "text": "Je eerste stap in het Koninkrijk is gezet. We nemen binnen twee werkdagen contact met je op.",
+      "again": "Nog een bericht sturen"
+    },
+    "alt": {
+      "title": "Liever nu praten?",
+      "text": "Plan een Kingdom Readiness Call van 30 minuten."
+    },
+    "calendar": "Agenda-inplanner [PLACEHOLDER]"
+  },
+  "closing": [
+    "Saudi-Arabië wacht niet. Jij ook niet.",
+    "Kansen kloppen één keer aan. In Saudi-Arabië kloppen ze luid.",
+    "De deur staat open. Wij lopen met je mee naar binnen.",
+    "Betreed niet alleen de markt. Hoor er echt bij."
+  ],
+  "footer": {
+    "tagline": "KingdomEntry. Jouw toegangspoort tot het Koninkrijk.",
+    "cities": "Amsterdam · Casablanca · Jeddah",
+    "company": "Bedrijf",
+    "contact": "Contact",
+    "download": "Download bedrijfsprofiel (PDF)",
+    "email": "info@kingdomentry.com",
+    "linkedin": "LinkedIn",
+    "rights": "© 2026 KingdomEntry. Alle rechten voorbehouden.",
+    "privacy": "Privacy",
+    "language": "Taal",
+    "disclaimer": "De informatie op deze website is algemeen en vormt geen juridisch of fiscaal advies. Regelgeving in Saudi-Arabië verandert regelmatig. Gereguleerd advies wordt verstrekt via erkende partnerkantoren."
   },
   "privacy": {
+    "seo": {
+      "title": "Privacy",
+      "description": "Hoe KingdomEntry omgaat met de gegevens die je met ons deelt."
+    },
     "title": "Privacy.",
-    "intro": "Kort gezegd: we verzamelen wat we nodig hebben om je te antwoorden, niets meer. [JURIDISCHE REVIEW]",
+    "intro": "Kort gezegd: we verzamelen wat we nodig hebben om je te antwoorden, meer niet. [LEGAL REVIEW]",
     "sections": [
       {
         "title": "Wat we verzamelen",
-        "text": "Naam, bedrijf, functie, e-mail, telefoon en je bericht via het contactformulier. Anonieme, privacyvriendelijke analytics op de site."
+        "text": "Naam, bedrijf, land, sector, e-mail, telefoon, de fase van je reis en je bericht wanneer je het contactformulier gebruikt. Anonieme, privacyvriendelijke statistieken op de site."
       },
       {
         "title": "Waarom",
-        "text": "Om je verzoek te beantwoorden en het gesprek voor te bereiden. Om te zien welke pagina's nuttig zijn."
+        "text": "Om je vraag te beantwoorden en je Kingdom Readiness Call voor te bereiden. Om te begrijpen welke pagina's nuttig zijn."
       },
       {
         "title": "Hoe lang",
         "text": "Formulierinzendingen 24 maanden, of tot je ons vraagt ze te verwijderen."
       },
       {
-        "title": "Je rechten",
-        "text": "Inzage, correctie, verwijdering, bezwaar. Mail privacy@kingdomentry.com."
+        "title": "Jouw rechten",
+        "text": "Inzage, correctie, verwijdering, bezwaar. Mail naar info@kingdomentry.com."
       },
       {
         "title": "Cookies",
-        "text": "Eén functionele cookie voor je taal. Analytics draait zonder cookies."
+        "text": "Eén functionele cookie voor je taal. Statistieken werken zonder cookies."
       }
     ]
+  },
+  "cookie": {
+    "text": "We gebruiken privacyvriendelijke statistieken. Geen advertenties, geen tracking over sites heen.",
+    "accept": "Accepteren",
+    "decline": "Weigeren"
   },
   "notFound": {
     "code": "404",
     "title": "Deze deur is dicht. Probeer een andere.",
     "link": "Terug naar home"
   },
-  "footer": {
-    "tagline": "Jouw zachte landing in Saudi-Arabië.",
-    "company": "Bedrijf",
-    "contact": "Contact",
-    "download": "Download bedrijfsprofiel (PDF)",
-    "email": "hello@kingdomentry.com",
-    "linkedin": "LinkedIn",
-    "rights": "© 2026 Kingdom Entry. Alle rechten voorbehouden.",
-    "privacy": "Privacy",
-    "language": "Taal"
-  },
-  "cookie": {
-    "text": "We gebruiken privacyvriendelijke analytics. Geen advertenties, geen tracking over sites heen.",
-    "accept": "Accepteren",
-    "decline": "Weigeren"
+  "images": {
+    "skyline": "De skyline van Riyad rijst op uit de woestijn bij zonsopkomst",
+    "gateway": "Een open stenen poort met Arabische ornamenten, van binnenuit verlicht",
+    "jeddahOffice": "Kantoorlounge met uitzicht op de Rode Zee bij zonsondergang",
+    "handshake": "Twee zakenpartners schudden elkaar de hand bij Arabische koffie",
+    "healthcare": "Een arts bekijkt scans in een moderne beeldvormingsruimte",
+    "jeddahArch": "De kust van Jeddah gezien door een bewerkte stenen boog bij zonsondergang",
+    "cleantech": "Zonnevelden en windturbines in de woestijn bij zonsondergang",
+    "ai": "Een gang in een datacenter met uitzicht op een stad bij nacht",
+    "agrifood": "Een verticale binnenboerderij met uitzicht op woestijnduinen",
+    "industry": "Robotarmen die onderdelen assembleren in een fabriekshal",
+    "logistics": "Een containerhaven met kranen en een vrachtschip bij schemering",
+    "tourism": "Villa's boven het water naast woestijnkliffen bij zonsondergang",
+    "construction": "Een groot herkenningspunt in aanbouw in de woestijn",
+    "education": "Een team dat samenwerkt aan een vergadertafel",
+    "fintech": "Een hand met een telefoon met een financiële app boven een stad bij nacht",
+    "amsterdam": "Een Amsterdamse gracht bij schemering met de Zuidas op de achtergrond",
+    "casablanca": "Een boulevard met palmbomen in Casablanca bij zonsondergang",
+    "jeddah": "De corniche van Jeddah bij schemering met de King Fahd-fontein"
   }
 }

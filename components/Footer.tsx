@@ -1,71 +1,80 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { navItems, site } from "@/lib/site";
-import { Diamond } from "./Diamond";
-import { DiamondPattern } from "./DiamondPattern";
+import { moreItems, navItems, site } from "@/lib/site";
+import { Cities } from "./Cities";
+import { ArrowIcon, DownloadIcon } from "./icons";
+import { Label } from "./Label";
 import { FooterLanguages } from "./LanguageSwitcher";
 import { Logo } from "./Logo";
+import { SkylineLines } from "./SkylineLines";
 
-function ColumnLabel({ children }: { children: string }) {
-  return <p className="m-0 mb-1.5 text-[12px] font-medium uppercase tracking-label text-horizon">{children}</p>;
-}
-
-const link = "self-start text-[15px] text-pearl no-underline hover:text-gold";
-
+/** Zeyna footer: royal blue, oversized nav words, arrowed contact lines. */
 export function Footer() {
   const t = useTranslations();
   return (
-    <footer className="relative overflow-hidden border-t border-gold/50 bg-blue text-pearl">
-      <DiamondPattern opacity={0.22} />
-      <div className="relative mx-auto flex w-full max-w-site flex-col gap-14 px-6 pb-10 pt-[72px]">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-10">
-          <div className="flex flex-col gap-[18px]">
-            <Logo mark="gold" size={40} lockup label="Kingdom Entry" />
-            <p className="m-0 text-[11.5px] font-medium uppercase tracking-label text-horizon">
-              {t("brand.descriptor")}
+    <footer className="relative isolate overflow-hidden bg-royal text-white">
+      <SkylineLines className="text-white" opacity={0.12} />
+      <div className="relative mx-auto w-full max-w-site px-6 pt-[clamp(70px,8vw,120px)]">
+        <div className="grid gap-12 lg:grid-cols-2">
+          <div>
+            <Logo mark="current" size={36} lockup label="Kingdom Entry" />
+            <p className="m-0 mt-6 text-[13px] uppercase tracking-label text-white/75">
+              <Cities text={t("footer.cities")} />
             </p>
-            <p lang="ar" className="m-0 text-start font-arabic text-[22px] font-semibold text-pearl">
+            <p lang="ar" className="m-0 mt-5 font-arabic text-[22px] font-medium">
               {t("brand.arabicName")}
             </p>
-            <p className="m-0 max-w-[30ch] text-[15px] font-light text-pearl">{t("footer.tagline")}</p>
           </div>
-
-          <div className="flex flex-col gap-3">
-            <ColumnLabel>{t("footer.company")}</ColumnLabel>
-            {navItems.map((n) => (
-              <Link key={n.key} href={n.href} className={link}>
-                {t(`nav.${n.key}`)}
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <ColumnLabel>{t("footer.contact")}</ColumnLabel>
-            <a href={`mailto:${site.email}`} className={link}>
-              {t("footer.email")}
-            </a>
-            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className={link}>
-              {t("footer.linkedin")}
-            </a>
-            <a
-              href={site.profilePdf}
-              download
-              className="mt-2.5 flex items-center gap-2.5 self-start rounded-sm border border-gold px-4 py-3 text-[15px] text-pearl no-underline hover:bg-gold/[0.14] hover:text-pearl"
-            >
-              <Diamond size={8} />
-              {t("footer.download")}
-            </a>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <ColumnLabel>{t("footer.language")}</ColumnLabel>
-            <FooterLanguages />
+          <div>
+            <p className="m-0 text-h3 text-white">{(t.raw("closing") as string[])[2]}</p>
+            <p className="m-0 mt-5 text-[16px] text-white/80">{t("footer.tagline")}</p>
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-between gap-3 border-t border-gold/40 pt-6 text-[13px] text-horizon">
+        <div className="mt-[clamp(60px,7vw,100px)] grid gap-12 border-t border-white/25 pt-10 lg:grid-cols-[1.2fr_1fr_0.6fr]">
+          <div>
+            <Label tone="dark">{t("footer.company")}</Label>
+            <nav className="mt-6 grid grid-cols-2 gap-x-6 text-[clamp(22px,2.6vw,34px)] leading-[1.2] tracking-[-0.03em] sm:grid-cols-3">
+              {[...navItems, ...moreItems].map((n) => (
+                <Link key={n.key} href={n.href} className="self-start py-2 text-white/65 no-underline hover:text-white">
+                  {t(`nav.${n.key}`)}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Label tone="dark">{t("footer.contact")}</Label>
+            <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] mt-3 flex min-h-11 items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
+              <ArrowIcon size={15} /> {t("footer.email")}
+            </a>
+            {site.linkedin ? (
+              <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[16px] text-white no-underline hover:text-white/75">
+                <ArrowIcon size={15} /> {t("footer.linkedin")}
+              </a>
+            ) : null}
+            {site.profilePdf ? (
+              <a
+                href={site.profilePdf}
+                download
+                className="mt-4 inline-flex items-center gap-3 self-start border border-white/40 px-4 py-3 text-[12px] font-medium uppercase tracking-label text-white no-underline transition-colors hover:bg-white hover:text-navy"
+              >
+                <DownloadIcon size={14} /> {t("footer.download")}
+              </a>
+            ) : null}
+          </div>
+          <div className="flex flex-col gap-2">
+            <Label tone="dark">{t("footer.language")}</Label>
+            <div className="mt-1 flex flex-col">
+              <FooterLanguages />
+            </div>
+          </div>
+        </div>
+
+        <p className="m-0 mt-16 max-w-[90ch] text-[12px] leading-relaxed text-white/70">{t("footer.disclaimer")}</p>
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/25 py-6 text-[12px] text-white/70">
           <span>{t("footer.rights")}</span>
-          <Link href="/privacy" className="text-horizon no-underline hover:text-gold">
+          <span className="uppercase tracking-label">{t("brand.descriptor")}</span>
+          <Link href="/privacy" className="inline-flex min-h-11 items-center text-white/70 no-underline hover:text-white">
             {t("footer.privacy")}
           </Link>
         </div>
